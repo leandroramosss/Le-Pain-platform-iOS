@@ -20,4 +20,13 @@ class Networking {
             }
         }
     }
+    
+    func signInUser(with email: String, with password: String) {
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+                        guard let stromgSelf = self else { return }
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
 }

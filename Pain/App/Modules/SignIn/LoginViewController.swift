@@ -49,6 +49,7 @@ class LoginViewController: UIViewController {
         button.setTitle("Sign up", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.layer.borderColor = UIColor.black.cgColor
+        button.addTarget(self, action: #selector(signInBottonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -56,7 +57,7 @@ class LoginViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Sign in", for: .normal)
         button.setTitleColor(.black, for: .normal)
-        button.addTarget(self, action: #selector(signUpBottomPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(signUpBottonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -95,7 +96,7 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
     
     func setupConstranits() {
         imageView.snp.makeConstraints { (maker) in
-            maker.top.equalTo(view.safeAreaLayoutGuide).offset(20)
+            maker.top.equalTo(view.safeAreaLayoutGuide).offset(40)
             maker.width.equalToSuperview().inset(25)
             maker.height.equalTo(250)
             maker.centerX.equalToSuperview()
@@ -123,7 +124,7 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
         }
         
         signInButton.snp.makeConstraints { (maker) in
-            maker.top.equalTo(passwordTextField.snp.bottom).offset(20)
+            maker.top.equalTo(passwordTextField.snp.bottom).offset(50)
             maker.centerX.equalToSuperview()
             maker.width.equalTo(100)
             maker.height.equalTo(40)
@@ -151,8 +152,30 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
         return false
     }
     
-    @objc func signUpBottomPressed() {
+    @objc func signInBottonPressed() {
+        if emailTextField.text?.isEmpty == true && passwordTextField.text?.isEmpty == true {
+            emailTextField.layer.borderColor = UIColor.red.cgColor
+            passwordTextField.layer.borderColor = UIColor.red.cgColor
+            print("email empty")
+        } else if passwordTextField.text?.isEmpty == true && emailTextField.text?.isEmpty == true{
+            emailTextField.layer.borderColor = UIColor.red.cgColor
+            passwordTextField.layer.borderColor = UIColor.red.cgColor
+        } else {
+            presenter?.signInUser(user: emailTextField.text!, user: passwordTextField.text!)
+            let viewController = MainPageRouter.createModule()
+            viewController.modalPresentationStyle = .fullScreen
+            present(viewController, animated: true, completion: nil)
+        }
+    }
+    
+    @objc func signUpBottonPressed() {
         let viewController = SignUpRouter.createModule()
         navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    func checkUserInfo() {
+        if Auth.auth().currentUser != nil {
+            print(Auth.auth().currentUser?.uid as Any)
+        }
     }
 }

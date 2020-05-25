@@ -29,4 +29,6 @@ protocol ViewToLoginPresenterProtocol: class {
     var view: PresenterToLoginProtocol? { get set }
     var interactor: PresenterToLoginInteractorProtocol? { get set }
     var router: PresenterToLoginRouterProtocol? { get set }
+    
+    func signInUser(user email: String, user password: String)
 }

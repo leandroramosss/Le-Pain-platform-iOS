@@ -9,9 +9,16 @@
 import Foundation
 
 class LoginPresenter: ViewToLoginPresenterProtocol {
+    
     var view: PresenterToLoginProtocol?
     var interactor: PresenterToLoginInteractorProtocol?
     var router: PresenterToLoginRouterProtocol?
+    
+    let networking = Networking()
+    
+    func signInUser(user email: String, user password: String) {
+        networking.signInUser(with: email, with: password)
+    }
 }
 
 extension LoginPresenter: InteractorToLoginPresenterProtocol {

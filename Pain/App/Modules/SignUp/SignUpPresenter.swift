@@ -12,6 +12,12 @@ class SignUpPresenter: ViewToSignUpPresenterProtocol {
     var view: PresenterToSignUpProtocol?
     var interactor: PresenterToSignUpInteractorProtocol?
     var router: PresenterToSignUpRouterProtocol?
+    
+    let networking = Networking()
+    
+    func createUser(email: String, passWord: String) {
+        networking.createUser(email: email, passWord: passWord)
+    }
 }
 
 extension SignUpPresenter: InteractorToSignUpPresenterProtocol {
