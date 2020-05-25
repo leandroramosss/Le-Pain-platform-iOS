@@ -1,5 +1,5 @@
 //
-//  MainProtocols.swift
+//  MainPageProtocols.swift
 //  Pain
 //
 //  Created by Leandro Ramos on 5/25/20.

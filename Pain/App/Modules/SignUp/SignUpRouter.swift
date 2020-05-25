@@ -25,6 +25,6 @@ class SignUpRouter: PresenterToSignUpRouterProtocol {
     }
     
     static var mainstoryboard: UIStoryboard {
-        return UIStoryboard(name: "Main", bundle: Bundle.main)
+        return UIStoryboard(name: "SignUp", bundle: Bundle.main)
     }
 }

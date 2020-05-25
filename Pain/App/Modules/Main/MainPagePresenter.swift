@@ -1,5 +1,5 @@
 //
-//  MainPresenter.swift
+//  MainPagePresenter.swift
 //  Pain
 //
 //  Created by Leandro Ramos on 5/25/20.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-class MainPresenter: ViewToMainPagePresenterProtocol {
+class MainPagePresenter: ViewToMainPagePresenterProtocol {
     var view: PresenterToMainPageProtocol?
     var interactor: PresenterToMainPageInteractorProtocol?
     var router: PresenterToMainPageRouterProtocol?
 }
 
-extension MainPresenter: InteractorToMainPagePresenterProtocol {
+extension MainPagePresenter: InteractorToMainPagePresenterProtocol {
     
 }

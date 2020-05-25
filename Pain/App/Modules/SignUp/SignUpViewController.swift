@@ -14,7 +14,7 @@ class SignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUpNavigation()
         // Do any additional setup after loading the view.
     }
     
@@ -33,4 +33,23 @@ class SignUpViewController: UIViewController {
 
 extension SignUpViewController: PresenterToSignUpProtocol {
     
+}
+
+extension SignUpViewController: ViewLayoutProtocol {
+    func setUpLayout() {
+        
+    }
+    
+    func viewHierarchy() {
+        
+    }
+    
+    func setupConstranits() {
+        
+    }
+    
+    func setUpNavigation() {
+        navigationController?.setNavigationBarHidden(false, animated: false)
+
+    }
 }

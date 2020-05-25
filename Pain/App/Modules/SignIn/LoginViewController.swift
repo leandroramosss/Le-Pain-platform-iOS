@@ -17,8 +17,14 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUpNavigation()
+        setUpLayout()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setUpNavigation()
     }
     
     @IBAction func loginButtonTapped(_ sender: Any) {
@@ -33,4 +39,23 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: PresenterToLoginProtocol {
     
+}
+
+extension LoginViewController: ViewLayoutProtocol {
+    func setUpLayout() {
+        viewHierarchy()
+        setupConstranits()
+    }
+    
+    func viewHierarchy() {
+        
+    }
+    
+    func setupConstranits() {
+        
+    }
+    
+    func setUpNavigation() {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
 }

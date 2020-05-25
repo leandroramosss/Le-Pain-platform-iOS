@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  MainPageViewController.swift
 //  Pain
 //
 //  Created by Leandro Ramos on 5/25/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainPageViewController: UIViewController {
     
     var presenter: ViewToMainPagePresenterProtocol?
 
@@ -31,6 +31,6 @@ class MainViewController: UIViewController {
 
 }
 
-extension MainViewController: PresenterToMainPageProtocol {
+extension MainPageViewController: PresenterToMainPageProtocol {
     
 }

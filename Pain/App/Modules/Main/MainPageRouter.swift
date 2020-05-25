@@ -1,5 +1,5 @@
 //
-//  MainRouter.swift
+//  MainPageRouter.swift
 //  Pain
 //
 //  Created by Leandro Ramos on 5/25/20.
@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-class MainRouter: PresenterToMainPageRouterProtocol {
+class MainPageRouter: PresenterToMainPageRouterProtocol {
     static func createModule() -> UIViewController {
-        var view = mainstoryboard.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController
-        let presenter: ViewToMainPagePresenterProtocol & InteractorToMainPagePresenterProtocol = MainPresenter()
-        let interactor: PresenterToMainPageInteractorProtocol = MainInteractor()
-        let router: PresenterToMainPageRouterProtocol = MainRouter()
+        var view = mainstoryboard.instantiateViewController(withIdentifier: "MainViewController") as? MainPageViewController
+        let presenter: ViewToMainPagePresenterProtocol & InteractorToMainPagePresenterProtocol = MainPagePresenter()
+        let interactor: PresenterToMainPageInteractorProtocol = MainPageInteractor()
+        let router: PresenterToMainPageRouterProtocol = MainPageRouter()
         
         view?.presenter = presenter
         presenter.view = view
