@@ -56,12 +56,25 @@ class SignUpViewController: UIViewController {
 }
 
 extension SignUpViewController: PresenterToSignUpProtocol {
+    func endRequestSuccessfully() {
+        let viewController = MainPageRouter.createModule()
+        self.navigationController?.present(viewController, animated: true, completion: nil)
+        self.navigationController?.popToViewController(viewController, animated: true)
+    }
+    
     func endRequestWithError(alert: UIAlertController) {
-        
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action) in
+            // do nothing
+        }))
+        present(alert, animated: true)
     }
     
     func showAlert(alert: UIAlertController, valid: Bool) {
-        
+        if !valid {
+            alert.addAction(UIAlertAction(title: "Fechar", style: .cancel, handler: { (action) in
+            }))
+            present(alert, animated: true)
+        }
     }
     
 }
@@ -129,15 +142,11 @@ extension SignUpViewController: ViewLayoutProtocol, UITextFieldDelegate {
     
     @objc func continueButtonTapped() {
         if emailTextfield.text?.isEmpty == true {
-            emailTextfield.layer.borderColor = UIColor.red.cgColor
             print("email empty")
         } else if passwordTextField.text?.isEmpty == true {
-            passwordTextField.layer.borderColor = UIColor.red.cgColor
+            print("password empty")
         } else {
             presenter?.createUser(email: emailTextfield.text ?? "", passWord: passwordTextField.text ?? "")
-            let viewController = LoginRouter.createModule()
-            viewController.modalPresentationStyle = .fullScreen
-            present(viewController, animated: true, completion: nil)
         }
     }
 }
