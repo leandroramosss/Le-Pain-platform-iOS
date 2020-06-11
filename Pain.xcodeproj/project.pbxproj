@@ -34,6 +34,7 @@
 		52C38070247BECD300D7972A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C3806F247BECD300D7972A /* Assets.xcassets */; };
 		52C38073247BECD300D7972A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C38071247BECD300D7972A /* LaunchScreen.storyboard */; };
 		52C3807E247BECD300D7972A /* PainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3807D247BECD300D7972A /* PainTests.swift */; };
+		52EE96672491AC8B00527E22 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EE96662491AC8B00527E22 /* Utils.swift */; };
 		9226F28C294B288B3CBDB6B9 /* Pods_PainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17D68FA72B37B1A6169404A5 /* Pods_PainTests.framework */; };
 		98B9486516ABBB9305204D1C /* Pods_Pain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE6E7BB66B84C4643C46C69 /* Pods_Pain.framework */; };
 /* End PBXBuildFile section */
@@ -83,6 +84,7 @@
 		52C38079247BECD300D7972A /* PainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C3807D247BECD300D7972A /* PainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainTests.swift; sourceTree = "<group>"; };
 		52C3807F247BECD300D7972A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52EE96662491AC8B00527E22 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		595ECEA17E881188C6B7DFA7 /* Pods-Pain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pain.release.xcconfig"; path = "Target Support Files/Pods-Pain/Pods-Pain.release.xcconfig"; sourceTree = "<group>"; };
 		6372C80342580201E1465184 /* Pods-PainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PainTests.release.xcconfig"; path = "Target Support Files/Pods-PainTests/Pods-PainTests.release.xcconfig"; sourceTree = "<group>"; };
 		ECE6E7BB66B84C4643C46C69 /* Pods_Pain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				529A1C43247C262800CA723B /* ViewLayoutProtocol.swift */,
+				52EE96662491AC8B00527E22 /* Utils.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				529A1C2D247BF8F800CA723B /* SignUpPresenter.swift in Sources */,
 				529A1C33247C03D700CA723B /* SignUpViewController.swift in Sources */,
 				529A1C3E247C0D4400CA723B /* MainPageViewController.swift in Sources */,
+				52EE96672491AC8B00527E22 /* Utils.swift in Sources */,
 				529A1C44247C262800CA723B /* ViewLayoutProtocol.swift in Sources */,
 				529A1C21247BF24C00CA723B /* LoginPresenter.swift in Sources */,
 				529A1C3A247C0C7600CA723B /* MainPageInteractor.swift in Sources */,
@@ -599,7 +603,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MDDP3J8FL2;
+				DEVELOPMENT_TEAM = B7W23X7N33;
 				INFOPLIST_FILE = Pain/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -618,7 +622,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MDDP3J8FL2;
+				DEVELOPMENT_TEAM = B7W23X7N33;
 				INFOPLIST_FILE = Pain/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

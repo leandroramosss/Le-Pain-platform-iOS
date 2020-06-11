@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 protocol PresenterToSignUpProtocol: class {
-    
+    func endRequestWithError(alert: UIAlertController)
+    func showAlert(alert: UIAlertController, valid: Bool)
+
 }
 
 protocol InteractorToSignUpPresenterProtocol: class {

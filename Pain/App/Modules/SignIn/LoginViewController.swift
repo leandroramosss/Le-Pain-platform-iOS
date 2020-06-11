@@ -40,22 +40,23 @@ class LoginViewController: UIViewController {
         let textField = UITextField()
         textField.layer.borderWidth = 0.5
         textField.layer.borderColor = UIColor.black.cgColor
+        textField.isSecureTextEntry = true
         return textField
     }()
     
     lazy var signInButton: UIButton = {
         let button = UIButton()
         button.layer.borderWidth = 0.5
-        button.setTitle("Sign up", for: .normal)
+        button.setTitle("Sign in", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.layer.borderColor = UIColor.black.cgColor
-        button.addTarget(self, action: #selector(signInBottonPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(signInButtonPressed), for: .touchUpInside)
         return button
     }()
     
     lazy var signUpButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Sign in", for: .normal)
+        button.setTitle("Subscribe", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(signUpBottonPressed), for: .touchUpInside)
         return button
@@ -76,6 +77,27 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: PresenterToLoginProtocol {
+    func didEndRequestSuccesfully() {
+        let viewController = MainPageRouter.createModule()
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: true, completion: nil)
+    }
+    
+    func didEndRequestWithError(alert: UIAlertController) {
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { action in
+            //do nothing
+        }))
+        present(alert, animated: true)
+    }
+    
+    func showAlert(alert: UIAlertController, valid: Bool) {
+        if !valid {
+            alert.addAction(UIAlertAction(title: "Fechar", style: .cancel, handler: { (action) in
+            }))
+            present(alert, animated: true)
+        }
+    }
+    
     
 }
 
@@ -152,20 +174,8 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
         return false
     }
     
-    @objc func signInBottonPressed() {
-        if emailTextField.text?.isEmpty == true && passwordTextField.text?.isEmpty == true {
-            emailTextField.layer.borderColor = UIColor.red.cgColor
-            passwordTextField.layer.borderColor = UIColor.red.cgColor
-            print("email empty")
-        } else if passwordTextField.text?.isEmpty == true && emailTextField.text?.isEmpty == true{
-            emailTextField.layer.borderColor = UIColor.red.cgColor
-            passwordTextField.layer.borderColor = UIColor.red.cgColor
-        } else {
-            presenter?.signInUser(user: emailTextField.text!, user: passwordTextField.text!)
-            let viewController = MainPageRouter.createModule()
-            viewController.modalPresentationStyle = .fullScreen
-            present(viewController, animated: true, completion: nil)
-        }
+    @objc func signInButtonPressed() {
+        presenter?.signInUser(user: emailTextField.text!, user: passwordTextField.text!)
     }
     
     @objc func signUpBottonPressed() {

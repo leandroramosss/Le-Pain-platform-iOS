@@ -12,21 +12,21 @@ import Firebase
 
 class Networking {
     
-    func createUser(email: String, passWord: String) {
-        Auth.auth().createUser(withEmail: email, password: passWord) { (authResult, error) in
-            guard let user = authResult?.user, error == nil else {
-                print("Error \(error?.localizedDescription)")
-                return
-            }
-        }
-    }
-    
-    func signInUser(with email: String, with password: String) {
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-                        guard let stromgSelf = self else { return }
-            if let error = error {
-                print(error.localizedDescription)
-            }
-        }
-    }
+//    func createUser(email: String, passWord: String) {
+//        Auth.auth().createUser(withEmail: email, password: passWord) { (authResult, error) in
+//            guard let user = authResult?.user, error == nil else {
+//                print("Error \(error?.localizedDescription)")
+//                return
+//            }
+//        }
+//    }
+//
+//    func signInUser(with email: String, with password: String) {
+//        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+//                        guard let stromgSelf = self else { return }
+//            if let error = error {
+//                print(error.localizedDescription)
+//            }
+//        }
+//    }
 }

@@ -25,6 +25,7 @@ class SignUpViewController: UIViewController {
         textField.layer.borderWidth = 0.5
         textField.layer.borderColor = UIColor.black.cgColor
         textField.autocapitalizationType = .none
+        textField.textColor = .black
         return textField
     }()
     
@@ -34,6 +35,7 @@ class SignUpViewController: UIViewController {
         textField.backgroundColor = .white
         textField.layer.borderColor = UIColor.black.cgColor
         textField.autocapitalizationType = .none
+        textField.textColor = .black
         return textField
     }()
     
@@ -54,6 +56,13 @@ class SignUpViewController: UIViewController {
 }
 
 extension SignUpViewController: PresenterToSignUpProtocol {
+    func endRequestWithError(alert: UIAlertController) {
+        
+    }
+    
+    func showAlert(alert: UIAlertController, valid: Bool) {
+        
+    }
     
 }
 

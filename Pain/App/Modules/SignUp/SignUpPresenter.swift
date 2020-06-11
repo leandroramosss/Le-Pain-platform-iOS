@@ -16,7 +16,7 @@ class SignUpPresenter: ViewToSignUpPresenterProtocol {
     let networking = Networking()
     
     func createUser(email: String, passWord: String) {
-        networking.createUser(email: email, passWord: passWord)
+//        networking.createUser(email: email, passWord: passWord)
     }
 }
 
