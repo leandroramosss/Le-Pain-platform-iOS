@@ -8,16 +8,13 @@
 
 import UIKit
 import SnapKit
+import Lottie
 
 class SignUpViewController: UIViewController {
     
     var presenter: ViewToSignUpPresenterProtocol?
+    let animamationView = AnimationView()
     
-    lazy var navigationBarExtentionView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .red
-        return view
-    }()
     
     lazy var emailTextfield: UITextField = {
         let textField = UITextField()
@@ -88,18 +85,13 @@ extension SignUpViewController: ViewLayoutProtocol, UITextFieldDelegate {
     }
     
     func viewHierarchy() {
-        view.addSubview(navigationBarExtentionView)
-        navigationBarExtentionView.addSubview(emailTextfield)
+        view.addSubview(emailTextfield)
         view.addSubview(passwordTextField)
         view.addSubview(continueButton)
+        view.addSubview(animamationView)
     }
     
     func setupConstranits() {
-        navigationBarExtentionView.snp.makeConstraints { (maker) in
-            maker.top.equalTo(view.safeAreaLayoutGuide)
-            maker.width.equalToSuperview()
-            maker.height.equalTo(100)
-        }
         
         emailTextfield.snp.makeConstraints { (maker) in
             maker.top.equalTo(view.safeAreaLayoutGuide).offset(10)
@@ -146,7 +138,21 @@ extension SignUpViewController: ViewLayoutProtocol, UITextFieldDelegate {
         } else if passwordTextField.text?.isEmpty == true {
             print("password empty")
         } else {
-            presenter?.createUser(email: emailTextfield.text ?? "", passWord: passwordTextField.text ?? "")
+            self.navigationController!.navigationBar.layer.zPosition = -1
+            startAnimation()
+            DispatchQueue.main.asyncAfter(wallDeadline: .now() + 1.5) {
+                self.presenter?.createUser(email: self.emailTextfield.text ?? "", passWord: self.passwordTextField.text ?? "")
+            }
         }
     }
+    
+    func startAnimation() {
+        animamationView.animation = Animation.named("loading")
+        animamationView.frame = view.bounds
+        animamationView.backgroundColor = .black
+        animamationView.contentMode = .scaleAspectFit
+        animamationView.loopMode = .loop
+        animamationView.play()
+    }
+    
 }

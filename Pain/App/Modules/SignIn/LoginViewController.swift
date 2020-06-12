@@ -79,6 +79,7 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: PresenterToLoginProtocol {
+    
     func didEndRequestSuccesfully() {
         let viewController = MainPageRouter.createModule()
         viewController.modalPresentationStyle = .fullScreen
@@ -170,6 +171,7 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
     }
     
     func startAnimation() {
+        navigationController?.setNavigationBarHidden(true, animated: true)
         animamationView.animation = Animation.named("loading")
         animamationView.frame = view.bounds
         animamationView.backgroundColor = .black
@@ -194,7 +196,9 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
     
     @objc func signInButtonPressed() {
         startAnimation()
-        presenter?.signInUser(user: emailTextField.text!, user: passwordTextField.text!)
+        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 1.5) {
+            self.presenter?.signInUser(user: self.emailTextField.text!, user: self.passwordTextField.text!)
+        }
     }
     
     @objc func signUpBottonPressed() {
