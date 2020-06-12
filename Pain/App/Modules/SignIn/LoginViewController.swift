@@ -10,10 +10,12 @@ import UIKit
 import FirebaseAuth
 import Firebase
 import SnapKit
+import Lottie
 
 class LoginViewController: UIViewController {
     
     var presenter: ViewToLoginPresenterProtocol?
+    let animamationView = AnimationView()
     
     lazy var imageView: UIImageView = {
         let image = UIImageView()
@@ -85,7 +87,9 @@ extension LoginViewController: PresenterToLoginProtocol {
     
     func didEndRequestWithError(alert: UIAlertController) {
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { action in
-            //do nothing
+            let viewController = LoginRouter.createModule()
+            viewController.modalPresentationStyle = .fullScreen
+            self.present(viewController, animated: true, completion: nil)
         }))
         present(alert, animated: true)
     }
@@ -93,6 +97,9 @@ extension LoginViewController: PresenterToLoginProtocol {
     func showAlert(alert: UIAlertController, valid: Bool) {
         if !valid {
             alert.addAction(UIAlertAction(title: "Fechar", style: .cancel, handler: { (action) in
+                let viewController = LoginRouter.createModule()
+                viewController.modalPresentationStyle = .fullScreen
+                self.present(viewController, animated: true, completion: nil)
             }))
             present(alert, animated: true)
         }
@@ -114,6 +121,7 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
         view.addSubview(passwordTextField)
         view.addSubview(signInButton)
         view.addSubview(signUpButton)
+        view.addSubview(animamationView)
     }
     
     func setupConstranits() {
@@ -158,8 +166,18 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
             maker.centerX.equalToSuperview()
             maker.bottom.equalTo(view.safeAreaLayoutGuide)
         }
+        
     }
     
+    func startAnimation() {
+        animamationView.animation = Animation.named("loading")
+        animamationView.frame = view.bounds
+        animamationView.backgroundColor = .black
+        animamationView.contentMode = .scaleAspectFit
+        animamationView.loopMode = .loop
+        animamationView.play()
+    }
+        
     func setUpNavigation() {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
@@ -175,6 +193,7 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
     }
     
     @objc func signInButtonPressed() {
+        startAnimation()
         presenter?.signInUser(user: emailTextField.text!, user: passwordTextField.text!)
     }
     

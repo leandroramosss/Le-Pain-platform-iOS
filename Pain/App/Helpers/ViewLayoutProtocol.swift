@@ -18,5 +18,6 @@ protocol ViewLayoutProtocol: class {
 
 extension ViewLayoutProtocol {
     func setUpNavigation() {}
+    func startAnimation() {}
 }
 
