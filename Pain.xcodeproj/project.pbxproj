@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520C301A24955EC40053C761 /* homeButton.json in Resources */ = {isa = PBXBuildFile; fileRef = 520C301924955EC40053C761 /* homeButton.json */; };
 		52774F32247C78DC001EAB2A /* MainPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52774F31247C78DC001EAB2A /* MainPage.storyboard */; };
 		529A1C1F247BF09D00CA723B /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529A1C1E247BF09D00CA723B /* LoginProtocols.swift */; };
 		529A1C21247BF24C00CA723B /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529A1C20247BF24C00CA723B /* LoginPresenter.swift */; };
@@ -27,6 +28,13 @@
 		529A1C46247C26D400CA723B /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 529A1C45247C26D400CA723B /* SignUp.storyboard */; };
 		529A1C48247C2F5500CA723B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 529A1C47247C2F5500CA723B /* GoogleService-Info.plist */; };
 		529A1C4A247C301F00CA723B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529A1C49247C301F00CA723B /* Networking.swift */; };
+		52A2112A249518B400E9DADC /* forgetAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 52A21129249518B300E9DADC /* forgetAnimation.json */; };
+		52A2112C24951A2400E9DADC /* ForgotCredencialsAnimatedAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52A2112B24951A2400E9DADC /* ForgotCredencialsAnimatedAlert.storyboard */; };
+		52B09BDD2495021800CE695E /* AnimatedAlertProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B09BDC2495021800CE695E /* AnimatedAlertProtocol.swift */; };
+		52B09BDF249504D000CE695E /* AnimateAlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B09BDE249504D000CE695E /* AnimateAlertPresenter.swift */; };
+		52B09BE1249505DB00CE695E /* AnimatedAlertInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B09BE0249505DB00CE695E /* AnimatedAlertInteractor.swift */; };
+		52B09BE32495076800CE695E /* AnimateAlerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B09BE22495076800CE695E /* AnimateAlerRouter.swift */; };
+		52B09BE52495088400CE695E /* AnimatedAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B09BE42495088400CE695E /* AnimatedAlertViewController.swift */; };
 		52C38064247BECD100D7972A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C38063247BECD100D7972A /* AppDelegate.swift */; };
 		52C38066247BECD100D7972A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C38065247BECD100D7972A /* SceneDelegate.swift */; };
 		52C3806B247BECD100D7972A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C38069247BECD100D7972A /* Main.storyboard */; };
@@ -54,6 +62,7 @@
 		0955EE41E94C3360440146CD /* Pods-PainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PainTests.debug.xcconfig"; path = "Target Support Files/Pods-PainTests/Pods-PainTests.debug.xcconfig"; sourceTree = "<group>"; };
 		17D68FA72B37B1A6169404A5 /* Pods_PainTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PainTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2060E63C93C98A07C614C764 /* Pods-Pain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pain.debug.xcconfig"; path = "Target Support Files/Pods-Pain/Pods-Pain.debug.xcconfig"; sourceTree = "<group>"; };
+		520C301924955EC40053C761 /* homeButton.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = homeButton.json; sourceTree = "<group>"; };
 		52774F31247C78DC001EAB2A /* MainPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainPage.storyboard; sourceTree = "<group>"; };
 		529A1C1E247BF09D00CA723B /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		529A1C20247BF24C00CA723B /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
@@ -74,6 +83,13 @@
 		529A1C45247C26D400CA723B /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		529A1C47247C2F5500CA723B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		529A1C49247C301F00CA723B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		52A21129249518B300E9DADC /* forgetAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forgetAnimation.json; sourceTree = "<group>"; };
+		52A2112B24951A2400E9DADC /* ForgotCredencialsAnimatedAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotCredencialsAnimatedAlert.storyboard; sourceTree = "<group>"; };
+		52B09BDC2495021800CE695E /* AnimatedAlertProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedAlertProtocol.swift; sourceTree = "<group>"; };
+		52B09BDE249504D000CE695E /* AnimateAlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateAlertPresenter.swift; sourceTree = "<group>"; };
+		52B09BE0249505DB00CE695E /* AnimatedAlertInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedAlertInteractor.swift; sourceTree = "<group>"; };
+		52B09BE22495076800CE695E /* AnimateAlerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateAlerRouter.swift; sourceTree = "<group>"; };
+		52B09BE42495088400CE695E /* AnimatedAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedAlertViewController.swift; sourceTree = "<group>"; };
 		52C38060247BECD100D7972A /* Pain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C38063247BECD100D7972A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52C38065247BECD100D7972A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +195,27 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		52B09BDA2495016100CE695E /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				52B09BDB2495017D00CE695E /* ForgotAlertAnimated */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		52B09BDB2495017D00CE695E /* ForgotAlertAnimated */ = {
+			isa = PBXGroup;
+			children = (
+				52B09BDC2495021800CE695E /* AnimatedAlertProtocol.swift */,
+				52B09BDE249504D000CE695E /* AnimateAlertPresenter.swift */,
+				52B09BE0249505DB00CE695E /* AnimatedAlertInteractor.swift */,
+				52B09BE22495076800CE695E /* AnimateAlerRouter.swift */,
+				52B09BE42495088400CE695E /* AnimatedAlertViewController.swift */,
+				52A2112B24951A2400E9DADC /* ForgotCredencialsAnimatedAlert.storyboard */,
+			);
+			path = ForgotAlertAnimated;
+			sourceTree = "<group>";
+		};
 		52C38057247BECD100D7972A = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +263,7 @@
 		52C38088247BECE600D7972A /* App */ = {
 			isa = PBXGroup;
 			children = (
+				52B09BDA2495016100CE695E /* Custom */,
 				52EE9675249320D500527E22 /* Json */,
 				529A1C42247C257400CA723B /* Helpers */,
 				529A1C3F247C11D300CA723B /* Networking */,
@@ -247,7 +285,9 @@
 		52EE9675249320D500527E22 /* Json */ = {
 			isa = PBXGroup;
 			children = (
+				520C301924955EC40053C761 /* homeButton.json */,
 				52EE9676249320EF00527E22 /* loading.json */,
+				52A21129249518B300E9DADC /* forgetAnimation.json */,
 			);
 			path = Json;
 			sourceTree = "<group>";
@@ -346,9 +386,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				52774F32247C78DC001EAB2A /* MainPage.storyboard in Resources */,
+				52A2112C24951A2400E9DADC /* ForgotCredencialsAnimatedAlert.storyboard in Resources */,
 				52C38073247BECD300D7972A /* LaunchScreen.storyboard in Resources */,
 				52C38070247BECD300D7972A /* Assets.xcassets in Resources */,
+				52A2112A249518B400E9DADC /* forgetAnimation.json in Resources */,
 				529A1C48247C2F5500CA723B /* GoogleService-Info.plist in Resources */,
+				520C301A24955EC40053C761 /* homeButton.json in Resources */,
 				52EE9677249320EF00527E22 /* loading.json in Resources */,
 				529A1C46247C26D400CA723B /* SignUp.storyboard in Resources */,
 				52C3806B247BECD100D7972A /* Main.storyboard in Resources */,
@@ -433,9 +476,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52B09BDF249504D000CE695E /* AnimateAlertPresenter.swift in Sources */,
 				529A1C31247C007A00CA723B /* SignUpRouter.swift in Sources */,
 				52C3806E247BECD100D7972A /* Pain.xcdatamodeld in Sources */,
 				529A1C36247C0A5B00CA723B /* MainPageProtocols.swift in Sources */,
+				52B09BDD2495021800CE695E /* AnimatedAlertProtocol.swift in Sources */,
 				529A1C3C247C0CBA00CA723B /* MainPageRouter.swift in Sources */,
 				529A1C2B247BF58700CA723B /* SignUpProtocols.swift in Sources */,
 				529A1C4A247C301F00CA723B /* Networking.swift in Sources */,
@@ -445,12 +490,15 @@
 				529A1C27247BF3CC00CA723B /* LoginViewController.swift in Sources */,
 				52C38066247BECD100D7972A /* SceneDelegate.swift in Sources */,
 				529A1C25247BF31B00CA723B /* LoginRouter.swift in Sources */,
+				52B09BE1249505DB00CE695E /* AnimatedAlertInteractor.swift in Sources */,
 				529A1C38247C0BFF00CA723B /* MainPagePresenter.swift in Sources */,
 				529A1C2F247BF98100CA723B /* SignUpInteractor.swift in Sources */,
 				529A1C2D247BF8F800CA723B /* SignUpPresenter.swift in Sources */,
+				52B09BE52495088400CE695E /* AnimatedAlertViewController.swift in Sources */,
 				529A1C33247C03D700CA723B /* SignUpViewController.swift in Sources */,
 				529A1C3E247C0D4400CA723B /* MainPageViewController.swift in Sources */,
 				52EE96672491AC8B00527E22 /* Utils.swift in Sources */,
+				52B09BE32495076800CE695E /* AnimateAlerRouter.swift in Sources */,
 				529A1C44247C262800CA723B /* ViewLayoutProtocol.swift in Sources */,
 				529A1C21247BF24C00CA723B /* LoginPresenter.swift in Sources */,
 				529A1C3A247C0C7600CA723B /* MainPageInteractor.swift in Sources */,

@@ -7,10 +7,10 @@
 //
 
 import Foundation
+import Lottie
 import UIKit
 
 protocol PresenterToAnimatedAlertProtocol: class {
-    
 }
 
 protocol InteractorToAnimatedAlertPresenterProtocol: class {

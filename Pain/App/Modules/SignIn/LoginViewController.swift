@@ -56,6 +56,14 @@ class LoginViewController: UIViewController {
         return button
     }()
     
+    lazy var forgetPassword: UIButton = {
+        let button = UIButton()
+        button.setTitle("forgot password?", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.addTarget(self, action: #selector(forgotPasswordTapped), for: .touchUpInside)
+        return button
+    }()
+    
     lazy var signUpButton: UIButton = {
         let button = UIButton()
         button.setTitle("Subscribe", for: .normal)
@@ -122,6 +130,7 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
         view.addSubview(passwordTextField)
         view.addSubview(signInButton)
         view.addSubview(signUpButton)
+        view.addSubview(forgetPassword)
         view.addSubview(animamationView)
     }
     
@@ -161,6 +170,13 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
             maker.height.equalTo(40)
         }
         
+        forgetPassword.snp.makeConstraints { (maker) in
+            maker.top.equalTo(signInButton.snp.bottom).offset(15)
+            maker.height.equalTo(40)
+            maker.width.equalTo(200)
+            maker.centerX.equalToSuperview()
+        }
+        
         signUpButton.snp.makeConstraints { (maker) in
             maker.width.equalTo(100)
             maker.height.equalTo(40)
@@ -196,7 +212,7 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
     
     @objc func signInButtonPressed() {
         startAnimation()
-        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 1.5) {
+        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 2.0) {
             self.presenter?.signInUser(user: self.emailTextField.text!, user: self.passwordTextField.text!)
         }
     }
@@ -204,6 +220,12 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
     @objc func signUpBottonPressed() {
         let viewController = SignUpRouter.createModule()
         navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    @objc func forgotPasswordTapped() {
+        let viewController = AnimatedAlertRouter.createModule()
+        viewController.modalPresentationStyle = .fullScreen
+        self.present(viewController, animated: true, completion: nil)
     }
     
     func checkUserInfo() {

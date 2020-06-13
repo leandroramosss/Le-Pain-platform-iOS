@@ -11,7 +11,7 @@ import UIKit
 
 class AnimatedAlertRouter: PresenterToAnimatedAlertRouterProtocol {
     static func createModule() -> UIViewController {
-        let view = mainstoryboard.instantiateViewController(withIdentifier: "") as? AnimatedAlertViewController
+        let view = mainstoryboard.instantiateViewController(withIdentifier: "ForgotCredencialsAnimatedAlert") as? AnimatedAlertViewController
         let presenter: ViewToAnimatedAlertPresenterProtocol & InteractorToAnimatedAlertPresenterProtocol = AnimatedAlertPresenter()
         let interactor: PresenterToAnimatedAlertInteractorProtocol = AnimatedAlertInteractor()
         let router: PresenterToAnimatedAlertRouterProtocol = AnimatedAlertRouter()
@@ -25,6 +25,6 @@ class AnimatedAlertRouter: PresenterToAnimatedAlertRouterProtocol {
     }
     
     static var mainstoryboard: UIStoryboard {
-        return UIStoryboard(name: "", bundle: Bundle.main)
+        return UIStoryboard(name: "ForgotCredencialsAnimatedAlert", bundle: Bundle.main)
     }
 }

@@ -11,7 +11,7 @@ import UIKit
 
 class MainPageRouter: PresenterToMainPageRouterProtocol {
     static func createModule() -> UIViewController {
-        var view = mainstoryboard.instantiateViewController(withIdentifier: "MainPageViewController") as? MainPageViewController
+        let view = mainstoryboard.instantiateViewController(withIdentifier: "MainPageViewController") as? MainPageViewController
         let presenter: ViewToMainPagePresenterProtocol & InteractorToMainPagePresenterProtocol = MainPagePresenter()
         let interactor: PresenterToMainPageInteractorProtocol = MainPageInteractor()
         let router: PresenterToMainPageRouterProtocol = MainPageRouter()
