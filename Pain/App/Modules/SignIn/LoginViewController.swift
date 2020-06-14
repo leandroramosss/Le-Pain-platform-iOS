@@ -35,6 +35,7 @@ class LoginViewController: UIViewController {
         textField.layer.borderWidth = 0.5
         textField.layer.borderColor = UIColor.black.cgColor
         textField.autocapitalizationType = .none
+        textField.keyboardType = .emailAddress
         return textField
     }()
     
@@ -43,6 +44,7 @@ class LoginViewController: UIViewController {
         textField.layer.borderWidth = 0.5
         textField.layer.borderColor = UIColor.black.cgColor
         textField.isSecureTextEntry = true
+        textField.keyboardType = .default
         return textField
     }()
     
@@ -83,10 +85,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpNavigation()
         setUpLayout()
-        handleTextFields()
-        view.backgroundColor = .red
+        view.backgroundColor = .white
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -135,6 +135,9 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
     func setUpLayout() {
         viewHierarchy()
         setupConstranits()
+        keyboardObservers()
+        handleTextFields()
+        setUpNavigation()
     }
     
     func viewHierarchy() {
@@ -153,7 +156,7 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
         imageView.snp.makeConstraints { (maker) in
             maker.top.equalTo(view.safeAreaLayoutGuide).offset(40)
             maker.width.equalToSuperview().inset(25)
-            maker.height.equalTo(250)
+            maker.height.equalTo(200)
             maker.centerX.equalToSuperview()
         }
         
@@ -194,14 +197,14 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
         
         forgetPassword.snp.makeConstraints { (maker) in
             maker.top.equalTo(signInButton.snp.bottom).offset(15)
-            maker.height.equalTo(40)
+//            maker.height.equalTo(40)
             maker.width.equalTo(200)
             maker.centerX.equalToSuperview()
         }
         
         signUpButton.snp.makeConstraints { (maker) in
             maker.width.equalTo(100)
-            maker.height.equalTo(40)
+            maker.height.equalTo(60)
             maker.centerX.equalToSuperview()
             maker.bottom.equalTo(view.safeAreaLayoutGuide)
         }
@@ -235,6 +238,7 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
     @objc func signInButtonPressed() {
         startAnimation()
         self.view.addSubview(animamationView)
+        self.view.endEditing(true)
         DispatchQueue.main.asyncAfter(wallDeadline: .now() + 2.0) {
             self.presenter?.signInUser(user: self.emailTextField.text!, user: self.passwordTextField.text!)
         }
@@ -260,4 +264,22 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
             print(Auth.auth().currentUser?.uid as Any)
         }
     }
+    
+    func keyboardObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        self.view.frame.origin.y = 0
+    }
+
 }

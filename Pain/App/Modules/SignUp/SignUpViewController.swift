@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import Lottie
+import NotificationCenter
 
 class SignUpViewController: UIViewController {
     
@@ -154,5 +155,4 @@ extension SignUpViewController: ViewLayoutProtocol, UITextFieldDelegate {
         animamationView.loopMode = .loop
         animamationView.play()
     }
-    
 }
