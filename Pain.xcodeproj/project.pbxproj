@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		520C301A24955EC40053C761 /* homeButton.json in Resources */ = {isa = PBXBuildFile; fileRef = 520C301924955EC40053C761 /* homeButton.json */; };
+		5216E1442496A11C00FAF2A0 /* secureField.json in Resources */ = {isa = PBXBuildFile; fileRef = 5216E1432496A11C00FAF2A0 /* secureField.json */; };
 		524E390C2495A3330086AD5C /* AnimatedForgotCredencialsAlertServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E390B2495A3330086AD5C /* AnimatedForgotCredencialsAlertServices.swift */; };
 		524E39102495B6E20086AD5C /* LoaderProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E390F2495B6E20086AD5C /* LoaderProtocols.swift */; };
 		524E39122495BA520086AD5C /* LoaderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E39112495BA520086AD5C /* LoaderPresenter.swift */; };
@@ -70,6 +71,7 @@
 		17D68FA72B37B1A6169404A5 /* Pods_PainTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PainTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2060E63C93C98A07C614C764 /* Pods-Pain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pain.debug.xcconfig"; path = "Target Support Files/Pods-Pain/Pods-Pain.debug.xcconfig"; sourceTree = "<group>"; };
 		520C301924955EC40053C761 /* homeButton.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = homeButton.json; sourceTree = "<group>"; };
+		5216E1432496A11C00FAF2A0 /* secureField.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = secureField.json; sourceTree = "<group>"; };
 		524E390B2495A3330086AD5C /* AnimatedForgotCredencialsAlertServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedForgotCredencialsAlertServices.swift; sourceTree = "<group>"; };
 		524E390F2495B6E20086AD5C /* LoaderProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderProtocols.swift; sourceTree = "<group>"; };
 		524E39112495BA520086AD5C /* LoaderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderPresenter.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 		52EE9675249320D500527E22 /* Json */ = {
 			isa = PBXGroup;
 			children = (
+				5216E1432496A11C00FAF2A0 /* secureField.json */,
 				520C301924955EC40053C761 /* homeButton.json */,
 				52EE9676249320EF00527E22 /* loading.json */,
 				52A21129249518B300E9DADC /* forgetAnimation.json */,
@@ -441,6 +444,7 @@
 				52EE9677249320EF00527E22 /* loading.json in Resources */,
 				529A1C46247C26D400CA723B /* SignUp.storyboard in Resources */,
 				52C3806B247BECD100D7972A /* Main.storyboard in Resources */,
+				5216E1442496A11C00FAF2A0 /* secureField.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

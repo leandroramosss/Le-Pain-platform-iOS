@@ -46,6 +46,15 @@ class LoginViewController: UIViewController {
         return textField
     }()
     
+    lazy var securefieldButton: AnimatedButton = {
+        let button = AnimatedButton()
+        button.animation = Animation.named("secureField")
+        button.backgroundColor = .clear
+        button.contentMode = .scaleAspectFit
+        button.addTarget(self, action: #selector(manageSecureField), for: .touchUpInside)
+        return button
+    }()
+    
     lazy var signInButton: UIButton = {
         let button = UIButton()
         button.layer.borderWidth = 0.5
@@ -136,6 +145,7 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
         view.addSubview(signInButton)
         view.addSubview(signUpButton)
         view.addSubview(forgetPassword)
+        view.addSubview(securefieldButton)
         view.addSubview(animamationView)
     }
     
@@ -166,6 +176,13 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
             maker.width.equalToSuperview().inset(16)
             maker.height.equalTo(40)
             maker.centerX.equalToSuperview()
+        }
+        
+        securefieldButton.snp.makeConstraints { (maker) in
+            maker.top.equalTo(passwordTextField.snp.top).offset(1)
+            maker.trailing.equalTo(passwordTextField.snp.trailing).offset(1)
+            maker.bottom.equalTo(passwordTextField.snp.bottom).offset(1)
+            maker.width.equalTo(50)
         }
         
         signInButton.snp.makeConstraints { (maker) in
@@ -232,6 +249,10 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
         let viewController = AnimatedAlertRouter.createModule()
         viewController.modalPresentationStyle = .fullScreen
         self.present(viewController, animated: true, completion: nil)
+    }
+    
+    @objc func manageSecureField(sender: AnimatedButton) {
+        self.passwordTextField.isSecureTextEntry.toggle()
     }
     
     func checkUserInfo() {
