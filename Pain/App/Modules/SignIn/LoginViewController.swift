@@ -32,6 +32,7 @@ class LoginViewController: UIViewController {
     
     lazy var emailTextField: UITextField = {
         let textField = UITextField()
+        textField.textColor = .black
         textField.layer.borderWidth = 0.5
         textField.layer.borderColor = UIColor.black.cgColor
         textField.autocapitalizationType = .none
@@ -41,6 +42,7 @@ class LoginViewController: UIViewController {
     
     lazy var passwordTextField: UITextField = {
         let textField = UITextField()
+        textField.textColor = .black
         textField.layer.borderWidth = 0.5
         textField.layer.borderColor = UIColor.black.cgColor
         textField.isSecureTextEntry = true
