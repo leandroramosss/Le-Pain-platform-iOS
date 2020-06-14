@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		520C301A24955EC40053C761 /* homeButton.json in Resources */ = {isa = PBXBuildFile; fileRef = 520C301924955EC40053C761 /* homeButton.json */; };
 		524E390C2495A3330086AD5C /* AnimatedForgotCredencialsAlertServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E390B2495A3330086AD5C /* AnimatedForgotCredencialsAlertServices.swift */; };
+		524E39102495B6E20086AD5C /* LoaderProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E390F2495B6E20086AD5C /* LoaderProtocols.swift */; };
+		524E39122495BA520086AD5C /* LoaderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E39112495BA520086AD5C /* LoaderPresenter.swift */; };
+		524E39142495BB080086AD5C /* LoaderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E39132495BB080086AD5C /* LoaderInteractor.swift */; };
+		524E39162495BB800086AD5C /* LoaderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E39152495BB800086AD5C /* LoaderRouter.swift */; };
+		524E39182495BC690086AD5C /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E39172495BC690086AD5C /* LoaderViewController.swift */; };
+		524E391A2495BF5F0086AD5C /* Loader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524E39192495BF5F0086AD5C /* Loader.storyboard */; };
 		52774F32247C78DC001EAB2A /* MainPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52774F31247C78DC001EAB2A /* MainPage.storyboard */; };
 		529A1C1F247BF09D00CA723B /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529A1C1E247BF09D00CA723B /* LoginProtocols.swift */; };
 		529A1C21247BF24C00CA723B /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529A1C20247BF24C00CA723B /* LoginPresenter.swift */; };
@@ -65,6 +71,12 @@
 		2060E63C93C98A07C614C764 /* Pods-Pain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pain.debug.xcconfig"; path = "Target Support Files/Pods-Pain/Pods-Pain.debug.xcconfig"; sourceTree = "<group>"; };
 		520C301924955EC40053C761 /* homeButton.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = homeButton.json; sourceTree = "<group>"; };
 		524E390B2495A3330086AD5C /* AnimatedForgotCredencialsAlertServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedForgotCredencialsAlertServices.swift; sourceTree = "<group>"; };
+		524E390F2495B6E20086AD5C /* LoaderProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderProtocols.swift; sourceTree = "<group>"; };
+		524E39112495BA520086AD5C /* LoaderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderPresenter.swift; sourceTree = "<group>"; };
+		524E39132495BB080086AD5C /* LoaderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderInteractor.swift; sourceTree = "<group>"; };
+		524E39152495BB800086AD5C /* LoaderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderRouter.swift; sourceTree = "<group>"; };
+		524E39172495BC690086AD5C /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
+		524E39192495BF5F0086AD5C /* Loader.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loader.storyboard; sourceTree = "<group>"; };
 		52774F31247C78DC001EAB2A /* MainPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainPage.storyboard; sourceTree = "<group>"; };
 		529A1C1E247BF09D00CA723B /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		529A1C20247BF24C00CA723B /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
@@ -157,6 +169,19 @@
 			path = AlertService;
 			sourceTree = "<group>";
 		};
+		524E390E2495B6790086AD5C /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				524E390F2495B6E20086AD5C /* LoaderProtocols.swift */,
+				524E39112495BA520086AD5C /* LoaderPresenter.swift */,
+				524E39132495BB080086AD5C /* LoaderInteractor.swift */,
+				524E39152495BB800086AD5C /* LoaderRouter.swift */,
+				524E39172495BC690086AD5C /* LoaderViewController.swift */,
+				524E39192495BF5F0086AD5C /* Loader.storyboard */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
 		529A1C28247BF51100CA723B /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +241,7 @@
 		52B09BDA2495016100CE695E /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				524E390E2495B6790086AD5C /* Loader */,
 				524E39092495A1E90086AD5C /* Alert */,
 			);
 			path = Custom;
@@ -409,6 +435,7 @@
 				52C38073247BECD300D7972A /* LaunchScreen.storyboard in Resources */,
 				52C38070247BECD300D7972A /* Assets.xcassets in Resources */,
 				52A2112A249518B400E9DADC /* forgetAnimation.json in Resources */,
+				524E391A2495BF5F0086AD5C /* Loader.storyboard in Resources */,
 				529A1C48247C2F5500CA723B /* GoogleService-Info.plist in Resources */,
 				520C301A24955EC40053C761 /* homeButton.json in Resources */,
 				52EE9677249320EF00527E22 /* loading.json in Resources */,
@@ -506,12 +533,17 @@
 				529A1C1F247BF09D00CA723B /* LoginProtocols.swift in Sources */,
 				529A1C23247BF2DF00CA723B /* LoginInteractor.swift in Sources */,
 				52C38064247BECD100D7972A /* AppDelegate.swift in Sources */,
+				524E39182495BC690086AD5C /* LoaderViewController.swift in Sources */,
 				529A1C27247BF3CC00CA723B /* LoginViewController.swift in Sources */,
 				52C38066247BECD100D7972A /* SceneDelegate.swift in Sources */,
 				529A1C25247BF31B00CA723B /* LoginRouter.swift in Sources */,
+				524E39122495BA520086AD5C /* LoaderPresenter.swift in Sources */,
 				524E390C2495A3330086AD5C /* AnimatedForgotCredencialsAlertServices.swift in Sources */,
 				52B09BE1249505DB00CE695E /* AnimatedAlertInteractor.swift in Sources */,
+				524E39102495B6E20086AD5C /* LoaderProtocols.swift in Sources */,
 				529A1C38247C0BFF00CA723B /* MainPagePresenter.swift in Sources */,
+				524E39142495BB080086AD5C /* LoaderInteractor.swift in Sources */,
+				524E39162495BB800086AD5C /* LoaderRouter.swift in Sources */,
 				529A1C2F247BF98100CA723B /* SignUpInteractor.swift in Sources */,
 				529A1C2D247BF8F800CA723B /* SignUpPresenter.swift in Sources */,
 				52B09BE52495088400CE695E /* AnimatedAlertViewController.swift in Sources */,

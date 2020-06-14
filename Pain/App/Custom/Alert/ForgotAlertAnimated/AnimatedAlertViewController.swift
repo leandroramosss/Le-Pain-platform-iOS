@@ -15,6 +15,7 @@ class AnimatedAlertViewController: UIViewController {
     var presenter: ViewToAnimatedAlertPresenterProtocol?
     var alertTitle = String()
     var alertMessage = String()
+    let loader = LoginViewController()
     
     lazy var animatedView: AnimationView = {
         let view = AnimationView()
@@ -36,7 +37,7 @@ class AnimatedAlertViewController: UIViewController {
     lazy var alertTitleLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
-        label.text = "Le Pain"
+        label.text = ""
         label.textColor = UIColor.white
         label.textAlignment = .center
         label.font = label.font.withSize(24)
@@ -53,7 +54,7 @@ class AnimatedAlertViewController: UIViewController {
     lazy var alertContent: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
-        label.text = "Invalid Password\n or invalid email \n was entered, please check again."
+        label.text = ""
         label.textColor = UIColor.white
         label.textAlignment = .center
         label.font = label.font.withSize(17)
@@ -154,6 +155,7 @@ extension AnimatedAlertViewController: ViewLayoutProtocol {
     }
         
     @objc func backButtonPressed() {
+        loader.dismiss(animated: true, completion: nil)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.dismiss(animated: true)
         }

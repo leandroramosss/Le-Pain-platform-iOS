@@ -15,7 +15,7 @@ import Lottie
 class LoginViewController: UIViewController {
     
     var presenter: ViewToLoginPresenterProtocol?
-    let animamationView = AnimationView()
+    var animamationView = AnimationView()
     
     lazy var imageView: UIImageView = {
         let image = UIImageView()
@@ -89,6 +89,7 @@ class LoginViewController: UIViewController {
 extension LoginViewController: PresenterToLoginProtocol {
     func didEndRequestWithError(alert: AnimatedAlertViewController) {
         self.present(alert, animated: true)
+        self.animamationView.removeFromSuperview()
     }
     
     
@@ -216,6 +217,7 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
     
     @objc func signInButtonPressed() {
         startAnimation()
+        self.view.addSubview(animamationView)
         DispatchQueue.main.asyncAfter(wallDeadline: .now() + 2.0) {
             self.presenter?.signInUser(user: self.emailTextField.text!, user: self.passwordTextField.text!)
         }
