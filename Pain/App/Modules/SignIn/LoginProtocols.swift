@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol PresenterToLoginProtocol: class {
-    func didEndRequestWithError(alert: UIAlertController)
+    func didEndRequestWithError(alert: AnimatedAlertViewController)
     func showAlert(alert: UIAlertController, valid: Bool)
     func didEndRequestSuccesfully() 
 }

@@ -13,6 +13,8 @@ import SnapKit
 class AnimatedAlertViewController: UIViewController {
     
     var presenter: ViewToAnimatedAlertPresenterProtocol?
+    var alertTitle = String()
+    var alertMessage = String()
     
     lazy var animatedView: AnimationView = {
         let view = AnimationView()
@@ -70,21 +72,11 @@ class AnimatedAlertViewController: UIViewController {
         return button
     }()
     
-//    lazy var secondButton: UIButton = {
-//        let button = UIButton()
-//        button.backgroundColor = UIColor.green
-//        button.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
-//        button.setTitle("Back", for: .normal)
-//        button.setTitleColor(.black, for: .normal)
-//        button.clipsToBounds = true
-//        button.layer.cornerRadius = 15
-//        return button
-//    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.black
         setUpLayout()
+        setUpAlert()
     }
     
 }
@@ -108,7 +100,6 @@ extension AnimatedAlertViewController: ViewLayoutProtocol {
         view.addSubview(lineLabel)
         view.addSubview(alertContent)
         view.addSubview(alertButton)
-//        view.addSubview(secondButton)
     }
     
     func setupConstranits() {
@@ -159,12 +150,17 @@ extension AnimatedAlertViewController: ViewLayoutProtocol {
         animatedView.loopMode = .loop
         animatedView.play()
         animatedView.contentMode = .scaleAspectFit
+        animatedView.animationSpeed = 1.5
     }
         
     @objc func backButtonPressed() {
-        let viewController = LoginRouter.createModule()
-        viewController.modalPresentationStyle = .fullScreen
-        self.present(viewController, animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.dismiss(animated: true)
+        }
     }
     
+    func setUpAlert() {
+        alertTitleLabel.text = alertTitle
+        alertContent.text = alertMessage
+    }
 }

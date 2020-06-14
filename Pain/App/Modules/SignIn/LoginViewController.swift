@@ -87,6 +87,10 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: PresenterToLoginProtocol {
+    func didEndRequestWithError(alert: AnimatedAlertViewController) {
+        self.present(alert, animated: true)
+    }
+    
     
     func didEndRequestSuccesfully() {
         let viewController = MainPageRouter.createModule()

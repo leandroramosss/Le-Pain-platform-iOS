@@ -17,23 +17,24 @@ class LoginPresenter: ViewToLoginPresenterProtocol {
     var router: PresenterToLoginRouterProtocol?
     
     let networking = Networking()
+    var forgotAnimatedAlert = AnimatedForgotCredencialsAlertServices()
     
     func signInUser(user email: String, user password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             switch error {
             case .some(let error as NSError) where error.code == AuthErrorCode.wrongPassword.rawValue:
-                let alert = UIAlertController(title: "Warining", message: "wrongPassword", preferredStyle: .alert)
+                let alert = self.forgotAnimatedAlert.alert(title: "Le Pain", body: "Invalid Password\n or invalid email \n was entered, please check again.")
                 self.view?.didEndRequestWithError(alert: alert)
                 print("wrong password")
             case .some(let error as NSError) where error.code == AuthErrorCode.invalidEmail.rawValue:
-                let alert = UIAlertController(title: "Warining", message: "Invalid Email", preferredStyle: .alert)
+                let alert = self.forgotAnimatedAlert.alert(title: "Le Pain", body: "Invalid Password\n or invalid email \n was entered, please check again.")
                 self.view?.didEndRequestWithError(alert: alert)
                 print("invalid email")
             case .some(let error as NSError) where error.code == AuthErrorCode.networkError.rawValue:
-                let alert = UIAlertController(title: "Warning", message: "veryfy Internet Conection", preferredStyle: .alert)
+                let alert = self.forgotAnimatedAlert.alert(title: "Warning", body: "Connection lost, there was some error network error.\nPlease veryfy the connection")
                 self.view?.didEndRequestWithError(alert: alert)
             case .some(let error):
-                let alert = UIAlertController(title: "Warining", message: "Internal error: Try again later", preferredStyle: .alert)
+                let alert = self.forgotAnimatedAlert.alert(title: "Sorry", body: "Internal error.\n Due to some updating we are facing problems\n try againLater")
                 self.view?.didEndRequestWithError(alert: alert)
                 print("Login error: \(error.localizedDescription)")
             default:

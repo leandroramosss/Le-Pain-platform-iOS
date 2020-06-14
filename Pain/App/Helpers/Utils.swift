@@ -18,5 +18,4 @@ class Utils {
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         return alert
     }
-
 }

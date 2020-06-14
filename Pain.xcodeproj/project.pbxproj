@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		520C301A24955EC40053C761 /* homeButton.json in Resources */ = {isa = PBXBuildFile; fileRef = 520C301924955EC40053C761 /* homeButton.json */; };
+		524E390C2495A3330086AD5C /* AnimatedForgotCredencialsAlertServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E390B2495A3330086AD5C /* AnimatedForgotCredencialsAlertServices.swift */; };
 		52774F32247C78DC001EAB2A /* MainPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52774F31247C78DC001EAB2A /* MainPage.storyboard */; };
 		529A1C1F247BF09D00CA723B /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529A1C1E247BF09D00CA723B /* LoginProtocols.swift */; };
 		529A1C21247BF24C00CA723B /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529A1C20247BF24C00CA723B /* LoginPresenter.swift */; };
@@ -63,6 +64,7 @@
 		17D68FA72B37B1A6169404A5 /* Pods_PainTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PainTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2060E63C93C98A07C614C764 /* Pods-Pain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pain.debug.xcconfig"; path = "Target Support Files/Pods-Pain/Pods-Pain.debug.xcconfig"; sourceTree = "<group>"; };
 		520C301924955EC40053C761 /* homeButton.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = homeButton.json; sourceTree = "<group>"; };
+		524E390B2495A3330086AD5C /* AnimatedForgotCredencialsAlertServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedForgotCredencialsAlertServices.swift; sourceTree = "<group>"; };
 		52774F31247C78DC001EAB2A /* MainPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainPage.storyboard; sourceTree = "<group>"; };
 		529A1C1E247BF09D00CA723B /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		529A1C20247BF24C00CA723B /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
@@ -139,6 +141,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		524E39092495A1E90086AD5C /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				52B09BDB2495017D00CE695E /* ForgotAlertAnimated */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		524E390A2495A2860086AD5C /* AlertService */ = {
+			isa = PBXGroup;
+			children = (
+				524E390B2495A3330086AD5C /* AnimatedForgotCredencialsAlertServices.swift */,
+			);
+			path = AlertService;
+			sourceTree = "<group>";
+		};
 		529A1C28247BF51100CA723B /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,7 +216,7 @@
 		52B09BDA2495016100CE695E /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				52B09BDB2495017D00CE695E /* ForgotAlertAnimated */,
+				524E39092495A1E90086AD5C /* Alert */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -206,6 +224,7 @@
 		52B09BDB2495017D00CE695E /* ForgotAlertAnimated */ = {
 			isa = PBXGroup;
 			children = (
+				524E390A2495A2860086AD5C /* AlertService */,
 				52B09BDC2495021800CE695E /* AnimatedAlertProtocol.swift */,
 				52B09BDE249504D000CE695E /* AnimateAlertPresenter.swift */,
 				52B09BE0249505DB00CE695E /* AnimatedAlertInteractor.swift */,
@@ -490,6 +509,7 @@
 				529A1C27247BF3CC00CA723B /* LoginViewController.swift in Sources */,
 				52C38066247BECD100D7972A /* SceneDelegate.swift in Sources */,
 				529A1C25247BF31B00CA723B /* LoginRouter.swift in Sources */,
+				524E390C2495A3330086AD5C /* AnimatedForgotCredencialsAlertServices.swift in Sources */,
 				52B09BE1249505DB00CE695E /* AnimatedAlertInteractor.swift in Sources */,
 				529A1C38247C0BFF00CA723B /* MainPagePresenter.swift in Sources */,
 				529A1C2F247BF98100CA723B /* SignUpInteractor.swift in Sources */,
