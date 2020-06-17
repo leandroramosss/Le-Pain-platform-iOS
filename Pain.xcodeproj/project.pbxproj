@@ -17,6 +17,12 @@
 		524E39182495BC690086AD5C /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E39172495BC690086AD5C /* LoaderViewController.swift */; };
 		524E391A2495BF5F0086AD5C /* Loader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524E39192495BF5F0086AD5C /* Loader.storyboard */; };
 		52774F32247C78DC001EAB2A /* MainPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52774F31247C78DC001EAB2A /* MainPage.storyboard */; };
+		527767C024999E3E00ADC23B /* RecoveryPasswordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527767BF24999E3E00ADC23B /* RecoveryPasswordProtocols.swift */; };
+		527767C224999FFB00ADC23B /* RecoverPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527767C124999FFB00ADC23B /* RecoverPasswordPresenter.swift */; };
+		527767C42499A05300ADC23B /* RecoveryPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527767C32499A05300ADC23B /* RecoveryPasswordInteractor.swift */; };
+		527767C62499A0DA00ADC23B /* RecoveryPasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527767C52499A0DA00ADC23B /* RecoveryPasswordRouter.swift */; };
+		527767C82499A45300ADC23B /* RecoveryPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527767C72499A45300ADC23B /* RecoveryPasswordViewController.swift */; };
+		527767CA2499AB7D00ADC23B /* recoveryPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527767C92499AB7D00ADC23B /* recoveryPassword.storyboard */; };
 		529A1C1F247BF09D00CA723B /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529A1C1E247BF09D00CA723B /* LoginProtocols.swift */; };
 		529A1C21247BF24C00CA723B /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529A1C20247BF24C00CA723B /* LoginPresenter.swift */; };
 		529A1C23247BF2DF00CA723B /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529A1C22247BF2DF00CA723B /* LoginInteractor.swift */; };
@@ -80,6 +86,12 @@
 		524E39172495BC690086AD5C /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
 		524E39192495BF5F0086AD5C /* Loader.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loader.storyboard; sourceTree = "<group>"; };
 		52774F31247C78DC001EAB2A /* MainPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainPage.storyboard; sourceTree = "<group>"; };
+		527767BF24999E3E00ADC23B /* RecoveryPasswordProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordProtocols.swift; sourceTree = "<group>"; };
+		527767C124999FFB00ADC23B /* RecoverPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordPresenter.swift; sourceTree = "<group>"; };
+		527767C32499A05300ADC23B /* RecoveryPasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordInteractor.swift; sourceTree = "<group>"; };
+		527767C52499A0DA00ADC23B /* RecoveryPasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordRouter.swift; sourceTree = "<group>"; };
+		527767C72499A45300ADC23B /* RecoveryPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordViewController.swift; sourceTree = "<group>"; };
+		527767C92499AB7D00ADC23B /* recoveryPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = recoveryPassword.storyboard; sourceTree = "<group>"; };
 		529A1C1E247BF09D00CA723B /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		529A1C20247BF24C00CA723B /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		529A1C22247BF2DF00CA723B /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
@@ -182,6 +194,19 @@
 				524E39192495BF5F0086AD5C /* Loader.storyboard */,
 			);
 			path = Loader;
+			sourceTree = "<group>";
+		};
+		527767BE24999E1F00ADC23B /* RecoveryPassword */ = {
+			isa = PBXGroup;
+			children = (
+				527767BF24999E3E00ADC23B /* RecoveryPasswordProtocols.swift */,
+				527767C124999FFB00ADC23B /* RecoverPasswordPresenter.swift */,
+				527767C32499A05300ADC23B /* RecoveryPasswordInteractor.swift */,
+				527767C52499A0DA00ADC23B /* RecoveryPasswordRouter.swift */,
+				527767C72499A45300ADC23B /* RecoveryPasswordViewController.swift */,
+				527767C92499AB7D00ADC23B /* recoveryPassword.storyboard */,
+			);
+			path = RecoveryPassword;
 			sourceTree = "<group>";
 		};
 		529A1C28247BF51100CA723B /* SignIn */ = {
@@ -322,6 +347,7 @@
 		52C38089247BECF100D7972A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				527767BE24999E1F00ADC23B /* RecoveryPassword */,
 				529A1C34247C0A4400CA723B /* Main */,
 				529A1C29247BF54A00CA723B /* SignUp */,
 				529A1C28247BF51100CA723B /* SignIn */,
@@ -439,6 +465,7 @@
 				52C38070247BECD300D7972A /* Assets.xcassets in Resources */,
 				52A2112A249518B400E9DADC /* forgetAnimation.json in Resources */,
 				524E391A2495BF5F0086AD5C /* Loader.storyboard in Resources */,
+				527767CA2499AB7D00ADC23B /* recoveryPassword.storyboard in Resources */,
 				529A1C48247C2F5500CA723B /* GoogleService-Info.plist in Resources */,
 				520C301A24955EC40053C761 /* homeButton.json in Resources */,
 				52EE9677249320EF00527E22 /* loading.json in Resources */,
@@ -529,18 +556,21 @@
 				52B09BDF249504D000CE695E /* AnimateAlertPresenter.swift in Sources */,
 				529A1C31247C007A00CA723B /* SignUpRouter.swift in Sources */,
 				52C3806E247BECD100D7972A /* Pain.xcdatamodeld in Sources */,
+				527767C024999E3E00ADC23B /* RecoveryPasswordProtocols.swift in Sources */,
 				529A1C36247C0A5B00CA723B /* MainPageProtocols.swift in Sources */,
 				52B09BDD2495021800CE695E /* AnimatedAlertProtocol.swift in Sources */,
 				529A1C3C247C0CBA00CA723B /* MainPageRouter.swift in Sources */,
 				529A1C2B247BF58700CA723B /* SignUpProtocols.swift in Sources */,
 				529A1C4A247C301F00CA723B /* Networking.swift in Sources */,
 				529A1C1F247BF09D00CA723B /* LoginProtocols.swift in Sources */,
+				527767C62499A0DA00ADC23B /* RecoveryPasswordRouter.swift in Sources */,
 				529A1C23247BF2DF00CA723B /* LoginInteractor.swift in Sources */,
 				52C38064247BECD100D7972A /* AppDelegate.swift in Sources */,
 				524E39182495BC690086AD5C /* LoaderViewController.swift in Sources */,
 				529A1C27247BF3CC00CA723B /* LoginViewController.swift in Sources */,
 				52C38066247BECD100D7972A /* SceneDelegate.swift in Sources */,
 				529A1C25247BF31B00CA723B /* LoginRouter.swift in Sources */,
+				527767C42499A05300ADC23B /* RecoveryPasswordInteractor.swift in Sources */,
 				524E39122495BA520086AD5C /* LoaderPresenter.swift in Sources */,
 				524E390C2495A3330086AD5C /* AnimatedForgotCredencialsAlertServices.swift in Sources */,
 				52B09BE1249505DB00CE695E /* AnimatedAlertInteractor.swift in Sources */,
@@ -548,9 +578,11 @@
 				529A1C38247C0BFF00CA723B /* MainPagePresenter.swift in Sources */,
 				524E39142495BB080086AD5C /* LoaderInteractor.swift in Sources */,
 				524E39162495BB800086AD5C /* LoaderRouter.swift in Sources */,
+				527767C82499A45300ADC23B /* RecoveryPasswordViewController.swift in Sources */,
 				529A1C2F247BF98100CA723B /* SignUpInteractor.swift in Sources */,
 				529A1C2D247BF8F800CA723B /* SignUpPresenter.swift in Sources */,
 				52B09BE52495088400CE695E /* AnimatedAlertViewController.swift in Sources */,
+				527767C224999FFB00ADC23B /* RecoverPasswordPresenter.swift in Sources */,
 				529A1C33247C03D700CA723B /* SignUpViewController.swift in Sources */,
 				529A1C3E247C0D4400CA723B /* MainPageViewController.swift in Sources */,
 				52EE96672491AC8B00527E22 /* Utils.swift in Sources */,

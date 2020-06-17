@@ -252,7 +252,7 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
     }
     
     @objc func forgotPasswordTapped() {
-        let viewController = AnimatedAlertRouter.createModule()
+        let viewController = RecoveryPasswordRouter.createModule()
         viewController.modalPresentationStyle = .fullScreen
         self.present(viewController, animated: true, completion: nil)
     }
