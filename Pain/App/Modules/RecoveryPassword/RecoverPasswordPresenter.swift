@@ -13,6 +13,7 @@ import Firebase
 
 class RecoveryPasswordPresenter: ViewToRecoveryPasswordPresenterProtocol {
     
+    
     var view: PresenterToRecoveryPasswordProtocol?
     var interactor: PresenterToRecoveryPasswordInteractorProtocol?
     var router: PresenterToRecoveryPasswordRouterProtocol?

@@ -64,7 +64,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
                   endingLineNumber = "25"
-                  offsetFromSymbolStart = "212">
+                  offsetFromSymbolStart = "227">
                </Location>
                <Location
                   uuid = "61AF72D5-E905-478E-BDA5-2FC0D84AF17C - d1bc5b74e7e9b814"
@@ -79,7 +79,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
                   endingLineNumber = "25"
-                  offsetFromSymbolStart = "424">
+                  offsetFromSymbolStart = "398">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -113,6 +113,22 @@
             startingLineNumber = "158"
             endingLineNumber = "158"
             landmarkName = "backButtonPressed()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9EEA1128-313F-4DC6-B7BC-6A28F38BD369"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pain/App/Modules/RecoveryPassword/RecoveryPasswordViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "sendButtonPressed()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

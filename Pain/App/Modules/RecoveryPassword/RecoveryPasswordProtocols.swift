@@ -31,4 +31,5 @@ protocol ViewToRecoveryPasswordPresenterProtocol: class {
     var interactor: PresenterToRecoveryPasswordInteractorProtocol? { get set }
     var router: PresenterToRecoveryPasswordRouterProtocol? { get set }
     
+    func recoveryPassword(user email: String)
 }
