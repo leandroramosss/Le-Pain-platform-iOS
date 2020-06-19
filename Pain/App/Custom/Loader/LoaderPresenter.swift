@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class LoaderPresenter: ViewToLoaderPresenterProtocol {
+    
     var view: PresenterToLoaderProtocol?
     var interactor: PresenterToLoaderInteractorProtocol?
     var router: PresenterToLoaderRouterProtocol?

@@ -11,6 +11,10 @@
 		5216E1442496A11C00FAF2A0 /* secureField.json in Resources */ = {isa = PBXBuildFile; fileRef = 5216E1432496A11C00FAF2A0 /* secureField.json */; };
 		524E27AB249C360B00CE1C26 /* SendEmailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E27AA249C360B00CE1C26 /* SendEmailProtocols.swift */; };
 		524E27B0249C3A2300CE1C26 /* sendEmail.json in Resources */ = {isa = PBXBuildFile; fileRef = 524E27AF249C3A2300CE1C26 /* sendEmail.json */; };
+		524E27B2249C3AD200CE1C26 /* SendEmailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E27B1249C3AD200CE1C26 /* SendEmailPresenter.swift */; };
+		524E27B4249C3B6300CE1C26 /* SendEmailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E27B3249C3B6300CE1C26 /* SendEmailInteractor.swift */; };
+		524E27B6249C3C0100CE1C26 /* SendEmailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E27B5249C3C0100CE1C26 /* SendEmailRouter.swift */; };
+		524E27B8249C3CAA00CE1C26 /* SendEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E27B7249C3CAA00CE1C26 /* SendEmailViewController.swift */; };
 		524E390C2495A3330086AD5C /* AnimatedForgotCredencialsAlertServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E390B2495A3330086AD5C /* AnimatedForgotCredencialsAlertServices.swift */; };
 		524E39102495B6E20086AD5C /* LoaderProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E390F2495B6E20086AD5C /* LoaderProtocols.swift */; };
 		524E39122495BA520086AD5C /* LoaderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E39112495BA520086AD5C /* LoaderPresenter.swift */; };
@@ -82,6 +86,10 @@
 		5216E1432496A11C00FAF2A0 /* secureField.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = secureField.json; sourceTree = "<group>"; };
 		524E27AA249C360B00CE1C26 /* SendEmailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailProtocols.swift; sourceTree = "<group>"; };
 		524E27AF249C3A2300CE1C26 /* sendEmail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sendEmail.json; sourceTree = "<group>"; };
+		524E27B1249C3AD200CE1C26 /* SendEmailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailPresenter.swift; sourceTree = "<group>"; };
+		524E27B3249C3B6300CE1C26 /* SendEmailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailInteractor.swift; sourceTree = "<group>"; };
+		524E27B5249C3C0100CE1C26 /* SendEmailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailRouter.swift; sourceTree = "<group>"; };
+		524E27B7249C3CAA00CE1C26 /* SendEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailViewController.swift; sourceTree = "<group>"; };
 		524E390B2495A3330086AD5C /* AnimatedForgotCredencialsAlertServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedForgotCredencialsAlertServices.swift; sourceTree = "<group>"; };
 		524E390F2495B6E20086AD5C /* LoaderProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderProtocols.swift; sourceTree = "<group>"; };
 		524E39112495BA520086AD5C /* LoaderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderPresenter.swift; sourceTree = "<group>"; };
@@ -175,6 +183,10 @@
 			isa = PBXGroup;
 			children = (
 				524E27AA249C360B00CE1C26 /* SendEmailProtocols.swift */,
+				524E27B1249C3AD200CE1C26 /* SendEmailPresenter.swift */,
+				524E27B3249C3B6300CE1C26 /* SendEmailInteractor.swift */,
+				524E27B5249C3C0100CE1C26 /* SendEmailRouter.swift */,
+				524E27B7249C3CAA00CE1C26 /* SendEmailViewController.swift */,
 			);
 			path = SenEmailAlert;
 			sourceTree = "<group>";
@@ -575,6 +587,7 @@
 				529A1C36247C0A5B00CA723B /* MainPageProtocols.swift in Sources */,
 				52B09BDD2495021800CE695E /* AnimatedAlertProtocol.swift in Sources */,
 				529A1C3C247C0CBA00CA723B /* MainPageRouter.swift in Sources */,
+				524E27B6249C3C0100CE1C26 /* SendEmailRouter.swift in Sources */,
 				529A1C2B247BF58700CA723B /* SignUpProtocols.swift in Sources */,
 				529A1C4A247C301F00CA723B /* Networking.swift in Sources */,
 				529A1C1F247BF09D00CA723B /* LoginProtocols.swift in Sources */,
@@ -585,6 +598,7 @@
 				524E27AB249C360B00CE1C26 /* SendEmailProtocols.swift in Sources */,
 				529A1C27247BF3CC00CA723B /* LoginViewController.swift in Sources */,
 				52C38066247BECD100D7972A /* SceneDelegate.swift in Sources */,
+				524E27B4249C3B6300CE1C26 /* SendEmailInteractor.swift in Sources */,
 				529A1C25247BF31B00CA723B /* LoginRouter.swift in Sources */,
 				527767C42499A05300ADC23B /* RecoveryPasswordInteractor.swift in Sources */,
 				524E39122495BA520086AD5C /* LoaderPresenter.swift in Sources */,
@@ -599,7 +613,9 @@
 				529A1C2D247BF8F800CA723B /* SignUpPresenter.swift in Sources */,
 				52B09BE52495088400CE695E /* AnimatedAlertViewController.swift in Sources */,
 				527767C224999FFB00ADC23B /* RecoverPasswordPresenter.swift in Sources */,
+				524E27B8249C3CAA00CE1C26 /* SendEmailViewController.swift in Sources */,
 				529A1C33247C03D700CA723B /* SignUpViewController.swift in Sources */,
+				524E27B2249C3AD200CE1C26 /* SendEmailPresenter.swift in Sources */,
 				529A1C3E247C0D4400CA723B /* MainPageViewController.swift in Sources */,
 				52EE96672491AC8B00527E22 /* Utils.swift in Sources */,
 				52B09BE32495076800CE695E /* AnimateAlerRouter.swift in Sources */,
