@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		520C301A24955EC40053C761 /* homeButton.json in Resources */ = {isa = PBXBuildFile; fileRef = 520C301924955EC40053C761 /* homeButton.json */; };
 		5216E1442496A11C00FAF2A0 /* secureField.json in Resources */ = {isa = PBXBuildFile; fileRef = 5216E1432496A11C00FAF2A0 /* secureField.json */; };
+		524E27AB249C360B00CE1C26 /* SendEmailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E27AA249C360B00CE1C26 /* SendEmailProtocols.swift */; };
+		524E27B0249C3A2300CE1C26 /* sendEmail.json in Resources */ = {isa = PBXBuildFile; fileRef = 524E27AF249C3A2300CE1C26 /* sendEmail.json */; };
 		524E390C2495A3330086AD5C /* AnimatedForgotCredencialsAlertServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E390B2495A3330086AD5C /* AnimatedForgotCredencialsAlertServices.swift */; };
 		524E39102495B6E20086AD5C /* LoaderProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E390F2495B6E20086AD5C /* LoaderProtocols.swift */; };
 		524E39122495BA520086AD5C /* LoaderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E39112495BA520086AD5C /* LoaderPresenter.swift */; };
@@ -78,6 +80,8 @@
 		2060E63C93C98A07C614C764 /* Pods-Pain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pain.debug.xcconfig"; path = "Target Support Files/Pods-Pain/Pods-Pain.debug.xcconfig"; sourceTree = "<group>"; };
 		520C301924955EC40053C761 /* homeButton.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = homeButton.json; sourceTree = "<group>"; };
 		5216E1432496A11C00FAF2A0 /* secureField.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = secureField.json; sourceTree = "<group>"; };
+		524E27AA249C360B00CE1C26 /* SendEmailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailProtocols.swift; sourceTree = "<group>"; };
+		524E27AF249C3A2300CE1C26 /* sendEmail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sendEmail.json; sourceTree = "<group>"; };
 		524E390B2495A3330086AD5C /* AnimatedForgotCredencialsAlertServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedForgotCredencialsAlertServices.swift; sourceTree = "<group>"; };
 		524E390F2495B6E20086AD5C /* LoaderProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderProtocols.swift; sourceTree = "<group>"; };
 		524E39112495BA520086AD5C /* LoaderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderPresenter.swift; sourceTree = "<group>"; };
@@ -165,6 +169,14 @@
 				6372C80342580201E1465184 /* Pods-PainTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		524E27A9249C35C100CE1C26 /* SenEmailAlert */ = {
+			isa = PBXGroup;
+			children = (
+				524E27AA249C360B00CE1C26 /* SendEmailProtocols.swift */,
+			);
+			path = SenEmailAlert;
 			sourceTree = "<group>";
 		};
 		524E39092495A1E90086AD5C /* Alert */ = {
@@ -268,6 +280,7 @@
 		52B09BDA2495016100CE695E /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				524E27A9249C35C100CE1C26 /* SenEmailAlert */,
 				524E390E2495B6790086AD5C /* Loader */,
 				524E39092495A1E90086AD5C /* Alert */,
 			);
@@ -358,6 +371,7 @@
 		52EE9675249320D500527E22 /* Json */ = {
 			isa = PBXGroup;
 			children = (
+				524E27AF249C3A2300CE1C26 /* sendEmail.json */,
 				5216E1432496A11C00FAF2A0 /* secureField.json */,
 				520C301924955EC40053C761 /* homeButton.json */,
 				52EE9676249320EF00527E22 /* loading.json */,
@@ -467,6 +481,7 @@
 				524E391A2495BF5F0086AD5C /* Loader.storyboard in Resources */,
 				527767CA2499AB7D00ADC23B /* recoveryPassword.storyboard in Resources */,
 				529A1C48247C2F5500CA723B /* GoogleService-Info.plist in Resources */,
+				524E27B0249C3A2300CE1C26 /* sendEmail.json in Resources */,
 				520C301A24955EC40053C761 /* homeButton.json in Resources */,
 				52EE9677249320EF00527E22 /* loading.json in Resources */,
 				529A1C46247C26D400CA723B /* SignUp.storyboard in Resources */,
@@ -567,6 +582,7 @@
 				529A1C23247BF2DF00CA723B /* LoginInteractor.swift in Sources */,
 				52C38064247BECD100D7972A /* AppDelegate.swift in Sources */,
 				524E39182495BC690086AD5C /* LoaderViewController.swift in Sources */,
+				524E27AB249C360B00CE1C26 /* SendEmailProtocols.swift in Sources */,
 				529A1C27247BF3CC00CA723B /* LoginViewController.swift in Sources */,
 				52C38066247BECD100D7972A /* SceneDelegate.swift in Sources */,
 				529A1C25247BF31B00CA723B /* LoginRouter.swift in Sources */,

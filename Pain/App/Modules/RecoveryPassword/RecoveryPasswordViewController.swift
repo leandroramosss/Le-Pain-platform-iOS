@@ -19,6 +19,7 @@ class RecoveryPasswordViewController: UIViewController {
         textField.textColor = UIColor.black
         textField.layer.borderColor = UIColor.black.cgColor
         textField.layer.borderWidth = 1
+        textField.keyboardType = .emailAddress
         return textField
     }()
     
@@ -47,6 +48,7 @@ extension RecoveryPasswordViewController: ViewLayoutProtocol {
     func setUpLayout() {
         viewHierarchy()
         setupConstranits()
+        textFieldDelegation()
     }
     
     func viewHierarchy() {
@@ -72,6 +74,19 @@ extension RecoveryPasswordViewController: ViewLayoutProtocol {
     
     @objc func sendButtonPressed() {
         presenter?.recoveryPassword(user: emailTextField.text!)
+    }
+    
+    func textFieldDelegation() {
+        emailTextField.delegate = self
+    }
+    
+}
+
+extension RecoveryPasswordViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return false
     }
     
 }
