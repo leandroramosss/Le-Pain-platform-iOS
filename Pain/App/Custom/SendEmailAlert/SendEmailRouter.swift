@@ -11,7 +11,7 @@ import UIKit
 
 class SendEmailRouter: PresenterToSendEmailRouterProtocol {
     static func createModule() -> UIViewController {
-        let view = mainstoryboard.instantiateViewController(withIdentifier: "") as? SendEmailViewController
+        let view = mainstoryboard.instantiateViewController(withIdentifier: "SendEmailViewController") as? SendEmailViewController
         let presenter: ViewToSendEmailPresenterProtocol & InteractorToSendEmailPresenterProtocol = SendEmailPresenter()
         let interactor: PresenterToSendEmailInteractorProtocol = SendEmailInteractor()
         let router: PresenterToSendEmailRouterProtocol = SendEmailRouter()
@@ -26,7 +26,7 @@ class SendEmailRouter: PresenterToSendEmailRouterProtocol {
     }
     
     static var mainstoryboard: UIStoryboard {
-        return UIStoryboard(name: "", bundle: Bundle.main)
+        return UIStoryboard(name: "SendEmailAlert", bundle: Bundle.main)
     }
     
 }

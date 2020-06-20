@@ -22,6 +22,8 @@
 		524E39162495BB800086AD5C /* LoaderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E39152495BB800086AD5C /* LoaderRouter.swift */; };
 		524E39182495BC690086AD5C /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E39172495BC690086AD5C /* LoaderViewController.swift */; };
 		524E391A2495BF5F0086AD5C /* Loader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524E39192495BF5F0086AD5C /* Loader.storyboard */; };
+		5250B002249D7E9400B210CD /* SendEmailAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5250B001249D7E9400B210CD /* SendEmailAlert.storyboard */; };
+		5250B004249D7F1C00B210CD /* SendEmailAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250B003249D7F1C00B210CD /* SendEmailAlertService.swift */; };
 		52774F32247C78DC001EAB2A /* MainPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52774F31247C78DC001EAB2A /* MainPage.storyboard */; };
 		527767C024999E3E00ADC23B /* RecoveryPasswordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527767BF24999E3E00ADC23B /* RecoveryPasswordProtocols.swift */; };
 		527767C224999FFB00ADC23B /* RecoverPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527767C124999FFB00ADC23B /* RecoverPasswordPresenter.swift */; };
@@ -97,6 +99,8 @@
 		524E39152495BB800086AD5C /* LoaderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderRouter.swift; sourceTree = "<group>"; };
 		524E39172495BC690086AD5C /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
 		524E39192495BF5F0086AD5C /* Loader.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loader.storyboard; sourceTree = "<group>"; };
+		5250B001249D7E9400B210CD /* SendEmailAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SendEmailAlert.storyboard; sourceTree = "<group>"; };
+		5250B003249D7F1C00B210CD /* SendEmailAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailAlertService.swift; sourceTree = "<group>"; };
 		52774F31247C78DC001EAB2A /* MainPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainPage.storyboard; sourceTree = "<group>"; };
 		527767BF24999E3E00ADC23B /* RecoveryPasswordProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordProtocols.swift; sourceTree = "<group>"; };
 		527767C124999FFB00ADC23B /* RecoverPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordPresenter.swift; sourceTree = "<group>"; };
@@ -179,16 +183,18 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		524E27A9249C35C100CE1C26 /* SenEmailAlert */ = {
+		524E27A9249C35C100CE1C26 /* SendEmailAlert */ = {
 			isa = PBXGroup;
 			children = (
+				5250B000249D78DC00B210CD /* SendEmailAlertService */,
 				524E27AA249C360B00CE1C26 /* SendEmailProtocols.swift */,
 				524E27B1249C3AD200CE1C26 /* SendEmailPresenter.swift */,
 				524E27B3249C3B6300CE1C26 /* SendEmailInteractor.swift */,
 				524E27B5249C3C0100CE1C26 /* SendEmailRouter.swift */,
 				524E27B7249C3CAA00CE1C26 /* SendEmailViewController.swift */,
+				5250B001249D7E9400B210CD /* SendEmailAlert.storyboard */,
 			);
-			path = SenEmailAlert;
+			path = SendEmailAlert;
 			sourceTree = "<group>";
 		};
 		524E39092495A1E90086AD5C /* Alert */ = {
@@ -218,6 +224,14 @@
 				524E39192495BF5F0086AD5C /* Loader.storyboard */,
 			);
 			path = Loader;
+			sourceTree = "<group>";
+		};
+		5250B000249D78DC00B210CD /* SendEmailAlertService */ = {
+			isa = PBXGroup;
+			children = (
+				5250B003249D7F1C00B210CD /* SendEmailAlertService.swift */,
+			);
+			path = SendEmailAlertService;
 			sourceTree = "<group>";
 		};
 		527767BE24999E1F00ADC23B /* RecoveryPassword */ = {
@@ -292,7 +306,7 @@
 		52B09BDA2495016100CE695E /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				524E27A9249C35C100CE1C26 /* SenEmailAlert */,
+				524E27A9249C35C100CE1C26 /* SendEmailAlert */,
 				524E390E2495B6790086AD5C /* Loader */,
 				524E39092495A1E90086AD5C /* Alert */,
 			);
@@ -495,6 +509,7 @@
 				529A1C48247C2F5500CA723B /* GoogleService-Info.plist in Resources */,
 				524E27B0249C3A2300CE1C26 /* sendEmail.json in Resources */,
 				520C301A24955EC40053C761 /* homeButton.json in Resources */,
+				5250B002249D7E9400B210CD /* SendEmailAlert.storyboard in Resources */,
 				52EE9677249320EF00527E22 /* loading.json in Resources */,
 				529A1C46247C26D400CA723B /* SignUp.storyboard in Resources */,
 				52C3806B247BECD100D7972A /* Main.storyboard in Resources */,
@@ -613,6 +628,7 @@
 				529A1C2D247BF8F800CA723B /* SignUpPresenter.swift in Sources */,
 				52B09BE52495088400CE695E /* AnimatedAlertViewController.swift in Sources */,
 				527767C224999FFB00ADC23B /* RecoverPasswordPresenter.swift in Sources */,
+				5250B004249D7F1C00B210CD /* SendEmailAlertService.swift in Sources */,
 				524E27B8249C3CAA00CE1C26 /* SendEmailViewController.swift in Sources */,
 				529A1C33247C03D700CA723B /* SignUpViewController.swift in Sources */,
 				524E27B2249C3AD200CE1C26 /* SendEmailPresenter.swift in Sources */,

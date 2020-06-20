@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol PresenterToRecoveryPasswordProtocol: class {
-    
+    func didEndRequestSuccessfully(alert: SendEmailViewController)
 }
 
 protocol InteractorToRecoveryPasswordPresenterProtocol: class {

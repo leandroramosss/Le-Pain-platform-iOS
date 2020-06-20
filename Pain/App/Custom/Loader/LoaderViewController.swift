@@ -53,6 +53,7 @@ extension LoaderViewController: ViewLayoutProtocol {
     }
     
     func loaderAnimation() {
+        view.bringSubviewToFront(animationView)
         animationView.play()
         animationView.loopMode = .loop
     }

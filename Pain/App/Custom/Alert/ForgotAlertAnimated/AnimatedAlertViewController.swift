@@ -15,7 +15,7 @@ class AnimatedAlertViewController: UIViewController {
     var presenter: ViewToAnimatedAlertPresenterProtocol?
     var alertTitle = String()
     var alertMessage = String()
-    let loader = LoginViewController()
+    let loader = LoaderViewController()
     
     lazy var animatedView: AnimationView = {
         let view = AnimationView()

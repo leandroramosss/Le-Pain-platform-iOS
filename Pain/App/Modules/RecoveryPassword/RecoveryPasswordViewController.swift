@@ -13,6 +13,7 @@ import SnapKit
 class RecoveryPasswordViewController: UIViewController {
     
     var presenter: ViewToRecoveryPasswordPresenterProtocol?
+    let loader = LoaderViewController()
     
     lazy var emailTextField: UITextField = {
         let textField = UITextField()
@@ -40,7 +41,9 @@ class RecoveryPasswordViewController: UIViewController {
 }
 
 extension RecoveryPasswordViewController: PresenterToRecoveryPasswordProtocol {
-    
+    func didEndRequestSuccessfully(alert: SendEmailViewController) {
+        self.present(alert, animated: true)
+    }
 }
 
 extension RecoveryPasswordViewController: ViewLayoutProtocol {
@@ -73,6 +76,7 @@ extension RecoveryPasswordViewController: ViewLayoutProtocol {
     }
     
     @objc func sendButtonPressed() {
+        loader.loaderAnimation()
         presenter?.recoveryPassword(user: emailTextField.text!)
     }
     

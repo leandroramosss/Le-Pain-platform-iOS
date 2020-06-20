@@ -64,7 +64,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
                   endingLineNumber = "25"
-                  offsetFromSymbolStart = "227">
+                  offsetFromSymbolStart = "212">
                </Location>
                <Location
                   uuid = "61AF72D5-E905-478E-BDA5-2FC0D84AF17C - d1bc5b74e7e9b814"
@@ -79,7 +79,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
                   endingLineNumber = "25"
-                  offsetFromSymbolStart = "398">
+                  offsetFromSymbolStart = "424">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -97,22 +97,6 @@
             startingLineNumber = "41"
             endingLineNumber = "41"
             landmarkName = "signInUser(user:user:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D76EEE0F-5B16-4189-B7D4-21C9AE3E3106"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pain/App/Custom/Alert/ForgotAlertAnimated/AnimatedAlertViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
-            landmarkName = "backButtonPressed()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

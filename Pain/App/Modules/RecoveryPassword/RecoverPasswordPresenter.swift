@@ -17,6 +17,7 @@ class RecoveryPasswordPresenter: ViewToRecoveryPasswordPresenterProtocol {
     var view: PresenterToRecoveryPasswordProtocol?
     var interactor: PresenterToRecoveryPasswordInteractorProtocol?
     var router: PresenterToRecoveryPasswordRouterProtocol?
+    let sendEmailAlert = SendEmailAlertService()
     
     func recoveryPassword(user email: String) {
         Auth.auth().sendPasswordReset(withEmail: email) { error in
@@ -28,7 +29,8 @@ class RecoveryPasswordPresenter: ViewToRecoveryPasswordPresenterProtocol {
             case .some(let error as NSError) where error.code == AuthErrorCode.networkError.rawValue:
                 let alert = UIAlertController(title: "Le Pain", message: "Internet error, please check your connection", preferredStyle: .alert)
             default:
-                let alert = UIAlertController(title: "Le Pain", message: "An reset link was sent to your email addres", preferredStyle: .alert)
+                let alert = self.sendEmailAlert.alert(title: "Le Pain", body: "An reset link was sent to your email addres")
+                self.view?.didEndRequestSuccessfully(alert: alert)
             }
         }
     }
