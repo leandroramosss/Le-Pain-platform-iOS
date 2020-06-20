@@ -50,38 +50,6 @@
             endingLineNumber = "25"
             landmarkName = "signInUser(user:user:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "61AF72D5-E905-478E-BDA5-2FC0D84AF17C - d1bc5b74e7e9b814"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Pain.LoginPresenter.signInUser(user: Swift.String, user: Swift.String) -&gt; ()"
-                  moduleName = "Pain"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro/Desktop/Pain/Pain/App/Modules/SignIn/LoginPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "212">
-               </Location>
-               <Location
-                  uuid = "61AF72D5-E905-478E-BDA5-2FC0D84AF17C - d1bc5b74e7e9b814"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Pain.LoginPresenter.signInUser(user: Swift.String, user: Swift.String) -&gt; ()"
-                  moduleName = "Pain"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro/Desktop/Pain/Pain/App/Modules/SignIn/LoginPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "424">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -97,6 +65,22 @@
             startingLineNumber = "41"
             endingLineNumber = "41"
             landmarkName = "signInUser(user:user:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1317CB24-7420-4B9C-9CD6-9AEF4310E9F1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pain/App/Modules/RecoveryPassword/RecoverPasswordPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "recoveryPassword(user:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

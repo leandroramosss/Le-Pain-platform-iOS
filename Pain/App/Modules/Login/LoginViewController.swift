@@ -15,7 +15,7 @@ import Lottie
 class LoginViewController: UIViewController {
     
     var presenter: ViewToLoginPresenterProtocol?
-    var animamationView = AnimationView()
+    var animationView = AnimationView()
     
     lazy var imageView: UIImageView = {
         let image = UIImageView()
@@ -100,7 +100,7 @@ class LoginViewController: UIViewController {
 extension LoginViewController: PresenterToLoginProtocol {
     func didEndRequestWithError(alert: AnimatedAlertViewController) {
         self.present(alert, animated: true)
-        self.animamationView.removeFromSuperview()
+        self.animationView.removeFromSuperview()
     }
     
     
@@ -151,7 +151,7 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
         view.addSubview(signUpButton)
         view.addSubview(forgetPassword)
         view.addSubview(securefieldButton)
-        view.addSubview(animamationView)
+        view.addSubview(animationView)
     }
     
     func setupConstranits() {
@@ -199,7 +199,6 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
         
         forgetPassword.snp.makeConstraints { (maker) in
             maker.top.equalTo(signInButton.snp.bottom).offset(15)
-//            maker.height.equalTo(40)
             maker.width.equalTo(200)
             maker.centerX.equalToSuperview()
         }
@@ -215,12 +214,12 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
     
     func startAnimation() {
         navigationController?.setNavigationBarHidden(true, animated: true)
-        animamationView.animation = Animation.named("loading")
-        animamationView.frame = view.bounds
-        animamationView.backgroundColor = .black
-        animamationView.contentMode = .scaleAspectFit
-        animamationView.loopMode = .loop
-        animamationView.play()
+        animationView.animation = Animation.named("loading")
+        animationView.frame = view.bounds
+        animationView.backgroundColor = .black
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.play()
     }
         
     func setUpNavigation() {
@@ -239,7 +238,7 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
     
     @objc func signInButtonPressed() {
         startAnimation()
-        self.view.addSubview(animamationView)
+        self.view.addSubview(animationView)
         self.view.endEditing(true)
         DispatchQueue.main.asyncAfter(wallDeadline: .now() + 2.0) {
             self.presenter?.signInUser(user: self.emailTextField.text!, user: self.passwordTextField.text!)

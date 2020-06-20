@@ -13,7 +13,7 @@ import SnapKit
 class RecoveryPasswordViewController: UIViewController {
     
     var presenter: ViewToRecoveryPasswordPresenterProtocol?
-    let loader = LoaderViewController()
+    var animationView = AnimationView()
     
     lazy var emailTextField: UITextField = {
         let textField = UITextField()
@@ -41,8 +41,18 @@ class RecoveryPasswordViewController: UIViewController {
 }
 
 extension RecoveryPasswordViewController: PresenterToRecoveryPasswordProtocol {
+    func didEndRequestWithCredebtialsErrors(alert: AnimatedAlertViewController) {
+        self.present(alert, animated: true)
+        self.animationView.removeFromSuperview()
+    }
+    
+    func didEndRequestWithError(alert: UIAlertController) {
+        self.present(alert, animated: true)
+    }
+    
     func didEndRequestSuccessfully(alert: SendEmailViewController) {
         self.present(alert, animated: true)
+        animationView.removeFromSuperview()
     }
 }
 
@@ -75,9 +85,21 @@ extension RecoveryPasswordViewController: ViewLayoutProtocol {
         }
     }
     
+    func startAnimation() {
+        animationView.animation = Animation.named("loading")
+        animationView.frame = view.bounds
+        animationView.backgroundColor = .black
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.play()
+    }
+    
     @objc func sendButtonPressed() {
-        loader.loaderAnimation()
-        presenter?.recoveryPassword(user: emailTextField.text!)
+        view.addSubview(animationView)
+        startAnimation()
+        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 2.0) {
+            self.presenter?.recoveryPassword(user: self.emailTextField.text!)
+        }
     }
     
     func textFieldDelegation() {

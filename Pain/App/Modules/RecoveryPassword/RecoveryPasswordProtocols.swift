@@ -11,6 +11,8 @@ import UIKit
 
 protocol PresenterToRecoveryPasswordProtocol: class {
     func didEndRequestSuccessfully(alert: SendEmailViewController)
+    func didEndRequestWithError(alert: UIAlertController)
+    func didEndRequestWithCredebtialsErrors(alert: AnimatedAlertViewController)
 }
 
 protocol InteractorToRecoveryPasswordPresenterProtocol: class {
