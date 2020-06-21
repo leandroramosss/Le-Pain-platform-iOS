@@ -73,7 +73,7 @@ class LoginViewController: UIViewController {
     lazy var signInButton: UIButton = {
         let button = UIButton()
         button.layer.borderWidth = 0.5
-        button.setTitle("Sign in", for: .normal)
+        button.setTitle("Login", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.layer.borderColor = UIColor.black.cgColor
         button.addTarget(self, action: #selector(signInButtonPressed), for: .touchUpInside)
@@ -107,6 +107,11 @@ class LoginViewController: UIViewController {
         setUpNavigation()
 //        logoAnimation()
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        self.view.endEditing(true)
+    }
+    
 }
 
 extension LoginViewController: PresenterToLoginProtocol {
@@ -211,7 +216,7 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
         }
         
         signInButton.snp.makeConstraints { (maker) in
-            maker.top.equalTo(passwordTextField.snp.bottom).offset(50)
+            maker.top.equalTo(passwordTextField.snp.bottom).offset(20)
             maker.centerX.equalToSuperview()
             maker.width.equalTo(100)
             maker.height.equalTo(40)

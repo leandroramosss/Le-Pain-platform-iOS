@@ -8,6 +8,7 @@
 
 import Foundation
 
-class SignUpInteractor: PresenterToSignUpInteractorProtocol {    
+class SignUpInteractor: PresenterToSignUpInteractorProtocol {
+    
     var presenter: InteractorToSignUpPresenterProtocol?
 }

@@ -10,4 +10,13 @@ import Foundation
 
 class UserManager {
     
+    func getUserName() -> String {
+        let userName = UserDefaults.standard.string(forKey: Constants.USERNAME)
+        return userName ?? ""
+    }
+    
+    func setUserName(userName: String) {
+        UserDefaults.standard.set(userName, forKey: Constants.USERNAME)
+    }
+    
 }
