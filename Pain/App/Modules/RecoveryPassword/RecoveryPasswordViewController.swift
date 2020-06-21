@@ -15,8 +15,15 @@ class RecoveryPasswordViewController: UIViewController {
     var presenter: ViewToRecoveryPasswordPresenterProtocol?
     var animationView = AnimationView()
     
-    lazy var emailTextField: UITextField = {
-        let textField = UITextField()
+    lazy var navigationImage: UIImageView = {
+        let view = UIImageView()
+        view.image = UIImage(named: "CustomNavigation")
+        view.contentMode = .scaleToFill
+        return view
+    }()
+    
+    lazy var emailTextField: CustomTextField = {
+        let textField = CustomTextField()
         textField.textColor = UIColor.black
         textField.layer.borderColor = UIColor.black.cgColor
         textField.layer.borderWidth = 1
@@ -31,11 +38,18 @@ class RecoveryPasswordViewController: UIViewController {
         button.addTarget(self, action: #selector(sendButtonPressed), for: .touchUpInside)
         return button
     }()
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        setUpLayout()
+        setUpNavigation()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setUpLayout()
+        setUpNavigation()
     }
     
 }
@@ -44,6 +58,7 @@ extension RecoveryPasswordViewController: PresenterToRecoveryPasswordProtocol {
     func didEndRequestWithCredebtialsErrors(alert: AnimatedAlertViewController) {
         self.present(alert, animated: true)
         self.animationView.removeFromSuperview()
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func didEndRequestWithError(alert: UIAlertController) {
@@ -65,11 +80,18 @@ extension RecoveryPasswordViewController: ViewLayoutProtocol {
     }
     
     func viewHierarchy() {
+        view.addSubview(navigationImage)
         view.addSubview(emailTextField)
         view.addSubview(sendButton)
     }
     
     func setupConstranits() {
+        
+        navigationImage.snp.makeConstraints { (maker) in
+            maker.top.equalToSuperview()
+            maker.leading.trailing.equalToSuperview()
+            maker.height.equalTo(192)
+        }
         
         emailTextField.snp.makeConstraints { (maker) in
             maker.center.equalToSuperview()
@@ -86,12 +108,19 @@ extension RecoveryPasswordViewController: ViewLayoutProtocol {
     }
     
     func startAnimation() {
+        navigationController?.setNavigationBarHidden(true, animated: true)
         animationView.animation = Animation.named("loading")
         animationView.frame = view.bounds
         animationView.backgroundColor = .black
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = .loop
         animationView.play()
+    }
+    
+    func setUpNavigation() {
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        title = "Password Recovery"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     @objc func sendButtonPressed() {

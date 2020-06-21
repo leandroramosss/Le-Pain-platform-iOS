@@ -23,36 +23,37 @@ class SignUpViewController: UIViewController {
         return view
     }()
     
-    lazy var emailTextfield: UITextField = {
-        let textField = UITextField()
+    lazy var emailTextfield: CustomTextField = {
+        let textField = CustomTextField()
         textField.backgroundColor = .white
         textField.layer.borderWidth = 0.5
         textField.layer.borderColor = UIColor.black.cgColor
         textField.autocapitalizationType = .none
         textField.textColor = .black
-        textField.placeholder = "email"
+        textField.attributedPlaceholder = NSAttributedString(string: "email address", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray.withAlphaComponent(0.5)])
         return textField
     }()
     
-    lazy var passwordTextField: UITextField = {
-        let textField = UITextField()
+    lazy var passwordTextField: CustomTextField = {
+        let textField = CustomTextField()
         textField.layer.borderWidth = 0.5
         textField.backgroundColor = .white
         textField.layer.borderColor = UIColor.black.cgColor
         textField.autocapitalizationType = .none
         textField.textColor = .black
         textField.placeholder = "password"
+        textField.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray.withAlphaComponent(0.5)])
         return textField
     }()
     
-    lazy var userNameTextField: UITextField = {
-        let textField = UITextField()
+    lazy var userNameTextField: CustomTextField = {
+        let textField = CustomTextField()
         textField.layer.borderWidth = 0.5
         textField.backgroundColor = .white
         textField.layer.borderColor = UIColor.black.cgColor
         textField.autocapitalizationType = .none
         textField.textColor = .black
-        textField.placeholder = "username"
+        textField.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray.withAlphaComponent(0.5)])
         return textField
     }()
     
@@ -125,7 +126,7 @@ extension SignUpViewController: ViewLayoutProtocol, UITextFieldDelegate {
         
         
         emailTextfield.snp.makeConstraints { (maker) in
-            maker.top.equalTo(view.safeAreaLayoutGuide).offset(30)
+            maker.top.equalTo(view.safeAreaLayoutGuide).offset(80)
             maker.width.equalToSuperview().inset(16)
             maker.centerX.equalToSuperview()
             maker.height.equalTo(40)
@@ -155,9 +156,8 @@ extension SignUpViewController: ViewLayoutProtocol, UITextFieldDelegate {
     
     func setUpNavigation() {
         navigationController?.setNavigationBarHidden(false, animated: true)
-        title = ""
+        title = "Subscription"
         navigationController?.navigationBar.prefersLargeTitles = true
-        
         if let navController = navigationController {
             System.clearNavigationBar(forBar: navigationController!.navigationBar)
             navController.view.backgroundColor = .white

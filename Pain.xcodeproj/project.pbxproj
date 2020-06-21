@@ -22,6 +22,7 @@
 		524E39162495BB800086AD5C /* LoaderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E39152495BB800086AD5C /* LoaderRouter.swift */; };
 		524E39182495BC690086AD5C /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E39172495BC690086AD5C /* LoaderViewController.swift */; };
 		524E391A2495BF5F0086AD5C /* Loader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524E39192495BF5F0086AD5C /* Loader.storyboard */; };
+		52500F02249FB01E00A19F6A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52500F01249FB01E00A19F6A /* CustomTextField.swift */; };
 		5250B002249D7E9400B210CD /* SendEmailAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5250B001249D7E9400B210CD /* SendEmailAlert.storyboard */; };
 		5250B004249D7F1C00B210CD /* SendEmailAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250B003249D7F1C00B210CD /* SendEmailAlertService.swift */; };
 		52774F32247C78DC001EAB2A /* MainPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52774F31247C78DC001EAB2A /* MainPage.storyboard */; };
@@ -60,6 +61,8 @@
 		52B09BE1249505DB00CE695E /* AnimatedAlertInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B09BE0249505DB00CE695E /* AnimatedAlertInteractor.swift */; };
 		52B09BE32495076800CE695E /* AnimateAlerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B09BE22495076800CE695E /* AnimateAlerRouter.swift */; };
 		52B09BE52495088400CE695E /* AnimatedAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B09BE42495088400CE695E /* AnimatedAlertViewController.swift */; };
+		52B18805249FE3760048E646 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B18804249FE3760048E646 /* Constants.swift */; };
+		52B18808249FE3DA0048E646 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B18807249FE3DA0048E646 /* UserManager.swift */; };
 		52C38064247BECD100D7972A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C38063247BECD100D7972A /* AppDelegate.swift */; };
 		52C38066247BECD100D7972A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C38065247BECD100D7972A /* SceneDelegate.swift */; };
 		52C3806B247BECD100D7972A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C38069247BECD100D7972A /* Main.storyboard */; };
@@ -102,6 +105,7 @@
 		524E39152495BB800086AD5C /* LoaderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderRouter.swift; sourceTree = "<group>"; };
 		524E39172495BC690086AD5C /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
 		524E39192495BF5F0086AD5C /* Loader.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loader.storyboard; sourceTree = "<group>"; };
+		52500F01249FB01E00A19F6A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		5250B001249D7E9400B210CD /* SendEmailAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SendEmailAlert.storyboard; sourceTree = "<group>"; };
 		5250B003249D7F1C00B210CD /* SendEmailAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailAlertService.swift; sourceTree = "<group>"; };
 		52774F31247C78DC001EAB2A /* MainPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainPage.storyboard; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 		52B09BE0249505DB00CE695E /* AnimatedAlertInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedAlertInteractor.swift; sourceTree = "<group>"; };
 		52B09BE22495076800CE695E /* AnimateAlerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateAlerRouter.swift; sourceTree = "<group>"; };
 		52B09BE42495088400CE695E /* AnimatedAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedAlertViewController.swift; sourceTree = "<group>"; };
+		52B18804249FE3760048E646 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		52B18807249FE3DA0048E646 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		52C38060247BECD100D7972A /* Pain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C38063247BECD100D7972A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52C38065247BECD100D7972A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -234,6 +240,14 @@
 			path = Loader;
 			sourceTree = "<group>";
 		};
+		52500F03249FB16600A19F6A /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				52500F01249FB01E00A19F6A /* CustomTextField.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
 		5250B000249D78DC00B210CD /* SendEmailAlertService */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +336,7 @@
 		52B09BDA2495016100CE695E /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				52500F03249FB16600A19F6A /* TextField */,
 				52A47959249EE93F009BBA1E /* NavigationBar */,
 				524E390E2495B6790086AD5C /* Loader */,
 				524E39092495A1E90086AD5C /* Alert */,
@@ -341,6 +356,22 @@
 				52A2112B24951A2400E9DADC /* ForgotCredencialsAnimatedAlert.storyboard */,
 			);
 			path = ForgotAlertAnimated;
+			sourceTree = "<group>";
+		};
+		52B18803249FE34D0048E646 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				52B18804249FE3760048E646 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		52B18806249FE3C50048E646 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				52B18807249FE3DA0048E646 /* UserManager.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		52C38057247BECD100D7972A = {
@@ -390,6 +421,8 @@
 		52C38088247BECE600D7972A /* App */ = {
 			isa = PBXGroup;
 			children = (
+				52B18806249FE3C50048E646 /* User */,
+				52B18803249FE34D0048E646 /* Constants */,
 				52B09BDA2495016100CE695E /* Custom */,
 				52EE9675249320D500527E22 /* Json */,
 				529A1C42247C257400CA723B /* Helpers */,
@@ -619,6 +652,7 @@
 				527767C024999E3E00ADC23B /* RecoveryPasswordProtocols.swift in Sources */,
 				529A1C36247C0A5B00CA723B /* MainPageProtocols.swift in Sources */,
 				52B09BDD2495021800CE695E /* AnimatedAlertProtocol.swift in Sources */,
+				52B18808249FE3DA0048E646 /* UserManager.swift in Sources */,
 				529A1C3C247C0CBA00CA723B /* MainPageRouter.swift in Sources */,
 				524E27B6249C3C0100CE1C26 /* SendEmailRouter.swift in Sources */,
 				529A1C2B247BF58700CA723B /* SignUpProtocols.swift in Sources */,
@@ -637,7 +671,9 @@
 				527767C42499A05300ADC23B /* RecoveryPasswordInteractor.swift in Sources */,
 				524E39122495BA520086AD5C /* LoaderPresenter.swift in Sources */,
 				524E390C2495A3330086AD5C /* AnimatedForgotCredencialsAlertServices.swift in Sources */,
+				52B18805249FE3760048E646 /* Constants.swift in Sources */,
 				52B09BE1249505DB00CE695E /* AnimatedAlertInteractor.swift in Sources */,
+				52500F02249FB01E00A19F6A /* CustomTextField.swift in Sources */,
 				524E39102495B6E20086AD5C /* LoaderProtocols.swift in Sources */,
 				529A1C38247C0BFF00CA723B /* MainPagePresenter.swift in Sources */,
 				524E39142495BB080086AD5C /* LoaderInteractor.swift in Sources */,

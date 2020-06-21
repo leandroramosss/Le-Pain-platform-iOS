@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
     
     lazy var imageView: AnimationView = {
         let image = AnimationView()
-        image.animation = Animation.named("breakfastLogo")
+//        image.animation = Animation.named("breakfastLogo")
         image.contentMode = .scaleAspectFit
         return image
     }()
@@ -39,23 +39,25 @@ class LoginViewController: UIViewController {
         return label
     }()
     
-    lazy var emailTextField: UITextField = {
-        let textField = UITextField()
+    lazy var emailTextField: CustomTextField = {
+        let textField = CustomTextField()
         textField.textColor = .black
         textField.layer.borderWidth = 0.5
         textField.layer.borderColor = UIColor.black.cgColor
         textField.autocapitalizationType = .none
         textField.keyboardType = .emailAddress
+        textField.attributedPlaceholder = NSAttributedString(string: "email address", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray.withAlphaComponent(0.5)])
         return textField
     }()
     
-    lazy var passwordTextField: UITextField = {
-        let textField = UITextField()
+    lazy var passwordTextField: CustomTextField = {
+        let textField = CustomTextField()
         textField.textColor = .black
         textField.layer.borderWidth = 0.5
         textField.layer.borderColor = UIColor.black.cgColor
         textField.isSecureTextEntry = true
         textField.keyboardType = .default
+        textField.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray.withAlphaComponent(0.5)])
         return textField
     }()
     
@@ -103,7 +105,7 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setUpNavigation()
-        logoAnimation()
+//        logoAnimation()
     }
 }
 
@@ -150,7 +152,7 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
         keyboardObservers()
         handleTextFields()
         setUpNavigation()
-        logoAnimation()
+//        logoAnimation()
     }
     
     func viewHierarchy() {
@@ -170,7 +172,7 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
         backgroundView.snp.makeConstraints { (maker) in
             maker.top.equalToSuperview()
             maker.leading.trailing.equalToSuperview()
-            maker.height.equalTo(192)
+            maker.height.equalTo(340)
         }
         
         imageView.snp.makeConstraints { (maker) in
@@ -275,8 +277,7 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
     
     @objc func forgotPasswordTapped() {
         let viewController = RecoveryPasswordRouter.createModule()
-        viewController.modalPresentationStyle = .fullScreen
-        self.present(viewController, animated: true, completion: nil)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     @objc func manageSecureField(sender: AnimatedButton) {
