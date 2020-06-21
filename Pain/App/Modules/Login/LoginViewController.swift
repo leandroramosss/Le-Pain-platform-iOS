@@ -17,15 +17,24 @@ class LoginViewController: UIViewController {
     var presenter: ViewToLoginPresenterProtocol?
     var animationView = AnimationView()
     
-    lazy var imageView: UIImageView = {
-        let image = UIImageView()
-        image.backgroundColor = .white
+    lazy var backgroundView: UIImageView = {
+        let view = UIImageView()
+        view.image = UIImage(named: "CustomNavigation")
+        view.contentMode = .scaleToFill
+        return view
+    }()
+    
+    lazy var imageView: AnimationView = {
+        let image = AnimationView()
+        image.animation = Animation.named("breakfastLogo")
+        image.contentMode = .scaleAspectFit
         return image
     }()
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Le Pain"
+        label.textColor = UIColor.black
         label.textAlignment = .center
         return label
     }()
@@ -94,6 +103,7 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setUpNavigation()
+        logoAnimation()
     }
 }
 
@@ -140,9 +150,11 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
         keyboardObservers()
         handleTextFields()
         setUpNavigation()
+        logoAnimation()
     }
     
     func viewHierarchy() {
+        view.addSubview(backgroundView)
         view.addSubview(imageView)
         view.addSubview(titleLabel)
         view.addSubview(emailTextField)
@@ -155,8 +167,14 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
     }
     
     func setupConstranits() {
+        backgroundView.snp.makeConstraints { (maker) in
+            maker.top.equalToSuperview()
+            maker.leading.trailing.equalToSuperview()
+            maker.height.equalTo(192)
+        }
+        
         imageView.snp.makeConstraints { (maker) in
-            maker.top.equalTo(view.safeAreaLayoutGuide).offset(40)
+            maker.top.equalTo(view.safeAreaLayoutGuide).offset(100)
             maker.width.equalToSuperview().inset(25)
             maker.height.equalTo(200)
             maker.centerX.equalToSuperview()
@@ -166,7 +184,7 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
             maker.top.equalTo(imageView.snp.bottom).offset(10)
             maker.width.equalToSuperview().inset(16)
             maker.centerX.equalToSuperview()
-            maker.height.equalTo(60)
+            maker.height.equalTo(30)
         }
         
         emailTextField.snp.makeConstraints { (maker) in
@@ -220,6 +238,11 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = .loop
         animationView.play()
+    }
+    
+    func logoAnimation() {
+        imageView.loopMode = .loop
+        imageView.play()
     }
         
     func setUpNavigation() {

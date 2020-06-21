@@ -16,6 +16,12 @@ class SignUpViewController: UIViewController {
     var presenter: ViewToSignUpPresenterProtocol?
     let animamationView = AnimationView()
     
+    lazy var backgroundView: UIImageView = {
+        let view = UIImageView()
+        view.image = UIImage(named: "CustomNavigation")
+        view.contentMode = .scaleToFill
+        return view
+    }()
     
     lazy var emailTextfield: UITextField = {
         let textField = UITextField()
@@ -24,6 +30,7 @@ class SignUpViewController: UIViewController {
         textField.layer.borderColor = UIColor.black.cgColor
         textField.autocapitalizationType = .none
         textField.textColor = .black
+        textField.placeholder = "email"
         return textField
     }()
     
@@ -34,12 +41,25 @@ class SignUpViewController: UIViewController {
         textField.layer.borderColor = UIColor.black.cgColor
         textField.autocapitalizationType = .none
         textField.textColor = .black
+        textField.placeholder = "password"
+        return textField
+    }()
+    
+    lazy var userNameTextField: UITextField = {
+        let textField = UITextField()
+        textField.layer.borderWidth = 0.5
+        textField.backgroundColor = .white
+        textField.layer.borderColor = UIColor.black.cgColor
+        textField.autocapitalizationType = .none
+        textField.textColor = .black
+        textField.placeholder = "username"
         return textField
     }()
     
     lazy var continueButton: UIButton = {
         let button = UIButton()
         button.layer.borderWidth = 0.5
+        button.backgroundColor = .white
         button.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
         button.setTitle("Continue", for: .normal)
         button.setTitleColor(.black, for: .normal)
@@ -49,6 +69,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         setUpLayout()
     }
 }
@@ -86,30 +107,46 @@ extension SignUpViewController: ViewLayoutProtocol, UITextFieldDelegate {
     }
     
     func viewHierarchy() {
+        view.addSubview(backgroundView)
         view.addSubview(emailTextfield)
         view.addSubview(passwordTextField)
+        view.addSubview(userNameTextField)
         view.addSubview(continueButton)
         view.addSubview(animamationView)
     }
     
     func setupConstranits() {
         
+        backgroundView.snp.makeConstraints { (maker) in
+            maker.top.equalToSuperview()
+            maker.leading.trailing.equalToSuperview()
+            maker.height.equalTo(192)
+        }
+        
+        
         emailTextfield.snp.makeConstraints { (maker) in
-            maker.top.equalTo(view.safeAreaLayoutGuide).offset(10)
+            maker.top.equalTo(view.safeAreaLayoutGuide).offset(30)
             maker.width.equalToSuperview().inset(16)
             maker.centerX.equalToSuperview()
             maker.height.equalTo(40)
         }
         
         passwordTextField.snp.makeConstraints { (maker) in
-            maker.top.equalTo(emailTextfield.snp.bottom).offset(20)
+            maker.top.equalTo(emailTextfield.snp.bottom).offset(30)
+            maker.width.equalToSuperview().inset(16)
+            maker.centerX.equalToSuperview()
+            maker.height.equalTo(40)
+        }
+        
+        userNameTextField.snp.makeConstraints { (maker) in
+            maker.top.equalTo(passwordTextField.snp.bottom).offset(30)
             maker.width.equalToSuperview().inset(16)
             maker.centerX.equalToSuperview()
             maker.height.equalTo(40)
         }
         
         continueButton.snp.makeConstraints { (maker) in
-            maker.top.equalTo(passwordTextField.snp.bottom).offset(20)
+            maker.top.equalTo(userNameTextField.snp.bottom).offset(30)
             maker.width.equalToSuperview().inset(16)
             maker.centerX.equalToSuperview()
             maker.height.equalTo(40)
@@ -118,14 +155,20 @@ extension SignUpViewController: ViewLayoutProtocol, UITextFieldDelegate {
     
     func setUpNavigation() {
         navigationController?.setNavigationBarHidden(false, animated: true)
-        title = "Subscribe!!"
+        title = ""
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.backgroundColor = .red
+        
+        if let navController = navigationController {
+            System.clearNavigationBar(forBar: navigationController!.navigationBar)
+            navController.view.backgroundColor = .white
+        }
+        
     }
     
     func handleTextFields() {
         emailTextfield.delegate = self
         passwordTextField.delegate = self
+        userNameTextField.delegate = self
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

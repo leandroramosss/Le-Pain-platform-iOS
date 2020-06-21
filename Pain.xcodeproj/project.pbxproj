@@ -53,6 +53,8 @@
 		52A2112A249518B400E9DADC /* forgetAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 52A21129249518B300E9DADC /* forgetAnimation.json */; };
 		52A2112C24951A2400E9DADC /* ForgotCredencialsAnimatedAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52A2112B24951A2400E9DADC /* ForgotCredencialsAnimatedAlert.storyboard */; };
 		52A47954249E5A0E009BBA1E /* LoaderActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47953249E5A0E009BBA1E /* LoaderActivity.swift */; };
+		52A4795B249EE95D009BBA1E /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A4795A249EE95D009BBA1E /* CustomNavigation.swift */; };
+		52A4795D249F14C5009BBA1E /* breakfastLogo.json in Resources */ = {isa = PBXBuildFile; fileRef = 52A4795C249F14C5009BBA1E /* breakfastLogo.json */; };
 		52B09BDD2495021800CE695E /* AnimatedAlertProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B09BDC2495021800CE695E /* AnimatedAlertProtocol.swift */; };
 		52B09BDF249504D000CE695E /* AnimateAlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B09BDE249504D000CE695E /* AnimateAlertPresenter.swift */; };
 		52B09BE1249505DB00CE695E /* AnimatedAlertInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B09BE0249505DB00CE695E /* AnimatedAlertInteractor.swift */; };
@@ -131,6 +133,8 @@
 		52A21129249518B300E9DADC /* forgetAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forgetAnimation.json; sourceTree = "<group>"; };
 		52A2112B24951A2400E9DADC /* ForgotCredencialsAnimatedAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotCredencialsAnimatedAlert.storyboard; sourceTree = "<group>"; };
 		52A47953249E5A0E009BBA1E /* LoaderActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderActivity.swift; sourceTree = "<group>"; };
+		52A4795A249EE95D009BBA1E /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
+		52A4795C249F14C5009BBA1E /* breakfastLogo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = breakfastLogo.json; sourceTree = "<group>"; };
 		52B09BDC2495021800CE695E /* AnimatedAlertProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedAlertProtocol.swift; sourceTree = "<group>"; };
 		52B09BDE249504D000CE695E /* AnimateAlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateAlertPresenter.swift; sourceTree = "<group>"; };
 		52B09BE0249505DB00CE695E /* AnimatedAlertInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedAlertInteractor.swift; sourceTree = "<group>"; };
@@ -202,6 +206,7 @@
 		524E39092495A1E90086AD5C /* Alert */ = {
 			isa = PBXGroup;
 			children = (
+				524E27A9249C35C100CE1C26 /* SendEmailAlert */,
 				52B09BDB2495017D00CE695E /* ForgotAlertAnimated */,
 			);
 			path = Alert;
@@ -306,10 +311,18 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		52A47959249EE93F009BBA1E /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				52A4795A249EE95D009BBA1E /* CustomNavigation.swift */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
 		52B09BDA2495016100CE695E /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				524E27A9249C35C100CE1C26 /* SendEmailAlert */,
+				52A47959249EE93F009BBA1E /* NavigationBar */,
 				524E390E2495B6790086AD5C /* Loader */,
 				524E39092495A1E90086AD5C /* Alert */,
 			);
@@ -400,6 +413,7 @@
 		52EE9675249320D500527E22 /* Json */ = {
 			isa = PBXGroup;
 			children = (
+				52A4795C249F14C5009BBA1E /* breakfastLogo.json */,
 				524E27AF249C3A2300CE1C26 /* sendEmail.json */,
 				5216E1432496A11C00FAF2A0 /* secureField.json */,
 				520C301924955EC40053C761 /* homeButton.json */,
@@ -516,6 +530,7 @@
 				52EE9677249320EF00527E22 /* loading.json in Resources */,
 				529A1C46247C26D400CA723B /* SignUp.storyboard in Resources */,
 				52C3806B247BECD100D7972A /* Main.storyboard in Resources */,
+				52A4795D249F14C5009BBA1E /* breakfastLogo.json in Resources */,
 				5216E1442496A11C00FAF2A0 /* secureField.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -633,6 +648,7 @@
 				52B09BE52495088400CE695E /* AnimatedAlertViewController.swift in Sources */,
 				527767C224999FFB00ADC23B /* RecoverPasswordPresenter.swift in Sources */,
 				5250B004249D7F1C00B210CD /* SendEmailAlertService.swift in Sources */,
+				52A4795B249EE95D009BBA1E /* CustomNavigation.swift in Sources */,
 				524E27B8249C3CAA00CE1C26 /* SendEmailViewController.swift in Sources */,
 				529A1C33247C03D700CA723B /* SignUpViewController.swift in Sources */,
 				524E27B2249C3AD200CE1C26 /* SendEmailPresenter.swift in Sources */,
