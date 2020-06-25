@@ -70,6 +70,7 @@
 		52C38070247BECD300D7972A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C3806F247BECD300D7972A /* Assets.xcassets */; };
 		52C38073247BECD300D7972A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C38071247BECD300D7972A /* LaunchScreen.storyboard */; };
 		52C3807E247BECD300D7972A /* PainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3807D247BECD300D7972A /* PainTests.swift */; };
+		52EB46C024A2DCA40028B14D /* UserManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB46BF24A2DCA40028B14D /* UserManagerProtocol.swift */; };
 		52EE96672491AC8B00527E22 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EE96662491AC8B00527E22 /* Utils.swift */; };
 		52EE9677249320EF00527E22 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 52EE9676249320EF00527E22 /* loading.json */; };
 		9226F28C294B288B3CBDB6B9 /* Pods_PainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17D68FA72B37B1A6169404A5 /* Pods_PainTests.framework */; };
@@ -157,6 +158,7 @@
 		52C38079247BECD300D7972A /* PainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C3807D247BECD300D7972A /* PainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainTests.swift; sourceTree = "<group>"; };
 		52C3807F247BECD300D7972A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52EB46BF24A2DCA40028B14D /* UserManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagerProtocol.swift; sourceTree = "<group>"; };
 		52EE96662491AC8B00527E22 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		52EE9676249320EF00527E22 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		595ECEA17E881188C6B7DFA7 /* Pods-Pain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pain.release.xcconfig"; path = "Target Support Files/Pods-Pain/Pods-Pain.release.xcconfig"; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				52B18807249FE3DA0048E646 /* UserManager.swift */,
+				52EB46BF24A2DCA40028B14D /* UserManagerProtocol.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -676,6 +679,7 @@
 				52500F02249FB01E00A19F6A /* CustomTextField.swift in Sources */,
 				524E39102495B6E20086AD5C /* LoaderProtocols.swift in Sources */,
 				529A1C38247C0BFF00CA723B /* MainPagePresenter.swift in Sources */,
+				52EB46C024A2DCA40028B14D /* UserManagerProtocol.swift in Sources */,
 				524E39142495BB080086AD5C /* LoaderInteractor.swift in Sources */,
 				524E39162495BB800086AD5C /* LoaderRouter.swift in Sources */,
 				527767C82499A45300ADC23B /* RecoveryPasswordViewController.swift in Sources */,

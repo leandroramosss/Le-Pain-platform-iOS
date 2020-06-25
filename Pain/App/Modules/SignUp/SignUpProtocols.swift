@@ -21,6 +21,9 @@ protocol InteractorToSignUpPresenterProtocol: class {
 
 protocol PresenterToSignUpInteractorProtocol: class {
     var presenter: InteractorToSignUpPresenterProtocol? { get set }
+    
+    func getUsername() -> String
+    func setUsername(username: String)
 }
 
 protocol PresenterToSignUpRouterProtocol: class {
@@ -33,4 +36,8 @@ protocol ViewToSignUpPresenterProtocol: class {
     var router: PresenterToSignUpRouterProtocol? { get set }
     
     func createUser(email: String, passWord: String)
+    
+    func getUsername() -> String
+    func setUsername(username: String)
+    
 }

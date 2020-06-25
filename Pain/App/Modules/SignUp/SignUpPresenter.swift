@@ -11,6 +11,7 @@ import FirebaseAuth
 import Firebase
 
 class SignUpPresenter: ViewToSignUpPresenterProtocol {
+    
     var view: PresenterToSignUpProtocol?
     var interactor: PresenterToSignUpInteractorProtocol?
     var router: PresenterToSignUpRouterProtocol?
@@ -46,6 +47,15 @@ class SignUpPresenter: ViewToSignUpPresenterProtocol {
             }
         }
     }
+    
+    func getUsername() -> String {
+        return (interactor?.getUsername())!
+    }
+    
+    func setUsername(username: String) {
+        interactor?.setUsername(username: username)
+    }
+    
 }
 
 extension SignUpPresenter: InteractorToSignUpPresenterProtocol {

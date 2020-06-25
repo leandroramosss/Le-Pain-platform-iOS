@@ -73,6 +73,7 @@ class SignUpViewController: UIViewController {
         view.backgroundColor = .white
         setUpLayout()
     }
+    
 }
 
 extension SignUpViewController: PresenterToSignUpProtocol {
@@ -154,6 +155,12 @@ extension SignUpViewController: ViewLayoutProtocol, UITextFieldDelegate {
         }
     }
     
+    func saveUserName() {
+        let usernameTapped = userNameTextField.text
+        print(usernameTapped as Any)
+        presenter?.setUsername(username: usernameTapped!)
+    }
+    
     func setUpNavigation() {
         navigationController?.setNavigationBarHidden(false, animated: true)
         title = "Subscription"
@@ -184,6 +191,7 @@ extension SignUpViewController: ViewLayoutProtocol, UITextFieldDelegate {
         } else {
             self.navigationController!.navigationBar.layer.zPosition = -1
             startAnimation()
+            saveUserName()
             DispatchQueue.main.asyncAfter(wallDeadline: .now() + 1.5) {
                 self.presenter?.createUser(email: self.emailTextfield.text ?? "", passWord: self.passwordTextField.text ?? "")
             }

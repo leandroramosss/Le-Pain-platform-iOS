@@ -8,15 +8,17 @@
 
 import Foundation
 
-class UserManager {
+class UserManager: UserManagerProtocol {
     
-    func getUserName() -> String {
-        let userName = UserDefaults.standard.string(forKey: Constants.USERNAME)
-        return userName ?? ""
+    func getUsername() -> String {
+        guard let data = UserDefaults.standard.string(forKey: Constants.USERNAME) else {
+            return ""
+        }
+        return data
     }
     
-    func setUserName(userName: String) {
-        UserDefaults.standard.set(userName, forKey: Constants.USERNAME)
+    func setUsername(username: String) {
+        UserDefaults.standard.set(username, forKey: Constants.USERNAME)
     }
-    
+        
 }
