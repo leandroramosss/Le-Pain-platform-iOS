@@ -10,4 +10,7 @@ import Foundation
 
 class MainPageInteractor: PresenterToMainPageInteractorProtocol {
     var presenter: InteractorToMainPagePresenterProtocol?
+    let userManager = UserManager()
+    
+
 }

@@ -11,4 +11,14 @@ import Foundation
 class SignUpInteractor: PresenterToSignUpInteractorProtocol {
     
     var presenter: InteractorToSignUpPresenterProtocol?
+    var manager = UserManager()
+    
+    func getUsername() -> String {
+        return manager.getUsername()
+    }
+    
+    func setUsername(username: String) {
+        manager.setUsername(username: username)
+    }
+
 }

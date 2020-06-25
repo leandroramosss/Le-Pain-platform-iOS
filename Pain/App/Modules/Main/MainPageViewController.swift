@@ -11,26 +11,52 @@ import UIKit
 class MainPageViewController: UIViewController {
     
     var presenter: ViewToMainPagePresenterProtocol?
+    var manager = UserManager()
+    
+    lazy var welcomeLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.black
+        return label
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
+        setUpLayout()
 
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension MainPageViewController: PresenterToMainPageProtocol {
     
+}
+
+extension MainPageViewController: ViewLayoutProtocol {
+    
+    func setUpLayout() {
+        viewHierarchy()
+        setupConstranits()
+        setUpWelcomeLabel()
+    }
+    
+    func viewHierarchy() {
+        
+        view.addSubview(welcomeLabel)
+        
+    }
+    
+    func setupConstranits() {
+        
+        welcomeLabel.snp.makeConstraints { (maker) in
+            maker.center.equalToSuperview()
+            maker.width.equalToSuperview().inset(16)
+            maker.height.equalTo(30)
+        }
+    }
+    
+    func setUpWelcomeLabel() {
+        let username = manager.getUsername()
+        welcomeLabel.text = "Welcome, \(username)"
+    }
 }
