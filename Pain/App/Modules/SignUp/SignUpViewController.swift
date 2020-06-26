@@ -10,11 +10,13 @@ import UIKit
 import SnapKit
 import Lottie
 import NotificationCenter
+import Firebase
 
 class SignUpViewController: UIViewController {
     
     var presenter: ViewToSignUpPresenterProtocol?
     let animamationView = AnimationView()
+    var ref: DocumentReference? = nil
     
     lazy var backgroundView: UIImageView = {
         let view = UIImageView()
@@ -59,7 +61,7 @@ class SignUpViewController: UIViewController {
     
     lazy var continueButton: UIButton = {
         let button = UIButton()
-        button.layer.borderWidth = 0.5
+        button.layer.borderWidth = 0.1
         button.backgroundColor = .white
         button.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
         button.setTitle("Continue", for: .normal)
@@ -105,6 +107,7 @@ extension SignUpViewController: ViewLayoutProtocol, UITextFieldDelegate {
         viewHierarchy()
         setupConstranits()
         handleTextFields()
+        ref = Firestore.firestore().document("user/user_data")
     }
     
     func viewHierarchy() {
@@ -177,16 +180,18 @@ extension SignUpViewController: ViewLayoutProtocol, UITextFieldDelegate {
     }
     
     @objc func continueButtonTapped() {
-        if emailTextfield.text?.isEmpty == true {
-            print("email empty")
-        } else if passwordTextField.text?.isEmpty == true {
-            print("password empty")
-        } else {
-            self.navigationController!.navigationBar.layer.zPosition = -1
-            startAnimation()
-            DispatchQueue.main.asyncAfter(wallDeadline: .now() + 1.5) {
-                self.presenter?.createUser(email: self.emailTextfield.text ?? "", passWord: self.passwordTextField.text ?? "")
+        let saveUser:[String: Any] = ["email": emailTextfield.text!, "password": passwordTextField.text!, "username": passwordTextField.text!]
+        ref?.setData(saveUser, completion: { (error) in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            } else {
+                print("data has been saved")
             }
+        })
+        self.navigationController!.navigationBar.layer.zPosition = -1
+        startAnimation()
+        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 1.5) {
+            self.presenter?.createUser(email: self.emailTextfield.text ?? "", passWord: self.passwordTextField.text ?? "")
         }
     }
     

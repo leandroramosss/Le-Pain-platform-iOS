@@ -37,7 +37,8 @@ class SignUpPresenter: ViewToSignUpPresenterProtocol {
                 self.view?.endRequestWithError(alert: alert)
             case .some(let error as NSError) where error.code == AuthErrorCode.missingEmail.rawValue:
                 let alert = UIAlertController(title: "Le Pain", message: "missing email", preferredStyle: .alert)
-                self.view?.endRequestWithError(alert: alert)
+//                self.view?.endRequestWithError(alert: alert)
+                self.view?.showAlert(alert: alert, valid: true)
             default:
                 if let user = result?.user {
                     print(user.uid)
