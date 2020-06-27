@@ -93,12 +93,24 @@ class SignUpViewController: UIViewController {
     lazy var datePicker: UIPickerView = {
         let picker = UIPickerView()
         picker.backgroundColor = .clear
+        picker.setValue(UIColor.black, forKeyPath: "textColor")
         return picker
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        setUpLayout()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        view.backgroundColor = .white
+        setUpLayout()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         setUpLayout()
     }
     

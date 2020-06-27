@@ -52,6 +52,10 @@ class RecoveryPasswordViewController: UIViewController {
         setUpNavigation()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setUpNavigation()
+    }
 }
 
 extension RecoveryPasswordViewController: PresenterToRecoveryPasswordProtocol {
