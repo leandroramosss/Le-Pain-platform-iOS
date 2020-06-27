@@ -223,7 +223,7 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
         }
         
         forgetPassword.snp.makeConstraints { (maker) in
-            maker.top.equalTo(signInButton.snp.bottom).offset(15)
+            maker.top.equalTo(signInButton.snp.bottom).offset(40)
             maker.width.equalTo(200)
             maker.centerX.equalToSuperview()
         }

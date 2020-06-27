@@ -17,7 +17,7 @@ class SignUpViewController: UIViewController {
     let animamationView = AnimationView()
     let date = Date()
     let formatter = DateFormatter()
-    let years = (1800...2120).map{String($0)}
+    let years = (1900...2120).map{String($0)}
     let days = (1...31).map{String($0)}
     var pickerMonth: [String] = [String]()
     var pickerDay: [String] = [String]()
@@ -153,7 +153,7 @@ extension SignUpViewController: ViewLayoutProtocol, UITextFieldDelegate {
         backgroundView.snp.makeConstraints { (maker) in
             maker.top.equalToSuperview()
             maker.leading.trailing.equalToSuperview()
-            maker.height.equalTo(192)
+            maker.height.equalTo(200)
         }
         
         emailTextfield.snp.makeConstraints { (maker) in
@@ -266,9 +266,9 @@ extension SignUpViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 
         ageTextField.text = pickerMonth[pickerView.selectedRow(inComponent:0)]
-            + "/" +
+            + " / " +
             pickerDay[pickerView.selectedRow(inComponent:1)]
-            + "/" +
+            + " / " +
             pickYears[pickerView.selectedRow(inComponent:2)]
     }
     

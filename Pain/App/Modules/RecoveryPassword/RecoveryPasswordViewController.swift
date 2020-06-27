@@ -90,7 +90,7 @@ extension RecoveryPasswordViewController: ViewLayoutProtocol {
         navigationImage.snp.makeConstraints { (maker) in
             maker.top.equalToSuperview()
             maker.leading.trailing.equalToSuperview()
-            maker.height.equalTo(192)
+            maker.height.equalTo(200)
         }
         
         emailTextField.snp.makeConstraints { (maker) in
