@@ -11,5 +11,6 @@ import Foundation
 struct Constants {
     
     static let USERNAME = "userName"
+    static let USEREMAIL = "user_email"
     
 }

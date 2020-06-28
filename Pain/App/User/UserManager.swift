@@ -20,5 +20,15 @@ class UserManager: UserManagerProtocol {
     func setUsername(username: String) {
         UserDefaults.standard.set(username, forKey: Constants.USERNAME)
     }
-        
+    
+    func getUserEmail() -> String {
+        guard let data = UserDefaults.standard.string(forKey: Constants.USEREMAIL) else {
+        return ""
+        }
+        return data
+    }
+    
+    func setUserEmail(email: String) {
+        UserDefaults.standard.set(email, forKey: Constants.USEREMAIL)
+    }
 }

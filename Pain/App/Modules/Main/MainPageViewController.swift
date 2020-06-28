@@ -41,9 +41,7 @@ extension MainPageViewController: ViewLayoutProtocol {
     }
     
     func viewHierarchy() {
-        
         view.addSubview(welcomeLabel)
-        
     }
     
     func setupConstranits() {

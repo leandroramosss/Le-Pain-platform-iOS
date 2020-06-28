@@ -9,5 +9,16 @@
 import Foundation
 
 class LoginInteractor: PresenterToLoginInteractorProtocol {
-    var presenter: InteractorToLoginPresenterProtocol?    
+    
+    var presenter: InteractorToLoginPresenterProtocol?
+    let manager = UserManager()
+    
+    func getUserEmail() -> String {
+        manager.getUserEmail()
+    }
+    
+    func setUserEmail(email: String) {
+        manager.setUserEmail(email: email)
+    }
+
 }

@@ -47,6 +47,7 @@ class LoginViewController: UIViewController {
         textField.autocapitalizationType = .none
         textField.keyboardType = .emailAddress
         textField.attributedPlaceholder = NSAttributedString(string: "email address", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray.withAlphaComponent(0.5)])
+        textField.text = presenter?.getUserEmail()
         return textField
     }()
     
@@ -272,6 +273,7 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
         self.view.endEditing(true)
         DispatchQueue.main.asyncAfter(wallDeadline: .now() + 2.0) {
             self.presenter?.signInUser(user: self.emailTextField.text!, user: self.passwordTextField.text!)
+            self.presenter?.setUserEmail(email: self.emailTextField.text!)
         }
     }
     

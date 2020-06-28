@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google
+ * Copyright 2019 Google
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,15 +14,17 @@
  * limitations under the License.
  */
 
-#import "FirebaseCore/Sources/Private/FIRComponentType.h"
+#import "FIRInstallationsAuthTokenResultInternal.h"
 
-#import "FirebaseCore/Sources/Private/FIRComponentContainerInternal.h"
+@implementation FIRInstallationsAuthTokenResult
 
-@implementation FIRComponentType
-
-+ (id)instanceForProtocol:(Protocol *)protocol inContainer:(FIRComponentContainer *)container {
-  // Forward the call to the container.
-  return [container instanceForProtocol:protocol];
+- (instancetype)initWithToken:(NSString *)token expirationDate:(NSDate *)expirationDate {
+  self = [super init];
+  if (self) {
+    _authToken = [token copy];
+    _expirationDate = expirationDate;
+  }
+  return self;
 }
 
 @end
