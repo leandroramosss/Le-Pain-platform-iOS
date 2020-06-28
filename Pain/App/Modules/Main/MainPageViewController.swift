@@ -7,23 +7,35 @@
 //
 
 import UIKit
+import Lottie
 
 class MainPageViewController: UIViewController {
     
     var presenter: ViewToMainPagePresenterProtocol?
     var manager = UserManager()
     
+    lazy var customNavigationBar: UINavigationBar = {
+        let bar = UINavigationBar()
+        return bar
+    }()
+    
+    lazy var profileView: AnimationView = {
+        let image = AnimationView()
+        view.backgroundColor = .clear
+        image.animation = Animation.named("emptyProfileAnimation")
+        return image
+    }()
+    
     lazy var welcomeLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.black
+        label.textColor = UIColor.systemBackground
         return label
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         setUpLayout()
-
+        view.backgroundColor = .white
     }
     
 }
@@ -38,23 +50,55 @@ extension MainPageViewController: ViewLayoutProtocol {
         viewHierarchy()
         setupConstranits()
         setUpWelcomeLabel()
+        setUpNavigation()
+        startAnimation()
     }
     
     func viewHierarchy() {
         view.addSubview(welcomeLabel)
+        view.addSubview(customNavigationBar)
+        customNavigationBar.addSubview(profileView)
+        customNavigationBar.backgroundColor = UIColor.white
     }
     
     func setupConstranits() {
+        customNavigationBar.snp.makeConstraints { (maker) in
+            maker.top.equalToSuperview()
+            maker.width.equalToSuperview()
+            maker.height.equalTo(120)
+        }
+        
+        profileView.snp.makeConstraints { (maker) in
+            maker.top.equalTo(view.safeAreaLayoutGuide).offset(10)
+            maker.bottom.equalTo(customNavigationBar.snp.bottom).offset(-10)
+            maker.leading.equalTo(customNavigationBar.snp.leading).offset(10)
+            maker.width.equalTo(100)
+        }
         
         welcomeLabel.snp.makeConstraints { (maker) in
             maker.center.equalToSuperview()
             maker.width.equalToSuperview().inset(16)
             maker.height.equalTo(30)
+            maker.width.equalTo(50)
         }
+    }
+    
+    func startAnimation() {
+        profileView.play()
+        profileView.contentMode = .scaleAspectFit
+    }
+    
+    func setUpNavigation() {
+        if let navController = navigationController {
+            System.navigationBarWhite(forBar: navigationController!.navigationBar)
+            navController.view.backgroundColor = .white
+        }
+
     }
     
     func setUpWelcomeLabel() {
         let username = manager.getUsername()
         welcomeLabel.text = "Welcome, \(username)"
     }
+    
 }

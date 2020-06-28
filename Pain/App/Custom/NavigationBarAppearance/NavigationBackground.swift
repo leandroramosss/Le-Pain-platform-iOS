@@ -18,4 +18,13 @@ struct System {
         navBar.shadowImage = UIImage()
         navBar.isTranslucent = true
     }
+    
+    static func navigationBarWhite(forBar navBar: UINavigationBar) {
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
+        appearance.backgroundColor = UIColor.systemBackground
+        navBar.isTranslucent = false
+    }
+
 }

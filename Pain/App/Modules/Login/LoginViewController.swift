@@ -125,7 +125,7 @@ extension LoginViewController: PresenterToLoginProtocol {
     func didEndRequestSuccesfully() {
         let viewController = MainPageRouter.createModule()
         viewController.modalPresentationStyle = .fullScreen
-        present(viewController, animated: true, completion: nil)
+        self.present(viewController, animated: true, completion: nil)
     }
     
     func didEndRequestWithError(alert: UIAlertController) {
