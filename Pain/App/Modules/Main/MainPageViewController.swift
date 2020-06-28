@@ -21,7 +21,8 @@ class MainPageViewController: UIViewController {
     
     lazy var profileView: AnimationView = {
         let image = AnimationView()
-        view.backgroundColor = .clear
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleProfileViewTapped))
+        image.addGestureRecognizer(tap)
         image.animation = Animation.named("emptyProfileAnimation")
         return image
     }()
@@ -99,6 +100,14 @@ extension MainPageViewController: ViewLayoutProtocol {
     func setUpWelcomeLabel() {
         let username = manager.getUsername()
         welcomeLabel.text = "Welcome, \(username)"
+    }
+    
+    @objc func handleProfileViewTapped(_ sender: UITapGestureRecognizer? = nil) {        
+        if let vc = UIStoryboard(name: "ProfileStoryboard", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController {
+                    vc.modalPresentationStyle = .overCurrentContext
+                    self.present(vc, animated: false, completion: nil)
+                }
+        
     }
     
 }

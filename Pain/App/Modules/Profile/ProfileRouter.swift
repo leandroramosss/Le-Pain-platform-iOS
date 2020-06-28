@@ -11,7 +11,7 @@ import UIKit
 
 class ProfileRouter: PresenterToProfileRouterProtocol {
     static func createModule() -> UIViewController {
-        let view = mainstoryboard.instantiateViewController(withIdentifier: "") as? ProfileViewController
+        let view = mainstoryboard.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController
         let presenter: ViewToProfilePresenterProtocol & InteractorToProfilePresenterProtocol = ProfilePresenter()
         let interactor: PresenterToProfileInteractorProtocol = ProfileInteractor()
         let router: PresenterToProfileRouterProtocol = ProfileRouter()
@@ -26,7 +26,7 @@ class ProfileRouter: PresenterToProfileRouterProtocol {
     }
     
     static var mainstoryboard: UIStoryboard {
-        return UIStoryboard(name: "", bundle: Bundle.main)
+        return UIStoryboard(name: "ProfileStoryboard", bundle: Bundle.main)
     }
     
 }
