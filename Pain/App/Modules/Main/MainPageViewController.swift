@@ -9,7 +9,7 @@
 import UIKit
 import Lottie
 
-class MainPageViewController: UIViewController {
+class MainPageViewController: UINavigationController {
     
     var presenter: ViewToMainPagePresenterProtocol?
     var manager = UserManager()
@@ -36,7 +36,7 @@ class MainPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLayout()
-        view.backgroundColor = .white
+        view.backgroundColor = .black
     }
     
 }
@@ -57,31 +57,31 @@ extension MainPageViewController: ViewLayoutProtocol {
     
     func viewHierarchy() {
         view.addSubview(welcomeLabel)
-        view.addSubview(customNavigationBar)
-        customNavigationBar.addSubview(profileView)
-        customNavigationBar.backgroundColor = UIColor.white
+//        view.addSubview(customNavigationBar)
+//        customNavigationBar.addSubview(profileView)
+//        customNavigationBar.backgroundColor = UIColor.white
     }
     
     func setupConstranits() {
-        customNavigationBar.snp.makeConstraints { (maker) in
-            maker.top.equalToSuperview()
-            maker.width.equalToSuperview()
-            maker.height.equalTo(120)
-        }
-        
-        profileView.snp.makeConstraints { (maker) in
-            maker.top.equalTo(view.safeAreaLayoutGuide).offset(10)
-            maker.bottom.equalTo(customNavigationBar.snp.bottom).offset(-10)
-            maker.leading.equalTo(customNavigationBar.snp.leading).offset(10)
-            maker.width.equalTo(100)
-        }
-        
-        welcomeLabel.snp.makeConstraints { (maker) in
-            maker.center.equalToSuperview()
-            maker.width.equalToSuperview().inset(16)
-            maker.height.equalTo(30)
-            maker.width.equalTo(50)
-        }
+//        customNavigationBar.snp.makeConstraints { (maker) in
+//            maker.top.equalToSuperview()
+//            maker.width.equalToSuperview()
+//            maker.height.equalTo(120)
+//        }
+//
+//        profileView.snp.makeConstraints { (maker) in
+//            maker.top.equalTo(view.safeAreaLayoutGuide).offset(10)
+//            maker.bottom.equalTo(customNavigationBar.snp.bottom).offset(-10)
+//            maker.leading.equalTo(customNavigationBar.snp.leading).offset(10)
+//            maker.width.equalTo(100)
+//        }
+//
+//        welcomeLabel.snp.makeConstraints { (maker) in
+//            maker.center.equalToSuperview()
+//            maker.width.equalToSuperview().inset(16)
+//            maker.height.equalTo(30)
+//            maker.width.equalTo(50)
+//        }
     }
     
     func startAnimation() {
@@ -90,12 +90,14 @@ extension MainPageViewController: ViewLayoutProtocol {
     }
     
     func setUpNavigation() {
-        if let navController = navigationController {
-            System.navigationBarWhite(forBar: navigationController!.navigationBar)
-            navController.view.backgroundColor = .white
-        }
-
-    }
+        title = "Main Page Title"
+        let navBarAppearance = UINavigationBar.appearance()
+        navBarAppearance.barTintColor = .red
+        navBarAppearance.tintColor = .white
+        navBarAppearance.titleTextAttributes = [
+                NSAttributedString.Key.foregroundColor: UIColor.white,
+                NSAttributedString.Key.font: UIFont(name: "Avenir", size: 20)!]
+            }
     
     func setUpWelcomeLabel() {
         let username = manager.getUsername()
