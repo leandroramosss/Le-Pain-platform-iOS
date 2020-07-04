@@ -220,6 +220,7 @@ extension SignUpViewController: ViewLayoutProtocol, UITextFieldDelegate {
         navigationController?.setNavigationBarHidden(false, animated: true)
         title = "Subscription"
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationItem.largeTitleDisplayMode = .always;
         if let navController = navigationController {
             System.clearNavigationBar(forBar: navigationController!.navigationBar)
             navController.view.backgroundColor = .white

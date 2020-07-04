@@ -32,11 +32,21 @@ class MainPageViewController: UIViewController {
         label.textColor = UIColor.systemBackground
         return label
     }()
+    
+    lazy var scrollView: UIScrollView = {
+        let scroll = UIScrollView()
+        return scroll
+    }()
+    
+    lazy var contentView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .gray
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLayout()
-        view.backgroundColor = .white
     }
     
 }
@@ -56,13 +66,26 @@ extension MainPageViewController: ViewLayoutProtocol {
     }
     
     func viewHierarchy() {
-        view.addSubview(welcomeLabel)
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+//        view.addSubview(welcomeLabel)
 //        view.addSubview(customNavigationBar)
 //        customNavigationBar.addSubview(profileView)
 //        customNavigationBar.backgroundColor = UIColor.white
     }
     
     func setupConstranits() {
+        scrollView.snp.makeConstraints { (maker) in
+            maker.top.bottom.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+        contentView.snp.makeConstraints { (maker) in
+            maker.top.bottom.equalTo(self.scrollView)
+            maker.left.right.equalTo(self.view)
+            maker.height.equalTo(1500)
+            maker.width.equalTo(self.scrollView)
+        }
+        
 //        customNavigationBar.snp.makeConstraints { (maker) in
 //            maker.top.equalToSuperview()
 //            maker.width.equalToSuperview()
@@ -92,10 +115,9 @@ extension MainPageViewController: ViewLayoutProtocol {
     func setUpNavigation() {
         title = "Main page title"
         navigationController?.setNavigationBarHidden(false, animated: true)
-        if let navController = navigationController {
-            System.navigationBarWhite(forBar: navigationController!.navigationBar)
-            navController.view.backgroundColor = .blue
-        }
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 31, weight: UIFont.Weight.bold) ]
+
     }
     
     func setUpWelcomeLabel() {
