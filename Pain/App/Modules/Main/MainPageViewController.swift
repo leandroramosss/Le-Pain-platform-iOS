@@ -19,6 +19,7 @@ class MainPageViewController: UIViewController {
     lazy var profileView: ProfileImageView = {
         let view = ProfileImageView(frame: frame)
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleProfileViewTapped))
+        view.backgroundColor = .red
         view.addGestureRecognizer(tap)
         return view
     }()

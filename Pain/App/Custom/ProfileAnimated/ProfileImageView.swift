@@ -16,12 +16,14 @@ class ProfileImageView: AnimationView {
         super.init(frame: frame)
         constraits()
         startAnimation()
+        setUpLayout()
     }
         
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         constraits()
         startAnimation()
+        setUpLayout()
     }
         
     func constraits() {
@@ -34,5 +36,10 @@ class ProfileImageView: AnimationView {
         self.animation = Animation.named("emptyProfileAnimation")
         self.contentMode = .scaleAspectFit
         self.play()
+    }
+    
+    func setUpLayout() {
+        self.layer.cornerRadius = 20
+        self.clipsToBounds = true
     }
 }
