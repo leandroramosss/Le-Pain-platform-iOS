@@ -47,6 +47,7 @@ class LoginViewController: UIViewController {
         textField.autocapitalizationType = .none
         textField.keyboardType = .emailAddress
         textField.attributedPlaceholder = NSAttributedString(string: "email address", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray.withAlphaComponent(0.5)])
+        textField.text = presenter?.getUserEmail()
         return textField
     }()
     
@@ -123,8 +124,9 @@ extension LoginViewController: PresenterToLoginProtocol {
     
     func didEndRequestSuccesfully() {
         let viewController = MainPageRouter.createModule()
-        viewController.modalPresentationStyle = .fullScreen
-        present(viewController, animated: true, completion: nil)
+//        viewController.modalPresentationStyle = .fullScreen
+//        self.present(viewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     func didEndRequestWithError(alert: UIAlertController) {
@@ -223,7 +225,7 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
         }
         
         forgetPassword.snp.makeConstraints { (maker) in
-            maker.top.equalTo(signInButton.snp.bottom).offset(15)
+            maker.top.equalTo(signInButton.snp.bottom).offset(40)
             maker.width.equalTo(200)
             maker.centerX.equalToSuperview()
         }
@@ -272,6 +274,7 @@ extension LoginViewController: ViewLayoutProtocol, UITextFieldDelegate {
         self.view.endEditing(true)
         DispatchQueue.main.asyncAfter(wallDeadline: .now() + 2.0) {
             self.presenter?.signInUser(user: self.emailTextField.text!, user: self.passwordTextField.text!)
+            self.presenter?.setUserEmail(email: self.emailTextField.text!)
         }
     }
     

@@ -25,7 +25,7 @@ class RecoveryPasswordRouter: PresenterToRecoveryPasswordRouterProtocol {
     }
     
     static var mainstoryboard: UIStoryboard {
-        return UIStoryboard(name: "recoveryPassword", bundle: Bundle.main)
+        return UIStoryboard(name: "RecoveryPassword", bundle: Bundle.main)
     }
     
 }

@@ -15,6 +15,17 @@ class SignUpViewController: UIViewController {
     
     var presenter: ViewToSignUpPresenterProtocol?
     let animamationView = AnimationView()
+    let date = Date()
+    let formatter = DateFormatter()
+    let years = (1900...2120).map{String($0)}
+    let days = (1...31).map{String($0)}
+    var pickerMonth: [String] = [String]()
+    var pickerDay: [String] = [String]()
+    var pickYears: [String] = [String]()
+    var selectedMonth: String?
+    var selectedDay: String?
+    var selectedYear: String?
+
     
     lazy var backgroundView: UIImageView = {
         let view = UIImageView()
@@ -68,9 +79,38 @@ class SignUpViewController: UIViewController {
         return button
     }()
     
+    lazy var ageTextField: CustomTextField = {
+        let textField = CustomTextField()
+        textField.layer.borderWidth = 0.5
+        textField.backgroundColor = .white
+        textField.layer.borderColor = UIColor.black.cgColor
+        textField.autocapitalizationType = .none
+        textField.textColor = .black
+        textField.attributedPlaceholder = NSAttributedString(string: "birthdate", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray.withAlphaComponent(0.5)])
+        return textField
+    }()
+    
+    lazy var datePicker: UIPickerView = {
+        let picker = UIPickerView()
+        picker.backgroundColor = .clear
+        picker.setValue(UIColor.black, forKeyPath: "textColor")
+        return picker
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        setUpLayout()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        view.backgroundColor = .white
+        setUpLayout()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         setUpLayout()
     }
     
@@ -105,7 +145,8 @@ extension SignUpViewController: ViewLayoutProtocol, UITextFieldDelegate {
         setUpNavigation()
         viewHierarchy()
         setupConstranits()
-        handleTextFields()
+        handleGeneralDelegation()
+        datePickerComponents()
     }
     
     func viewHierarchy() {
@@ -113,6 +154,8 @@ extension SignUpViewController: ViewLayoutProtocol, UITextFieldDelegate {
         view.addSubview(emailTextfield)
         view.addSubview(passwordTextField)
         view.addSubview(userNameTextField)
+        view.addSubview(ageTextField)
+        view.addSubview(datePicker)
         view.addSubview(continueButton)
         view.addSubview(animamationView)
     }
@@ -122,9 +165,8 @@ extension SignUpViewController: ViewLayoutProtocol, UITextFieldDelegate {
         backgroundView.snp.makeConstraints { (maker) in
             maker.top.equalToSuperview()
             maker.leading.trailing.equalToSuperview()
-            maker.height.equalTo(192)
+            maker.height.equalTo(200)
         }
-        
         
         emailTextfield.snp.makeConstraints { (maker) in
             maker.top.equalTo(view.safeAreaLayoutGuide).offset(80)
@@ -147,8 +189,21 @@ extension SignUpViewController: ViewLayoutProtocol, UITextFieldDelegate {
             maker.height.equalTo(40)
         }
         
-        continueButton.snp.makeConstraints { (maker) in
+        ageTextField.snp.makeConstraints { (maker) in
             maker.top.equalTo(userNameTextField.snp.bottom).offset(30)
+            maker.width.equalToSuperview().inset(16)
+            maker.centerX.equalToSuperview()
+            maker.height.equalTo(40)
+        }
+        
+        datePicker.snp.makeConstraints { (maker) in
+            maker.top.equalTo(ageTextField.snp.bottom).offset(30)
+            maker.leading.trailing.equalToSuperview().inset(20)
+            maker.height.equalTo(100)
+        }
+        
+        continueButton.snp.makeConstraints { (maker) in
+            maker.top.equalTo(datePicker.snp.bottom).offset(30)
             maker.width.equalToSuperview().inset(16)
             maker.centerX.equalToSuperview()
             maker.height.equalTo(40)
@@ -165,6 +220,7 @@ extension SignUpViewController: ViewLayoutProtocol, UITextFieldDelegate {
         navigationController?.setNavigationBarHidden(false, animated: true)
         title = "Subscription"
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationItem.largeTitleDisplayMode = .always;
         if let navController = navigationController {
             System.clearNavigationBar(forBar: navigationController!.navigationBar)
             navController.view.backgroundColor = .white
@@ -172,10 +228,12 @@ extension SignUpViewController: ViewLayoutProtocol, UITextFieldDelegate {
         
     }
     
-    func handleTextFields() {
+    func handleGeneralDelegation() {
         emailTextfield.delegate = self
         passwordTextField.delegate = self
         userNameTextField.delegate = self
+        datePicker.delegate = self
+        datePicker.dataSource = self
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -184,17 +242,11 @@ extension SignUpViewController: ViewLayoutProtocol, UITextFieldDelegate {
     }
     
     @objc func continueButtonTapped() {
-        if emailTextfield.text?.isEmpty == true {
-            print("email empty")
-        } else if passwordTextField.text?.isEmpty == true {
-            print("password empty")
-        } else {
-            self.navigationController!.navigationBar.layer.zPosition = -1
-            startAnimation()
-            saveUserName()
-            DispatchQueue.main.asyncAfter(wallDeadline: .now() + 1.5) {
-                self.presenter?.createUser(email: self.emailTextfield.text ?? "", passWord: self.passwordTextField.text ?? "")
-            }
+        self.navigationController!.navigationBar.layer.zPosition = -1
+        startAnimation()
+        saveUserName()
+        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 1.5) {
+            self.presenter?.createUser(email: self.emailTextfield.text ?? "", passWord: self.passwordTextField.text ?? "")
         }
     }
     
@@ -206,4 +258,48 @@ extension SignUpViewController: ViewLayoutProtocol, UITextFieldDelegate {
         animamationView.loopMode = .loop
         animamationView.play()
     }
+}
+
+extension SignUpViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 3
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if component == 0 {
+            return pickerMonth.count//month
+        }else if component == 1 {
+            return pickerDay.count//day
+        }else {
+            return pickYears.count//year
+        }
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+
+        ageTextField.text = pickerMonth[pickerView.selectedRow(inComponent:0)]
+            + " / " +
+            pickerDay[pickerView.selectedRow(inComponent:1)]
+            + " / " +
+            pickYears[pickerView.selectedRow(inComponent:2)]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        if component == 0 {
+            return pickerMonth[row]
+        }else if component == 1 {
+            return pickerDay[row]
+        }else {
+            return pickYears[row]
+        }
+    }
+    
+    func datePickerComponents() {
+        pickerMonth = formatter.shortMonthSymbols
+        pickerDay = days
+        pickYears = years
+    }
+
 }

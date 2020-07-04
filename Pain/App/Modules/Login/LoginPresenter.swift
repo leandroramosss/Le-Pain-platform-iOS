@@ -45,6 +45,16 @@ class LoginPresenter: ViewToLoginPresenterProtocol {
             }
         }
     }
+    
+    func getUserEmail() -> String {
+        (interactor?.getUserEmail())!
+    }
+    
+    func setUserEmail(email: String) {
+        interactor?.setUserEmail(email: email)
+    }
+
+    
 }
 
 extension LoginPresenter: InteractorToLoginPresenterProtocol {

@@ -17,6 +17,7 @@ class SignUpPresenter: ViewToSignUpPresenterProtocol {
     var router: PresenterToSignUpRouterProtocol?
     
     let networking = Networking()
+    let forgotAnimatedAlert = AnimatedForgotCredencialsAlertServices()
     
     func createUser(email: String, passWord: String) {
         Auth.auth().createUser(withEmail: email, password: passWord) { result, error in

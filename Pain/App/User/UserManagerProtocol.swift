@@ -14,4 +14,7 @@ protocol UserManagerProtocol {
     func getUsername() -> String
     func setUsername(username: String)
     
+    func getUserEmail() -> String
+    func setUserEmail(email: String)
+    
 }
