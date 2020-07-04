@@ -15,11 +15,12 @@ class MainPageViewController: UIViewController {
     var manager = UserManager()
     
     let frame = CGRect()
+    let transition = CircularTransition()
     
     lazy var profileView: ProfileImageView = {
         let view = ProfileImageView(frame: frame)
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleProfileViewTapped))
-        view.backgroundColor = .red
+        view.backgroundColor = .white
         view.addGestureRecognizer(tap)
         return view
     }()
@@ -100,9 +101,31 @@ extension MainPageViewController: ViewLayoutProtocol {
     
     @objc func handleProfileViewTapped(_ sender: UITapGestureRecognizer? = nil) {
         print("tapped")
+        let viewController = ProfileRouter.createModule()
+        viewController.transitioningDelegate = self
+        viewController.modalPresentationStyle = .fullScreen
+        navigationController?.present(viewController, animated: true, completion: nil)
 //        if let vc = UIStoryboard(name: "ProfileStoryboard", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController {
 //            vc.modalPresentationStyle = .overCurrentContext
 //            self.present(vc, animated: false, completion: nil)
 //        }
     }
+}
+
+extension MainPageViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .present
+        transition.startingPoint = profileView.center
+        transition.circleColor = profileView.backgroundColor!
+        return transition
+    }
+
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .dismiss
+        transition.startingPoint = profileView.center
+        transition.circleColor = profileView.backgroundColor!
+        return transition
+    }
+        
 }

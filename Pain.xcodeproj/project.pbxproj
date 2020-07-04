@@ -15,6 +15,7 @@
 		52191ED124A9130700320F2F /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52191ED024A9130700320F2F /* ProfileInteractor.swift */; };
 		52191ED324A913C000320F2F /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52191ED224A913C000320F2F /* ProfileRouter.swift */; };
 		52191ED524A915B200320F2F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52191ED424A915B200320F2F /* ProfileViewController.swift */; };
+		521C9E4F24B104920057D3F4 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521C9E4E24B104920057D3F4 /* CircularTransition.swift */; };
 		524E27AB249C360B00CE1C26 /* SendEmailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E27AA249C360B00CE1C26 /* SendEmailProtocols.swift */; };
 		524E27B0249C3A2300CE1C26 /* sendEmail.json in Resources */ = {isa = PBXBuildFile; fileRef = 524E27AF249C3A2300CE1C26 /* sendEmail.json */; };
 		524E27B2249C3AD200CE1C26 /* SendEmailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E27B1249C3AD200CE1C26 /* SendEmailPresenter.swift */; };
@@ -108,6 +109,7 @@
 		52191ED024A9130700320F2F /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
 		52191ED224A913C000320F2F /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 		52191ED424A915B200320F2F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		521C9E4E24B104920057D3F4 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
 		524E27AA249C360B00CE1C26 /* SendEmailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailProtocols.swift; sourceTree = "<group>"; };
 		524E27AF249C3A2300CE1C26 /* sendEmail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sendEmail.json; sourceTree = "<group>"; };
 		524E27B1249C3AD200CE1C26 /* SendEmailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailPresenter.swift; sourceTree = "<group>"; };
@@ -235,6 +237,22 @@
 				52B5BA4B24A917D400A7865C /* ProfileStoryboard.storyboard */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		521C9E5024B109750057D3F4 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				521C9E5124B109860057D3F4 /* CircularTransition */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
+		521C9E5124B109860057D3F4 /* CircularTransition */ = {
+			isa = PBXGroup;
+			children = (
+				521C9E4E24B104920057D3F4 /* CircularTransition.swift */,
+			);
+			path = CircularTransition;
 			sourceTree = "<group>";
 		};
 		524E27A9249C35C100CE1C26 /* SendEmailAlert */ = {
@@ -378,6 +396,7 @@
 		52B09BDA2495016100CE695E /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				521C9E5024B109750057D3F4 /* Transition */,
 				52CC031524B0B75A00F4FDB8 /* ProfileAnimated */,
 				52500F03249FB16600A19F6A /* TextField */,
 				52A47959249EE93F009BBA1E /* NavigationBarAppearance */,
@@ -762,6 +781,7 @@
 				52191ECF24A9123400320F2F /* ProfilePresenter.swift in Sources */,
 				529A1C3E247C0D4400CA723B /* MainPageViewController.swift in Sources */,
 				52EE96672491AC8B00527E22 /* Utils.swift in Sources */,
+				521C9E4F24B104920057D3F4 /* CircularTransition.swift in Sources */,
 				52B09BE32495076800CE695E /* AnimateAlerRouter.swift in Sources */,
 				529A1C44247C262800CA723B /* ViewLayoutProtocol.swift in Sources */,
 				529A1C21247BF24C00CA723B /* LoginPresenter.swift in Sources */,
