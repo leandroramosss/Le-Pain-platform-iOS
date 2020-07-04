@@ -78,6 +78,7 @@
 		52C38070247BECD300D7972A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C3806F247BECD300D7972A /* Assets.xcassets */; };
 		52C38073247BECD300D7972A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C38071247BECD300D7972A /* LaunchScreen.storyboard */; };
 		52C3807E247BECD300D7972A /* PainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3807D247BECD300D7972A /* PainTests.swift */; };
+		52CC031724B0B79400F4FDB8 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC031624B0B79400F4FDB8 /* ProfileImageView.swift */; };
 		52E941C324A8F85500E32D6E /* emptyProfileAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 52E941C224A8F85500E32D6E /* emptyProfileAnimation.json */; };
 		52EB46C024A2DCA40028B14D /* UserManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB46BF24A2DCA40028B14D /* UserManagerProtocol.swift */; };
 		52EE96672491AC8B00527E22 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EE96662491AC8B00527E22 /* Utils.swift */; };
@@ -172,6 +173,7 @@
 		52C38079247BECD300D7972A /* PainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C3807D247BECD300D7972A /* PainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainTests.swift; sourceTree = "<group>"; };
 		52C3807F247BECD300D7972A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52CC031624B0B79400F4FDB8 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		52E941C224A8F85500E32D6E /* emptyProfileAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emptyProfileAnimation.json; sourceTree = "<group>"; };
 		52EB46BF24A2DCA40028B14D /* UserManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagerProtocol.swift; sourceTree = "<group>"; };
 		52EE96662491AC8B00527E22 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 		52B09BDA2495016100CE695E /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				52CC031524B0B75A00F4FDB8 /* Profile */,
 				52500F03249FB16600A19F6A /* TextField */,
 				52A47959249EE93F009BBA1E /* NavigationBarAppearance */,
 				524E390E2495B6790086AD5C /* Loader */,
@@ -490,6 +493,14 @@
 				529A1C28247BF51100CA723B /* Login */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		52CC031524B0B75A00F4FDB8 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				52CC031624B0B79400F4FDB8 /* ProfileImageView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		52EE9675249320D500527E22 /* Json */ = {
@@ -727,6 +738,7 @@
 				527767C42499A05300ADC23B /* RecoveryPasswordInteractor.swift in Sources */,
 				524E39122495BA520086AD5C /* LoaderPresenter.swift in Sources */,
 				524E390C2495A3330086AD5C /* AnimatedForgotCredencialsAlertServices.swift in Sources */,
+				52CC031724B0B79400F4FDB8 /* ProfileImageView.swift in Sources */,
 				52B18805249FE3760048E646 /* Constants.swift in Sources */,
 				52B09BE1249505DB00CE695E /* AnimatedAlertInteractor.swift in Sources */,
 				52500F02249FB01E00A19F6A /* CustomTextField.swift in Sources */,

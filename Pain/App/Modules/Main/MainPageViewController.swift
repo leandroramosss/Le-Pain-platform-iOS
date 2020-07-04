@@ -14,17 +14,22 @@ class MainPageViewController: UIViewController {
     var presenter: ViewToMainPagePresenterProtocol?
     var manager = UserManager()
     
-    lazy var customNavigationBar: UINavigationBar = {
-        let bar = UINavigationBar()
-        return bar
-    }()
+    let frame = CGRect()
+        
+//    lazy var profileView: AnimationView = {
+//        let image = AnimationView()
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(handleProfileViewTapped))
+//        image.addGestureRecognizer(tap)
+//        return image
+//    }()
     
-    lazy var profileView: AnimationView = {
-        let image = AnimationView()
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleProfileViewTapped))
-        image.addGestureRecognizer(tap)
-        image.animation = Animation.named("emptyProfileAnimation")
-        return image
+    lazy var profileView: ProfileImageView = {
+        let view = ProfileImageView(frame: frame)
+        view.backgroundColor = .white
+        view.contentMode = .scaleAspectFit
+        view.animation = Animation.named("emptyProfileAnimation")
+        view.play()
+        return view
     }()
     
     lazy var welcomeLabel: UILabel = {
@@ -68,6 +73,7 @@ extension MainPageViewController: ViewLayoutProtocol {
     func viewHierarchy() {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
+        contentView.addSubview(profileView)
 //        view.addSubview(welcomeLabel)
 //        view.addSubview(customNavigationBar)
 //        customNavigationBar.addSubview(profileView)
@@ -85,7 +91,7 @@ extension MainPageViewController: ViewLayoutProtocol {
             maker.height.equalTo(1500)
             maker.width.equalTo(self.scrollView)
         }
-        
+                
 //        customNavigationBar.snp.makeConstraints { (maker) in
 //            maker.top.equalToSuperview()
 //            maker.width.equalToSuperview()
@@ -107,16 +113,14 @@ extension MainPageViewController: ViewLayoutProtocol {
 //        }
     }
     
-    func startAnimation() {
-        profileView.play()
-        profileView.contentMode = .scaleAspectFit
-    }
     
     func setUpNavigation() {
         title = "Main page title"
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 31, weight: UIFont.Weight.bold) ]
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 31, weight: UIFont.Weight.bold)]
+        profileView.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: profileView)
 
     }
     
@@ -125,7 +129,7 @@ extension MainPageViewController: ViewLayoutProtocol {
         welcomeLabel.text = "Welcome, \(username)"
     }
     
-    @objc func handleProfileViewTapped(_ sender: UITapGestureRecognizer? = nil) {        
+    @objc func handleProfileViewTapped(_ sender: UITapGestureRecognizer? = nil) {
         if let vc = UIStoryboard(name: "ProfileStoryboard", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController {
                     vc.modalPresentationStyle = .overCurrentContext
                     self.present(vc, animated: false, completion: nil)
