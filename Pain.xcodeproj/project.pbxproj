@@ -369,7 +369,7 @@
 		52B09BDA2495016100CE695E /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				52CC031524B0B75A00F4FDB8 /* Profile */,
+				52CC031524B0B75A00F4FDB8 /* ProfileAnimated */,
 				52500F03249FB16600A19F6A /* TextField */,
 				52A47959249EE93F009BBA1E /* NavigationBarAppearance */,
 				524E390E2495B6790086AD5C /* Loader */,
@@ -495,12 +495,12 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		52CC031524B0B75A00F4FDB8 /* Profile */ = {
+		52CC031524B0B75A00F4FDB8 /* ProfileAnimated */ = {
 			isa = PBXGroup;
 			children = (
 				52CC031624B0B79400F4FDB8 /* ProfileImageView.swift */,
 			);
-			path = Profile;
+			path = ProfileAnimated;
 			sourceTree = "<group>";
 		};
 		52EE9675249320D500527E22 /* Json */ = {

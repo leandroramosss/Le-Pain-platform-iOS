@@ -15,20 +15,11 @@ class MainPageViewController: UIViewController {
     var manager = UserManager()
     
     let frame = CGRect()
-        
-//    lazy var profileView: AnimationView = {
-//        let image = AnimationView()
-//        let tap = UITapGestureRecognizer(target: self, action: #selector(handleProfileViewTapped))
-//        image.addGestureRecognizer(tap)
-//        return image
-//    }()
     
     lazy var profileView: ProfileImageView = {
         let view = ProfileImageView(frame: frame)
-        view.backgroundColor = .white
-        view.contentMode = .scaleAspectFit
-        view.animation = Animation.named("emptyProfileAnimation")
-        view.play()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleProfileViewTapped))
+        view.addGestureRecognizer(tap)
         return view
     }()
     
@@ -48,7 +39,7 @@ class MainPageViewController: UIViewController {
         view.backgroundColor = .gray
         return view
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLayout()
@@ -74,10 +65,6 @@ extension MainPageViewController: ViewLayoutProtocol {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubview(profileView)
-//        view.addSubview(welcomeLabel)
-//        view.addSubview(customNavigationBar)
-//        customNavigationBar.addSubview(profileView)
-//        customNavigationBar.backgroundColor = UIColor.white
     }
     
     func setupConstranits() {
@@ -91,26 +78,7 @@ extension MainPageViewController: ViewLayoutProtocol {
             maker.height.equalTo(1500)
             maker.width.equalTo(self.scrollView)
         }
-                
-//        customNavigationBar.snp.makeConstraints { (maker) in
-//            maker.top.equalToSuperview()
-//            maker.width.equalToSuperview()
-//            maker.height.equalTo(120)
-//        }
-//
-//        profileView.snp.makeConstraints { (maker) in
-//            maker.top.equalTo(view.safeAreaLayoutGuide).offset(10)
-//            maker.bottom.equalTo(customNavigationBar.snp.bottom).offset(-10)
-//            maker.leading.equalTo(customNavigationBar.snp.leading).offset(10)
-//            maker.width.equalTo(100)
-//        }
-//
-//        welcomeLabel.snp.makeConstraints { (maker) in
-//            maker.center.equalToSuperview()
-//            maker.width.equalToSuperview().inset(16)
-//            maker.height.equalTo(30)
-//            maker.width.equalTo(50)
-//        }
+        
     }
     
     
@@ -121,7 +89,7 @@ extension MainPageViewController: ViewLayoutProtocol {
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 31, weight: UIFont.Weight.bold)]
         profileView.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: profileView)
-
+        
     }
     
     func setUpWelcomeLabel() {
@@ -130,11 +98,10 @@ extension MainPageViewController: ViewLayoutProtocol {
     }
     
     @objc func handleProfileViewTapped(_ sender: UITapGestureRecognizer? = nil) {
-        if let vc = UIStoryboard(name: "ProfileStoryboard", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController {
-                    vc.modalPresentationStyle = .overCurrentContext
-                    self.present(vc, animated: false, completion: nil)
-                }
-        
+        print("tapped")
+//        if let vc = UIStoryboard(name: "ProfileStoryboard", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController {
+//            vc.modalPresentationStyle = .overCurrentContext
+//            self.present(vc, animated: false, completion: nil)
+//        }
     }
-    
 }
