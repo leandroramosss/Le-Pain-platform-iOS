@@ -9,7 +9,7 @@
 import UIKit
 import Lottie
 
-class MainPageViewController: UINavigationController {
+class MainPageViewController: UIViewController {
     
     var presenter: ViewToMainPagePresenterProtocol?
     var manager = UserManager()
@@ -36,7 +36,7 @@ class MainPageViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLayout()
-        view.backgroundColor = .black
+        view.backgroundColor = .white
     }
     
 }
@@ -90,14 +90,13 @@ extension MainPageViewController: ViewLayoutProtocol {
     }
     
     func setUpNavigation() {
-        title = "Main Page Title"
-        let navBarAppearance = UINavigationBar.appearance()
-        navBarAppearance.barTintColor = .red
-        navBarAppearance.tintColor = .white
-        navBarAppearance.titleTextAttributes = [
-                NSAttributedString.Key.foregroundColor: UIColor.white,
-                NSAttributedString.Key.font: UIFont(name: "Avenir", size: 20)!]
-            }
+        title = "Main page title"
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        if let navController = navigationController {
+            System.navigationBarWhite(forBar: navigationController!.navigationBar)
+            navController.view.backgroundColor = .blue
+        }
+    }
     
     func setUpWelcomeLabel() {
         let username = manager.getUsername()

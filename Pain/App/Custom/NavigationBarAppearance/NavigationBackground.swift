@@ -23,8 +23,7 @@ struct System {
         let appearance = UINavigationBarAppearance()
         appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
-        appearance.backgroundColor = UIColor.systemBackground
-        navBar.isTranslucent = false
+        appearance.backgroundColor = UIColor.black
     }
 
 }
