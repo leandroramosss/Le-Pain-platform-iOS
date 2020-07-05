@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol PresenterToProfileProtocol: class {
-    
+    func didEndRequestSuccesfully()
 }
 
 protocol InteractorToProfilePresenterProtocol: class {
@@ -30,4 +30,6 @@ protocol ViewToProfilePresenterProtocol: class {
     var view: PresenterToProfileProtocol? { get set }
     var interactor: PresenterToProfileInteractorProtocol? { get set }
     var router: PresenterToProfileRouterProtocol? { get set }
+    
+    func signOutUser() 
 }

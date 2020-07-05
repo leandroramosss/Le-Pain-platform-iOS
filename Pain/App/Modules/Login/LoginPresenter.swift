@@ -18,6 +18,18 @@ class LoginPresenter: ViewToLoginPresenterProtocol {
     
     let networking = Networking()
     var forgotAnimatedAlert = AnimatedForgotCredencialsAlertServices()
+        
+    func getUserEmail() -> String {
+        (interactor?.getUserEmail())!
+    }
+    
+    func setUserEmail(email: String) {
+        interactor?.setUserEmail(email: email)
+    }
+    
+}
+
+extension LoginPresenter: InteractorToLoginPresenterProtocol {
     
     func signInUser(user email: String, user password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
@@ -45,18 +57,4 @@ class LoginPresenter: ViewToLoginPresenterProtocol {
             }
         }
     }
-    
-    func getUserEmail() -> String {
-        (interactor?.getUserEmail())!
-    }
-    
-    func setUserEmail(email: String) {
-        interactor?.setUserEmail(email: email)
-    }
-
-    
-}
-
-extension LoginPresenter: InteractorToLoginPresenterProtocol {
-    
 }

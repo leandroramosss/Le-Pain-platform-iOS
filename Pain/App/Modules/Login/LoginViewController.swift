@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     
     var presenter: ViewToLoginPresenterProtocol?
     var animationView = AnimationView()
+    let transition = CircularTransition()
     
     lazy var backgroundView: UIImageView = {
         let view = UIImageView()

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 import UIKit
 
 class ProfilePresenter: ViewToProfilePresenterProtocol {
@@ -18,4 +19,14 @@ class ProfilePresenter: ViewToProfilePresenterProtocol {
 
 extension ProfilePresenter: InteractorToProfilePresenterProtocol {
     
+    func signOutUser() {
+        
+        do {
+            try Auth.auth().signOut()
+            self.view?.didEndRequestSuccesfully()
+        } catch let error {
+            print("Error trying to sign out of Firebase: \(error.localizedDescription)")
+        }
+    }
+
 }
