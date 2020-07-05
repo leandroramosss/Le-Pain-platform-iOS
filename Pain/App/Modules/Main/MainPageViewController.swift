@@ -71,7 +71,8 @@ extension MainPageViewController: ViewLayoutProtocol {
     
     func setupConstranits() {
         scrollView.snp.makeConstraints { (maker) in
-            maker.top.bottom.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            maker.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            maker.bottom.equalToSuperview()
         }
         
         contentView.snp.makeConstraints { (maker) in
@@ -103,12 +104,8 @@ extension MainPageViewController: ViewLayoutProtocol {
         print("tapped")
         let viewController = ProfileRouter.createModule()
         viewController.transitioningDelegate = self
-        viewController.modalPresentationStyle = .fullScreen
+        viewController.modalPresentationStyle = .custom
         navigationController?.present(viewController, animated: true, completion: nil)
-//        if let vc = UIStoryboard(name: "ProfileStoryboard", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController {
-//            vc.modalPresentationStyle = .overCurrentContext
-//            self.present(vc, animated: false, completion: nil)
-//        }
     }
 }
 
