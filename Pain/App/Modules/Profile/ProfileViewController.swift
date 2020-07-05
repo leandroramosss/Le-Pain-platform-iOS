@@ -23,6 +23,11 @@ class ProfileViewController: UIViewController {
         return view
     }()
     
+    lazy var nameTextField: CustomLinedTextField = {
+        let textfield = CustomLinedTextField()
+        return textfield
+    }()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setUpLayout()
@@ -33,6 +38,7 @@ class ProfileViewController: UIViewController {
         view.backgroundColor = .white
         setUpLayout()
     }
+    
 }
 
 extension ProfileViewController: PresenterToProfileProtocol {
@@ -43,24 +49,27 @@ extension ProfileViewController: ViewLayoutProtocol, UIViewControllerTransitioni
     func setUpLayout() {
         viewHierarchy()
         setupConstranits()
-        setUpNavigation()
     }
     
     func viewHierarchy() {
         view.addSubview(profileView)
+        view.addSubview(nameTextField)
     }
     
     func setupConstranits() {
         profileView.snp.makeConstraints { (maker) in
-            maker.top.equalToSuperview().offset(50)
+            maker.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(5)
             maker.leading.equalToSuperview().offset(20)
         }
+        
+        nameTextField.snp.makeConstraints { (maker) in
+            maker.top.equalTo(profileView.snp.bottom).offset(30)
+            maker.width.equalToSuperview().inset(20)
+            maker.height.equalTo(40)
+            maker.centerX.equalToSuperview()
+        }
     }
-    
-    func setUpNavigation() {
-//        navigationController?.setNavigationBarHidden(false, animated: true)
-    }
-    
+        
     @objc func handleProfileViewTapped() {
         print("touthed")
         let viewController = MainPageRouter.createModule()

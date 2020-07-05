@@ -27,7 +27,8 @@ class MainPageViewController: UIViewController {
     
     lazy var welcomeLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.systemBackground
+        label.textColor = UIColor.black
+        label.backgroundColor = .blue
         return label
     }()
     
@@ -87,11 +88,19 @@ extension MainPageViewController: ViewLayoutProtocol {
     
     func setUpNavigation() {
         title = "Main page title"
+//        navigationItem.prompt = "Your prompt text here"
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 31, weight: UIFont.Weight.bold)]
         profileView.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: profileView)
+        
+        let searchController = UISearchController(searchResultsController: nil)// transition resultview example
+        navigationItem.searchController = searchController
+        navigationItem.searchController?.automaticallyShowsCancelButton = true
+        navigationItem.searchController?.automaticallyShowsSearchResultsController = true
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
         
     }
     
