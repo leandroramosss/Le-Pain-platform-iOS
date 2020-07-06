@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02AAAF776EEB3E08B195E147 /* Pods_PainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5801545D593E3001EE24A2ED /* Pods_PainTests.framework */; };
-		3A5D73F94B8427B704C219F1 /* Pods_Pain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5976AA2C6B31AA884F77E5A /* Pods_Pain.framework */; };
 		520C301A24955EC40053C761 /* homeButton.json in Resources */ = {isa = PBXBuildFile; fileRef = 520C301924955EC40053C761 /* homeButton.json */; };
 		5216E1442496A11C00FAF2A0 /* secureField.json in Resources */ = {isa = PBXBuildFile; fileRef = 5216E1432496A11C00FAF2A0 /* secureField.json */; };
-		52191ECA24A905A100320F2F /* emptyProfileAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 52191EC924A905A100320F2F /* emptyProfileAnimation.json */; };
 		52191ECD24A90F5E00320F2F /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52191ECC24A90F5E00320F2F /* ProfileProtocols.swift */; };
 		52191ECF24A9123400320F2F /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52191ECE24A9123400320F2F /* ProfilePresenter.swift */; };
 		52191ED124A9130700320F2F /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52191ED024A9130700320F2F /* ProfileInteractor.swift */; };
@@ -42,6 +39,7 @@
 		527767C62499A0DA00ADC23B /* RecoveryPasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527767C52499A0DA00ADC23B /* RecoveryPasswordRouter.swift */; };
 		527767C82499A45300ADC23B /* RecoveryPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527767C72499A45300ADC23B /* RecoveryPasswordViewController.swift */; };
 		527767CA2499AB7D00ADC23B /* RecoveryPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527767C92499AB7D00ADC23B /* RecoveryPassword.storyboard */; };
+		5288DC3F24B2AE27005E77DF /* emptyProfileAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 5288DC3E24B2AE27005E77DF /* emptyProfileAnimation.json */; };
 		529A1C1F247BF09D00CA723B /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529A1C1E247BF09D00CA723B /* LoginProtocols.swift */; };
 		529A1C21247BF24C00CA723B /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529A1C20247BF24C00CA723B /* LoginPresenter.swift */; };
 		529A1C23247BF2DF00CA723B /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529A1C22247BF2DF00CA723B /* LoginInteractor.swift */; };
@@ -82,10 +80,11 @@
 		52C38073247BECD300D7972A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C38071247BECD300D7972A /* LaunchScreen.storyboard */; };
 		52C3807E247BECD300D7972A /* PainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3807D247BECD300D7972A /* PainTests.swift */; };
 		52CC031724B0B79400F4FDB8 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC031624B0B79400F4FDB8 /* ProfileImageView.swift */; };
-		52E941C324A8F85500E32D6E /* emptyProfileAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 52E941C224A8F85500E32D6E /* emptyProfileAnimation.json */; };
 		52EB46C024A2DCA40028B14D /* UserManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB46BF24A2DCA40028B14D /* UserManagerProtocol.swift */; };
 		52EE96672491AC8B00527E22 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EE96662491AC8B00527E22 /* Utils.swift */; };
 		52EE9677249320EF00527E22 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 52EE9676249320EF00527E22 /* loading.json */; };
+		5D102943152E41A01F83BAA4 /* Pods_Pain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4674E91EBF9EE6D73BA7D6FA /* Pods_Pain.framework */; };
+		8AB77D2C8760299E6999D08D /* Pods_PainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAEF2F009B6D7AF02FCF8BAD /* Pods_PainTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,11 +98,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		07908BD253AB2B13DB5590D6 /* Pods-PainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PainTests.debug.xcconfig"; path = "Target Support Files/Pods-PainTests/Pods-PainTests.debug.xcconfig"; sourceTree = "<group>"; };
-		24A0470B31C664319CC7C1CB /* Pods-Pain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pain.debug.xcconfig"; path = "Target Support Files/Pods-Pain/Pods-Pain.debug.xcconfig"; sourceTree = "<group>"; };
+		24D16CD7AA508280ADEE2F27 /* Pods-PainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PainTests.debug.xcconfig"; path = "Target Support Files/Pods-PainTests/Pods-PainTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4674E91EBF9EE6D73BA7D6FA /* Pods_Pain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		520C301924955EC40053C761 /* homeButton.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = homeButton.json; sourceTree = "<group>"; };
 		5216E1432496A11C00FAF2A0 /* secureField.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = secureField.json; sourceTree = "<group>"; };
-		52191EC924A905A100320F2F /* emptyProfileAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emptyProfileAnimation.json; sourceTree = "<group>"; };
 		52191ECC24A90F5E00320F2F /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
 		52191ECE24A9123400320F2F /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		52191ED024A9130700320F2F /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
@@ -134,6 +132,7 @@
 		527767C52499A0DA00ADC23B /* RecoveryPasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordRouter.swift; sourceTree = "<group>"; };
 		527767C72499A45300ADC23B /* RecoveryPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordViewController.swift; sourceTree = "<group>"; };
 		527767C92499AB7D00ADC23B /* RecoveryPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecoveryPassword.storyboard; sourceTree = "<group>"; };
+		5288DC3E24B2AE27005E77DF /* emptyProfileAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emptyProfileAnimation.json; sourceTree = "<group>"; };
 		529A1C1E247BF09D00CA723B /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		529A1C20247BF24C00CA723B /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		529A1C22247BF2DF00CA723B /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
@@ -178,14 +177,13 @@
 		52C3807D247BECD300D7972A /* PainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainTests.swift; sourceTree = "<group>"; };
 		52C3807F247BECD300D7972A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52CC031624B0B79400F4FDB8 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
-		52E941C224A8F85500E32D6E /* emptyProfileAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emptyProfileAnimation.json; sourceTree = "<group>"; };
 		52EB46BF24A2DCA40028B14D /* UserManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagerProtocol.swift; sourceTree = "<group>"; };
 		52EE96662491AC8B00527E22 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		52EE9676249320EF00527E22 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
-		5801545D593E3001EE24A2ED /* Pods_PainTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PainTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		911A3CA5ABF239746DD69E79 /* Pods-Pain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pain.release.xcconfig"; path = "Target Support Files/Pods-Pain/Pods-Pain.release.xcconfig"; sourceTree = "<group>"; };
-		CE3AE0A3C1B1FC660D9ACC21 /* Pods-PainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PainTests.release.xcconfig"; path = "Target Support Files/Pods-PainTests/Pods-PainTests.release.xcconfig"; sourceTree = "<group>"; };
-		E5976AA2C6B31AA884F77E5A /* Pods_Pain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C27FC042CC7F3D6EC91CAAF /* Pods-Pain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pain.release.xcconfig"; path = "Target Support Files/Pods-Pain/Pods-Pain.release.xcconfig"; sourceTree = "<group>"; };
+		901AA6C5428193783FA38CE3 /* Pods-PainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PainTests.release.xcconfig"; path = "Target Support Files/Pods-PainTests/Pods-PainTests.release.xcconfig"; sourceTree = "<group>"; };
+		BAEF2F009B6D7AF02FCF8BAD /* Pods_PainTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PainTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1B1E393AEC084786BD4D7CA /* Pods-Pain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pain.debug.xcconfig"; path = "Target Support Files/Pods-Pain/Pods-Pain.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +191,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A5D73F94B8427B704C219F1 /* Pods_Pain.framework in Frameworks */,
+				5D102943152E41A01F83BAA4 /* Pods_Pain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,18 +199,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02AAAF776EEB3E08B195E147 /* Pods_PainTests.framework in Frameworks */,
+				8AB77D2C8760299E6999D08D /* Pods_PainTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1CDE7611C7FFDD42CD625E0B /* Frameworks */ = {
+		15ABDE83970FEFD8F02973CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E5976AA2C6B31AA884F77E5A /* Pods_Pain.framework */,
-				5801545D593E3001EE24A2ED /* Pods_PainTests.framework */,
+				4674E91EBF9EE6D73BA7D6FA /* Pods_Pain.framework */,
+				BAEF2F009B6D7AF02FCF8BAD /* Pods_PainTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -220,10 +218,10 @@
 		2633B03C6713124AF7CAB577 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				24A0470B31C664319CC7C1CB /* Pods-Pain.debug.xcconfig */,
-				911A3CA5ABF239746DD69E79 /* Pods-Pain.release.xcconfig */,
-				07908BD253AB2B13DB5590D6 /* Pods-PainTests.debug.xcconfig */,
-				CE3AE0A3C1B1FC660D9ACC21 /* Pods-PainTests.release.xcconfig */,
+				E1B1E393AEC084786BD4D7CA /* Pods-Pain.debug.xcconfig */,
+				8C27FC042CC7F3D6EC91CAAF /* Pods-Pain.release.xcconfig */,
+				24D16CD7AA508280ADEE2F27 /* Pods-PainTests.debug.xcconfig */,
+				901AA6C5428193783FA38CE3 /* Pods-PainTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -464,7 +462,7 @@
 				52C3807C247BECD300D7972A /* PainTests */,
 				52C38061247BECD100D7972A /* Products */,
 				2633B03C6713124AF7CAB577 /* Pods */,
-				1CDE7611C7FFDD42CD625E0B /* Frameworks */,
+				15ABDE83970FEFD8F02973CA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -537,8 +535,7 @@
 		52EE9675249320D500527E22 /* Json */ = {
 			isa = PBXGroup;
 			children = (
-				52E941C224A8F85500E32D6E /* emptyProfileAnimation.json */,
-				52191EC924A905A100320F2F /* emptyProfileAnimation.json */,
+				5288DC3E24B2AE27005E77DF /* emptyProfileAnimation.json */,
 				52A4795C249F14C5009BBA1E /* breakfastLogo.json */,
 				524E27AF249C3A2300CE1C26 /* sendEmail.json */,
 				5216E1432496A11C00FAF2A0 /* secureField.json */,
@@ -556,11 +553,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52C38082247BECD300D7972A /* Build configuration list for PBXNativeTarget "Pain" */;
 			buildPhases = (
-				53FFD8A111BD7C697712727A /* [CP] Check Pods Manifest.lock */,
+				C8304454B8C68CAC24F6420F /* [CP] Check Pods Manifest.lock */,
 				52C3805C247BECD100D7972A /* Sources */,
 				52C3805D247BECD100D7972A /* Frameworks */,
 				52C3805E247BECD100D7972A /* Resources */,
-				9E4ACE99E31892C248959271 /* [CP] Embed Pods Frameworks */,
+				CCEFF59EBD1780179271564C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -575,7 +572,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52C38085247BECD300D7972A /* Build configuration list for PBXNativeTarget "PainTests" */;
 			buildPhases = (
-				AF11957FE3A691B2212FB027 /* [CP] Check Pods Manifest.lock */,
+				D540845E4E2FFDA519F90A24 /* [CP] Check Pods Manifest.lock */,
 				52C38075247BECD300D7972A /* Sources */,
 				52C38076247BECD300D7972A /* Frameworks */,
 				52C38077247BECD300D7972A /* Resources */,
@@ -633,7 +630,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52E941C324A8F85500E32D6E /* emptyProfileAnimation.json in Resources */,
 				52774F32247C78DC001EAB2A /* MainPage.storyboard in Resources */,
 				52A2112C24951A2400E9DADC /* ForgotCredencialsAnimatedAlert.storyboard in Resources */,
 				52C38073247BECD300D7972A /* LaunchScreen.storyboard in Resources */,
@@ -644,7 +640,7 @@
 				527767CA2499AB7D00ADC23B /* RecoveryPassword.storyboard in Resources */,
 				529A1C48247C2F5500CA723B /* GoogleService-Info.plist in Resources */,
 				524E27B0249C3A2300CE1C26 /* sendEmail.json in Resources */,
-				52191ECA24A905A100320F2F /* emptyProfileAnimation.json in Resources */,
+				5288DC3F24B2AE27005E77DF /* emptyProfileAnimation.json in Resources */,
 				520C301A24955EC40053C761 /* homeButton.json in Resources */,
 				5250B002249D7E9400B210CD /* SendEmailAlert.storyboard in Resources */,
 				52EE9677249320EF00527E22 /* loading.json in Resources */,
@@ -665,7 +661,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		53FFD8A111BD7C697712727A /* [CP] Check Pods Manifest.lock */ = {
+		C8304454B8C68CAC24F6420F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -687,7 +683,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9E4ACE99E31892C248959271 /* [CP] Embed Pods Frameworks */ = {
+		CCEFF59EBD1780179271564C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -704,7 +700,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pain/Pods-Pain-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AF11957FE3A691B2212FB027 /* [CP] Check Pods Manifest.lock */ = {
+		D540845E4E2FFDA519F90A24 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -947,7 +943,7 @@
 		};
 		52C38083247BECD300D7972A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24A0470B31C664319CC7C1CB /* Pods-Pain.debug.xcconfig */;
+			baseConfigurationReference = E1B1E393AEC084786BD4D7CA /* Pods-Pain.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -967,7 +963,7 @@
 		};
 		52C38084247BECD300D7972A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 911A3CA5ABF239746DD69E79 /* Pods-Pain.release.xcconfig */;
+			baseConfigurationReference = 8C27FC042CC7F3D6EC91CAAF /* Pods-Pain.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -987,7 +983,7 @@
 		};
 		52C38086247BECD300D7972A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 07908BD253AB2B13DB5590D6 /* Pods-PainTests.debug.xcconfig */;
+			baseConfigurationReference = 24D16CD7AA508280ADEE2F27 /* Pods-PainTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1010,7 +1006,7 @@
 		};
 		52C38087247BECD300D7972A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE3AE0A3C1B1FC660D9ACC21 /* Pods-PainTests.release.xcconfig */;
+			baseConfigurationReference = 901AA6C5428193783FA38CE3 /* Pods-PainTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

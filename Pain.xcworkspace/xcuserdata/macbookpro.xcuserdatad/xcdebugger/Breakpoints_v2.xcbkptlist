@@ -46,8 +46,8 @@
             filePath = "Pain/App/Modules/Profile/ProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "didTapSignout()"
             landmarkType = "7">
             <Locations>
@@ -94,10 +94,10 @@
             filePath = "Pain/App/Modules/Profile/ProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "didEndRequestSuccesfully()"
-            landmarkType = "7">
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "ProfileViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -110,8 +110,8 @@
             filePath = "Pain/App/Modules/Profile/ProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "didTapSignout()"
             landmarkType = "7">
          </BreakpointContent>

@@ -36,13 +36,24 @@ class ProfileViewController: UIViewController {
 
     lazy var logoutButton: UIButton = {
         let button = UIButton()
+        button.layer.borderWidth = 0.5
+        button.layer.borderColor = UIColor.black.cgColor
         button.setTitle("logout", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(didTapSignout), for: .touchUpInside)
         return button
     }()
     
-    lazy var nameTextField: CustomLinedTextField = {
+    lazy var profilePicture: UIButton = {
+        let button = UIButton()
+        button.layer.borderWidth = 0.5
+        button.layer.borderColor = UIColor.black.cgColor
+        button.setTitle("profile picture", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        return button
+    }()
+    
+    lazy var emailTextField: CustomLinedTextField = {
         let textfield = CustomLinedTextField()
         textfield.text = manager.getUserEmail()
         return textfield
@@ -92,8 +103,9 @@ extension ProfileViewController: ViewLayoutProtocol, UIViewControllerTransitioni
     func viewHierarchy() {
         view.addSubview(profileView)
         view.addSubview(profileTitle)
-        view.addSubview(nameTextField)
+        view.addSubview(emailTextField)
         view.addSubview(logoutButton)
+        view.addSubview(profilePicture)
     }
     
     func setupConstranits() {
@@ -110,13 +122,21 @@ extension ProfileViewController: ViewLayoutProtocol, UIViewControllerTransitioni
         }
         
         logoutButton.snp.makeConstraints { (maker) in
-            maker.top.equalTo(profileTitle.snp.bottom).offset(10)
+            maker.top.equalTo(profileTitle.snp.bottom).offset(20)
+            maker.leading.equalToSuperview().offset(10)
             maker.height.equalTo(40)
             maker.width.equalTo(100)
         }
         
-        nameTextField.snp.makeConstraints { (maker) in
-            maker.top.equalTo(profileView.snp.bottom).offset(30)
+        profilePicture.snp.makeConstraints { (maker) in
+            maker.top.equalTo(logoutButton.snp.bottom).offset(10)
+            maker.leading.equalToSuperview().offset(10)
+            maker.width.equalTo(150)
+            maker.height.equalTo(40)
+        }
+        
+        emailTextField.snp.makeConstraints { (maker) in
+            maker.top.equalTo(profilePicture.snp.bottom).offset(30)
             maker.width.equalToSuperview().inset(20)
             maker.height.equalTo(40)
             maker.centerX.equalToSuperview()

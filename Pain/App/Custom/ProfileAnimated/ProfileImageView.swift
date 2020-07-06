@@ -35,10 +35,14 @@ class ProfileImageView: AnimationView {
     func startAnimation() {
         self.animation = Animation.named("emptyProfileAnimation")
         self.contentMode = .scaleAspectFit
+        self.animationSpeed = 0.9
         self.play()
+        self.loopMode = .loop
     }
     
     func setUpLayout() {
+        self.layer.borderWidth = 0.5
+        self.layer.borderColor = UIColor.black.cgColor
         self.layer.cornerRadius = 20
         self.clipsToBounds = true
     }
