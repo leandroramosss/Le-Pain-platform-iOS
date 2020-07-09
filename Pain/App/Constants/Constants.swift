@@ -12,5 +12,6 @@ struct Constants {
     
     static let USERNAME = "userName"
     static let USEREMAIL = "user_email"
+    static let PROFILE_PICTURE = "user_profile"
     
 }

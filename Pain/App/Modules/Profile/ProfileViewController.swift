@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController {
     let manager = UserManager()
     var animationView = AnimationView()
     var imagePicker = UIImagePickerController()
+    var profilePictureWasPressed: Bool = false
     
     lazy var scrollView: UIScrollView = {
         let scroll = UIScrollView()
@@ -35,6 +36,11 @@ class ProfileViewController: UIViewController {
         view.backgroundColor = .white
         view.addGestureRecognizer(tap)
         return view
+    }()
+    
+    lazy var userPhotoView: ProfilePhoto = {
+        let photo = ProfilePhoto(frame: frame)
+        return photo
     }()
     
     lazy var profileTitle: UILabel = {
@@ -73,6 +79,7 @@ class ProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        userPhotoView.isHidden = true
         setUpLayout()
     }
 
@@ -106,7 +113,7 @@ extension ProfileViewController: PresenterToProfileProtocol {
     
 }
 
-extension ProfileViewController: ViewLayoutProtocol, UIViewControllerTransitioningDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension ProfileViewController: ViewLayoutProtocol, UIViewControllerTransitioningDelegate {
     func setUpLayout() {
         viewHierarchy()
         setupConstranits()
@@ -120,6 +127,7 @@ extension ProfileViewController: ViewLayoutProtocol, UIViewControllerTransitioni
         contentView.addSubview(emailTextField)
         contentView.addSubview(logoutButton)
         contentView.addSubview(profilePicture)
+        contentView.addSubview(userPhotoView)
     }
     
     func setupConstranits() {
@@ -166,6 +174,15 @@ extension ProfileViewController: ViewLayoutProtocol, UIViewControllerTransitioni
             maker.height.equalTo(40)
             maker.centerX.equalToSuperview()
         }
+        
+        userPhotoView.snp.makeConstraints { (maker) in
+//            maker.top.equalTo(emailTextField.snp.bottom).offset(10)
+//            maker.centerX.equalTo(contentView)
+//            maker.height.width.equalTo(100)
+            maker.top.equalTo(contentView.snp.top).offset(4)
+            maker.leading.equalTo(contentView.snp.leading).offset(17)
+
+        }
     }
             
     @objc func handleProfileViewTapped() {
@@ -201,18 +218,11 @@ extension ProfileViewController: ViewLayoutProtocol, UIViewControllerTransitioni
     }
     
     @objc func profilePictureButtonTapped() {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            imagePicker.delegate = self
-            imagePicker.sourceType = .camera
-            imagePicker.allowsEditing = false
-            present(imagePicker, animated: true, completion: nil)
+        ImagePickerManager().pickImage(self){ [self] image in
+            self.profilePictureWasPressed.toggle()
+            self.presenter?.setUserChoosesPhoto(imageWasChoosen: profilePictureWasPressed)
+            userPhotoView.isHidden = false
+            userPhotoView.image = image
         }
-    }
-    
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
-        self.dismiss(animated: true, completion: { () -> Void in
-
-        })
-        
     }
 }

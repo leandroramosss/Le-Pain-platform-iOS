@@ -7,26 +7,32 @@
 //
 
 import UIKit
+import SnapKit
 
-class ProfilePhoto: UIView {
-    
-    lazy var imageView: UIImage = {
-        let view = UIImage()
-        return view
-    }()
+class ProfilePhoto: UIImageView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpLayout()
+        makeConstraits()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setUpLayout()
+        makeConstraits()
     }
     
     func setUpLayout() {
-        let rounded = self.bounds.width / 2
-        self.layer.cornerRadius = rounded
+        self.backgroundColor = .orange
+        self.layer.cornerRadius = 20
+        self.clipsToBounds = true
     }
+    
+    func makeConstraits() {
+        self.snp.makeConstraints { (maker) in
+            maker.height.width.equalTo(40)
+        }
+    }
+    
 }

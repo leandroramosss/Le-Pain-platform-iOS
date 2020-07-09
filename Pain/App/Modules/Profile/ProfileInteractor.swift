@@ -10,6 +10,17 @@ import Foundation
 import UIKit
 
 class ProfileInteractor: PresenterToProfileInteractorProtocol {
+    
     var presenter: InteractorToProfilePresenterProtocol?
+    var manager = UserManager()
+    
+    func getUserChoosesPhoto() -> Bool {
+        return manager.getUserChoosesPhoto()
+    }
+    
+    func setUserChoosesPhoto(imageWasChoosen: Bool) {
+        manager.setUserChoosesPhoto(imageWasChoosen: imageWasChoosen)
+    }
+
     
 }

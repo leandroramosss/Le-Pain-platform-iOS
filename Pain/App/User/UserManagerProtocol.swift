@@ -17,4 +17,7 @@ protocol UserManagerProtocol {
     func getUserEmail() -> String
     func setUserEmail(email: String)
     
+    func getUserChoosesPhoto() -> Bool
+    func setUserChoosesPhoto(imageWasChoosen: Bool)
+    
 }

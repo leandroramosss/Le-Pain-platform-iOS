@@ -39,54 +39,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B4EC3AD6-D8F5-4140-A083-2AEC692B893F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pain/App/Modules/Profile/ProfileViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
-            landmarkName = "didTapSignout()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B4EC3AD6-D8F5-4140-A083-2AEC692B893F - 31f850f54355e364"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pain.ProfileViewController.didTapSignout() -&gt; ()"
-                  moduleName = "Pain"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro/Desktop/Pain/Pain/App/Modules/Profile/ProfileViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "198"
-                  endingLineNumber = "198"
-                  offsetFromSymbolStart = "1004">
-               </Location>
-               <Location
-                  uuid = "B4EC3AD6-D8F5-4140-A083-2AEC692B893F - 351289760002fc68"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in Pain.ProfileViewController.didTapSignout() -&gt; ()"
-                  moduleName = "Pain"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro/Desktop/Pain/Pain/App/Modules/Profile/ProfileViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "199"
-                  endingLineNumber = "199"
-                  offsetFromSymbolStart = "64">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "D886D687-33DB-4BF0-A3C9-9BB2AF63A1DC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -94,8 +46,8 @@
             filePath = "Pain/App/Modules/Profile/ProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "didEndRequestSuccesfully()"
             landmarkType = "7">
          </BreakpointContent>
@@ -103,16 +55,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "132939AE-FA1B-432D-B4AE-6EFB767F4B27"
+            uuid = "278C71B0-1FC5-4499-B433-236474A0ABED"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pain/App/Modules/Profile/ProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
-            landmarkName = "didTapSignout()"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
+            landmarkName = "profilePictureButtonTapped()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

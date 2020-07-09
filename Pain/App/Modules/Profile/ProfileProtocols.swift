@@ -20,6 +20,10 @@ protocol InteractorToProfilePresenterProtocol: class {
 protocol PresenterToProfileInteractorProtocol: class {
     var presenter: InteractorToProfilePresenterProtocol? { get set }
     
+    func getUserChoosesPhoto() -> Bool
+    func setUserChoosesPhoto(imageWasChoosen: Bool)
+
+    
 }
 
 protocol PresenterToProfileRouterProtocol: class {
@@ -30,6 +34,9 @@ protocol ViewToProfilePresenterProtocol: class {
     var view: PresenterToProfileProtocol? { get set }
     var interactor: PresenterToProfileInteractorProtocol? { get set }
     var router: PresenterToProfileRouterProtocol? { get set }
+    
+    func getUserChoosesPhoto() -> Bool
+    func setUserChoosesPhoto(imageWasChoosen: Bool)
     
     func signOutUser() 
 }

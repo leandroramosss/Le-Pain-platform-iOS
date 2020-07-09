@@ -11,9 +11,18 @@ import Firebase
 import UIKit
 
 class ProfilePresenter: ViewToProfilePresenterProtocol {
+    
     var view: PresenterToProfileProtocol?
     var interactor: PresenterToProfileInteractorProtocol?
     var router: PresenterToProfileRouterProtocol?
+    
+    func getUserChoosesPhoto() -> Bool {
+        return ((interactor?.getUserChoosesPhoto()) != nil)
+    }
+    
+    func setUserChoosesPhoto(imageWasChoosen: Bool) {
+        interactor?.setUserChoosesPhoto(imageWasChoosen: imageWasChoosen)
+    }
     
 }
 

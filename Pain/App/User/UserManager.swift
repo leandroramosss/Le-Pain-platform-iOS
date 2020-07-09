@@ -31,4 +31,13 @@ class UserManager: UserManagerProtocol {
     func setUserEmail(email: String) {
         UserDefaults.standard.set(email, forKey: Constants.USEREMAIL)
     }
+    
+    func getUserChoosesPhoto() -> Bool {
+        return UserDefaults.standard.bool(forKey: Constants.PROFILE_PICTURE)
+    }
+    
+    func setUserChoosesPhoto(imageWasChoosen: Bool) {
+        UserDefaults.standard.set(imageWasChoosen, forKey: Constants.PROFILE_PICTURE)
+    }
+    
 }
