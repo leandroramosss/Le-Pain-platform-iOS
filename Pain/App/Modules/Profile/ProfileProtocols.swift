@@ -23,6 +23,7 @@ protocol PresenterToProfileInteractorProtocol: class {
     func getUserChoosesPhoto() -> Bool
     func setUserChoosesPhoto(imageWasChoosen: Bool)
 
+    func setRemoveUUID(userUUID: String)
     
 }
 
@@ -37,6 +38,8 @@ protocol ViewToProfilePresenterProtocol: class {
     
     func getUserChoosesPhoto() -> Bool
     func setUserChoosesPhoto(imageWasChoosen: Bool)
+    
+    func setRemoveUUID(userUUID: String)
     
     func signOutUser() 
 }

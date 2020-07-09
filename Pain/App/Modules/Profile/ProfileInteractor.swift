@@ -22,5 +22,16 @@ class ProfileInteractor: PresenterToProfileInteractorProtocol {
         manager.setUserChoosesPhoto(imageWasChoosen: imageWasChoosen)
     }
 
+    func getUserUUID() -> String {
+        return manager.getUserUUID()
+    }
     
+    func setUserUUID(userUUID: String) {
+        manager.setUserUUID(userUUID: userUUID)
+    }
+    
+    func setRemoveUUID(userUUID: String) {
+        manager.setRemoveUUID(userUUID: userUUID)
+    }
+
 }

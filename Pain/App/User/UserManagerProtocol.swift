@@ -23,4 +23,6 @@ protocol UserManagerProtocol {
     func getUserUUID() -> String
     func setUserUUID(userUUID: String)
     
+    func setRemoveUUID(userUUID: String)
+    
 }

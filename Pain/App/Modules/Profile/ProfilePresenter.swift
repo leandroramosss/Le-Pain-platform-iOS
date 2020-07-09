@@ -15,6 +15,7 @@ class ProfilePresenter: ViewToProfilePresenterProtocol {
     var view: PresenterToProfileProtocol?
     var interactor: PresenterToProfileInteractorProtocol?
     var router: PresenterToProfileRouterProtocol?
+    var manager = UserManager()
     
     func getUserChoosesPhoto() -> Bool {
         return ((interactor?.getUserChoosesPhoto()) != nil)
@@ -24,6 +25,10 @@ class ProfilePresenter: ViewToProfilePresenterProtocol {
         interactor?.setUserChoosesPhoto(imageWasChoosen: imageWasChoosen)
     }
     
+    func setRemoveUUID(userUUID: String) {
+        interactor?.setRemoveUUID(userUUID: userUUID)
+    }
+
 }
 
 extension ProfilePresenter: InteractorToProfilePresenterProtocol {
@@ -32,6 +37,9 @@ extension ProfilePresenter: InteractorToProfilePresenterProtocol {
         
         do {
             try Auth.auth().signOut()
+            let userUUID = manager.getUserUUID()
+            self.interactor?.setRemoveUUID(userUUID: userUUID)
+            UserDefaults.standard.synchronize()
             self.view?.didEndRequestSuccesfully()
         } catch let error {
             print("Error trying to sign out of Firebase: \(error.localizedDescription)")

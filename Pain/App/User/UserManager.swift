@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UserManager: UserManagerProtocol {
+class UserManager: UserManagerProtocol {    
     
     func getUsername() -> String {
         guard let data = UserDefaults.standard.string(forKey: Constants.USERNAME) else {
@@ -47,6 +47,9 @@ class UserManager: UserManagerProtocol {
     func setUserUUID(userUUID: String) {
         UserDefaults.standard.set(userUUID, forKey: Constants.UUID)
     }
-
+    
+    func setRemoveUUID(userUUID: String) {
+        UserDefaults.standard.removeObject(forKey: Constants.UUID)
+    }
     
 }

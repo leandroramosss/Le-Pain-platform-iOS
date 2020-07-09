@@ -24,7 +24,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let userUUID = manager.getUserUUID()
         
-        if userUUID == nil {
+        
+        if userUUID == "" {
             let controller = LoginRouter.createModule()
             let navigationController = UINavigationController()
             navigationController.viewControllers = [controller]
