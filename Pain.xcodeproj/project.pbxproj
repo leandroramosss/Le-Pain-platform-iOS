@@ -32,6 +32,7 @@
 		52500F02249FB01E00A19F6A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52500F01249FB01E00A19F6A /* CustomTextField.swift */; };
 		5250B002249D7E9400B210CD /* SendEmailAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5250B001249D7E9400B210CD /* SendEmailAlert.storyboard */; };
 		5250B004249D7F1C00B210CD /* SendEmailAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250B003249D7F1C00B210CD /* SendEmailAlertService.swift */; };
+		525D5FFF24B7441600EACC58 /* ProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525D5FFE24B7441600EACC58 /* ProfilePhoto.swift */; };
 		52774F32247C78DC001EAB2A /* MainPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52774F31247C78DC001EAB2A /* MainPage.storyboard */; };
 		527767C024999E3E00ADC23B /* RecoveryPasswordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527767BF24999E3E00ADC23B /* RecoveryPasswordProtocols.swift */; };
 		527767C224999FFB00ADC23B /* RecoverPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527767C124999FFB00ADC23B /* RecoverPasswordPresenter.swift */; };
@@ -125,6 +126,7 @@
 		52500F01249FB01E00A19F6A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		5250B001249D7E9400B210CD /* SendEmailAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SendEmailAlert.storyboard; sourceTree = "<group>"; };
 		5250B003249D7F1C00B210CD /* SendEmailAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailAlertService.swift; sourceTree = "<group>"; };
+		525D5FFE24B7441600EACC58 /* ProfilePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhoto.swift; sourceTree = "<group>"; };
 		52774F31247C78DC001EAB2A /* MainPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainPage.storyboard; sourceTree = "<group>"; };
 		527767BF24999E3E00ADC23B /* RecoveryPasswordProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordProtocols.swift; sourceTree = "<group>"; };
 		527767C124999FFB00ADC23B /* RecoverPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordPresenter.swift; sourceTree = "<group>"; };
@@ -317,6 +319,14 @@
 			path = SendEmailAlertService;
 			sourceTree = "<group>";
 		};
+		5253B07324B73F9D00301A86 /* ProfileImage */ = {
+			isa = PBXGroup;
+			children = (
+				525D5FFE24B7441600EACC58 /* ProfilePhoto.swift */,
+			);
+			path = ProfileImage;
+			sourceTree = "<group>";
+		};
 		527767BE24999E1F00ADC23B /* RecoveryPassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,6 +407,7 @@
 		52B09BDA2495016100CE695E /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				5253B07324B73F9D00301A86 /* ProfileImage */,
 				521C9E5024B109750057D3F4 /* Transition */,
 				52CC031524B0B75A00F4FDB8 /* ProfileAnimated */,
 				52500F03249FB16600A19F6A /* TextField */,
@@ -761,6 +772,7 @@
 				52B09BE1249505DB00CE695E /* AnimatedAlertInteractor.swift in Sources */,
 				52500F02249FB01E00A19F6A /* CustomTextField.swift in Sources */,
 				524E39102495B6E20086AD5C /* LoaderProtocols.swift in Sources */,
+				525D5FFF24B7441600EACC58 /* ProfilePhoto.swift in Sources */,
 				52191ECD24A90F5E00320F2F /* ProfileProtocols.swift in Sources */,
 				52191ED324A913C000320F2F /* ProfileRouter.swift in Sources */,
 				521C9E5324B17FA50057D3F4 /* CustomLinedTextField.swift in Sources */,

@@ -46,13 +46,13 @@
             filePath = "Pain/App/Modules/Profile/ProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "didTapSignout()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "B4EC3AD6-D8F5-4140-A083-2AEC692B893F - c314b4ef1ab97aad"
+                  uuid = "B4EC3AD6-D8F5-4140-A083-2AEC692B893F - 31f850f54355e364"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -62,12 +62,12 @@
                   urlString = "file:///Users/macbookpro/Desktop/Pain/Pain/App/Modules/Profile/ProfileViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "153"
-                  endingLineNumber = "153"
-                  offsetFromSymbolStart = "874">
+                  startingLineNumber = "198"
+                  endingLineNumber = "198"
+                  offsetFromSymbolStart = "1004">
                </Location>
                <Location
-                  uuid = "B4EC3AD6-D8F5-4140-A083-2AEC692B893F - c7fe6d6c59ee6582"
+                  uuid = "B4EC3AD6-D8F5-4140-A083-2AEC692B893F - 351289760002fc68"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -77,9 +77,9 @@
                   urlString = "file:///Users/macbookpro/Desktop/Pain/Pain/App/Modules/Profile/ProfileViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "154"
-                  endingLineNumber = "154"
-                  offsetFromSymbolStart = "52">
+                  startingLineNumber = "199"
+                  endingLineNumber = "199"
+                  offsetFromSymbolStart = "64">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -94,10 +94,10 @@
             filePath = "Pain/App/Modules/Profile/ProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "ProfileViewController"
-            landmarkType = "21">
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "didEndRequestSuccesfully()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -110,8 +110,8 @@
             filePath = "Pain/App/Modules/Profile/ProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
             landmarkName = "didTapSignout()"
             landmarkType = "7">
          </BreakpointContent>

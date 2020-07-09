@@ -17,6 +17,17 @@ class ProfileViewController: UIViewController {
     let frame = CGRect()
     let manager = UserManager()
     var animationView = AnimationView()
+    var imagePicker = UIImagePickerController()
+    
+    lazy var scrollView: UIScrollView = {
+        let scroll = UIScrollView()
+        return scroll
+    }()
+    
+    lazy var contentView: UIView = {
+        let view = UIView()
+        return view
+    }()
     
     lazy var profileView: ProfileImageView = {
         let view = ProfileImageView(frame: frame)
@@ -50,6 +61,7 @@ class ProfileViewController: UIViewController {
         button.layer.borderColor = UIColor.black.cgColor
         button.setTitle("profile picture", for: .normal)
         button.setTitleColor(.black, for: .normal)
+        button.addTarget(self, action: #selector(profilePictureButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -94,30 +106,43 @@ extension ProfileViewController: PresenterToProfileProtocol {
     
 }
 
-extension ProfileViewController: ViewLayoutProtocol, UIViewControllerTransitioningDelegate {
+extension ProfileViewController: ViewLayoutProtocol, UIViewControllerTransitioningDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func setUpLayout() {
         viewHierarchy()
         setupConstranits()
     }
     
     func viewHierarchy() {
-        view.addSubview(profileView)
-        view.addSubview(profileTitle)
-        view.addSubview(emailTextField)
-        view.addSubview(logoutButton)
-        view.addSubview(profilePicture)
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(profileView)
+        contentView.addSubview(profileTitle)
+        contentView.addSubview(emailTextField)
+        contentView.addSubview(logoutButton)
+        contentView.addSubview(profilePicture)
     }
     
     func setupConstranits() {
+        scrollView.snp.makeConstraints { (maker) in
+            maker.top.leading.trailing.bottom.equalToSuperview().inset(0)
+        }
+        
+        contentView.snp.makeConstraints { (maker) in
+            maker.top.bottom.equalTo(self.scrollView)
+            maker.left.right.equalTo(self.view)
+            maker.height.equalTo(1500)
+            maker.width.equalTo(self.scrollView)
+        }
+        
         profileView.snp.makeConstraints { (maker) in
-            maker.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(4)
-            maker.leading.equalToSuperview().offset(17)
+            maker.top.equalTo(contentView.snp.top).offset(4)
+            maker.leading.equalTo(contentView.snp.leading).offset(17)
         }
         
         profileTitle.snp.makeConstraints { (maker) in
-            maker.top.equalTo(view.safeAreaLayoutGuide).offset(10)
+            maker.top.equalTo(contentView.snp.top).offset(10)
             maker.leading.equalTo(profileView.snp.trailing).offset(20)
-            maker.trailing.equalToSuperview().offset(-20)
+            maker.trailing.equalTo(contentView.snp.trailing).offset(-20)
             maker.height.equalTo(40)
         }
         
@@ -142,7 +167,7 @@ extension ProfileViewController: ViewLayoutProtocol, UIViewControllerTransitioni
             maker.centerX.equalToSuperview()
         }
     }
-        
+            
     @objc func handleProfileViewTapped() {
         print("touthed")
         let viewController = MainPageRouter.createModule()
@@ -173,5 +198,21 @@ extension ProfileViewController: ViewLayoutProtocol, UIViewControllerTransitioni
         DispatchQueue.main.asyncAfter(wallDeadline: .now() + 2.0) {
             self.presenter?.signOutUser()
         }
+    }
+    
+    @objc func profilePictureButtonTapped() {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera
+            imagePicker.allowsEditing = false
+            present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
+        self.dismiss(animated: true, completion: { () -> Void in
+
+        })
+        
     }
 }

@@ -72,7 +72,7 @@ extension MainPageViewController: ViewLayoutProtocol {
     
     func setupConstranits() {
         scrollView.snp.makeConstraints { (maker) in
-            maker.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            maker.top.leading.trailing.equalToSuperview()
             maker.bottom.equalToSuperview()
         }
         
