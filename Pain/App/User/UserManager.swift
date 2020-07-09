@@ -40,4 +40,13 @@ class UserManager: UserManagerProtocol {
         UserDefaults.standard.set(imageWasChoosen, forKey: Constants.PROFILE_PICTURE)
     }
     
+    func getUserUUID() -> String {
+        return UserDefaults.standard.string(forKey: Constants.UUID) ?? ""
+    }
+    
+    func setUserUUID(userUUID: String) {
+        UserDefaults.standard.set(userUUID, forKey: Constants.UUID)
+    }
+
+    
 }

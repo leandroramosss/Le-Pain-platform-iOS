@@ -27,6 +27,14 @@ class LoginPresenter: ViewToLoginPresenterProtocol {
         interactor?.setUserEmail(email: email)
     }
     
+    func getUserUUID() -> String {
+        return (interactor?.getUserUUID())!
+    }
+    
+    func setUserUUID(userUUID: String) {
+        interactor?.setUserUUID(userUUID: userUUID)
+    }
+    
 }
 
 extension LoginPresenter: InteractorToLoginPresenterProtocol {
@@ -51,6 +59,7 @@ extension LoginPresenter: InteractorToLoginPresenterProtocol {
                 print("Login error: \(error.localizedDescription)")
             default:
                 if let user = result?.user {
+                    self.interactor?.setUserUUID(userUUID: user.uid)
                     print(user.uid)
                 }
                 self.view?.didEndRequestSuccesfully()

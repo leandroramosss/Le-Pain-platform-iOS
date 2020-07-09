@@ -24,6 +24,9 @@ protocol PresenterToLoginInteractorProtocol: class {
     
     func getUserEmail() -> String
     func setUserEmail(email: String)
+    
+    func getUserUUID() -> String
+    func setUserUUID(userUUID: String)
 
 }
 
@@ -40,5 +43,8 @@ protocol ViewToLoginPresenterProtocol: class {
     
     func getUserEmail() -> String
     func setUserEmail(email: String)
+    
+    func getUserUUID() -> String
+    func setUserUUID(userUUID: String)
 
 }

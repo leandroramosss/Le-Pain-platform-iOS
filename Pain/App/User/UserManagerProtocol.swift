@@ -20,4 +20,7 @@ protocol UserManagerProtocol {
     func getUserChoosesPhoto() -> Bool
     func setUserChoosesPhoto(imageWasChoosen: Bool)
     
+    func getUserUUID() -> String
+    func setUserUUID(userUUID: String)
+    
 }

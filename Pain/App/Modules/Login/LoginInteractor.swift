@@ -20,5 +20,13 @@ class LoginInteractor: PresenterToLoginInteractorProtocol {
     func setUserEmail(email: String) {
         manager.setUserEmail(email: email)
     }
+    
+    func getUserUUID() -> String {
+        return manager.getUserUUID()
+    }
+    
+    func setUserUUID(userUUID: String) {
+        manager.setUserUUID(userUUID: userUUID)
+    }
 
 }
