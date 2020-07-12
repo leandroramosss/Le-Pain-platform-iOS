@@ -75,7 +75,6 @@ class ProfileViewController: UIViewController {
         let textfield = CustomLinedTextField()
         textfield.animateConstraits()
         textfield.placeholderLabel.text = "email"
-        textfield.placeholder = "email"
         textfield.text = manager.getUserEmail()
         return textfield
     }()
@@ -83,7 +82,6 @@ class ProfileViewController: UIViewController {
     lazy var usernameTextField: CustomLinedTextField = {
         let textField = CustomLinedTextField()
         textField.placeholderLabel.text = "username"
-        textField.placeholder = "username"
         return textField
     }()
     

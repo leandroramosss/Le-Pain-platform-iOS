@@ -46,8 +46,8 @@
             filePath = "Pain/App/Modules/Profile/ProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "didEndRequestSuccesfully()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "Pain/App/Modules/Profile/ProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
             landmarkName = "profilePictureButtonTapped()"
             landmarkType = "7">
          </BreakpointContent>

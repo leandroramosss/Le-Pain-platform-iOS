@@ -10,6 +10,7 @@ target 'Pain' do
   pod 'SnapKit', '~> 5.0'
   pod 'FirebaseAuth'
   pod 'lottie-ios'
+  pod 'Firebase/Firestore'
 
   target 'PainTests' do
     inherit! :search_paths
