@@ -73,8 +73,18 @@ class ProfileViewController: UIViewController {
     
     lazy var emailTextField: CustomLinedTextField = {
         let textfield = CustomLinedTextField()
+        textfield.animateConstraits()
+        textfield.placeholderLabel.text = "email"
+        textfield.placeholder = "email"
         textfield.text = manager.getUserEmail()
         return textfield
+    }()
+    
+    lazy var usernameTextField: CustomLinedTextField = {
+        let textField = CustomLinedTextField()
+        textField.placeholderLabel.text = "username"
+        textField.placeholder = "username"
+        return textField
     }()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -128,6 +138,7 @@ extension ProfileViewController: ViewLayoutProtocol, UIViewControllerTransitioni
         contentView.addSubview(logoutButton)
         contentView.addSubview(profilePicture)
         contentView.addSubview(userPhotoView)
+        contentView.addSubview(usernameTextField)
     }
     
     func setupConstranits() {
@@ -183,6 +194,14 @@ extension ProfileViewController: ViewLayoutProtocol, UIViewControllerTransitioni
             maker.leading.equalTo(contentView.snp.leading).offset(17)
 
         }
+        
+        usernameTextField.snp.makeConstraints { (maker) in
+            maker.top.equalTo(emailTextField.snp.bottom).offset(16)
+            maker.width.equalToSuperview().inset(20)
+            maker.height.equalTo(40)
+            maker.centerX.equalToSuperview()
+        }
+        
     }
             
     @objc func handleProfileViewTapped() {
@@ -220,9 +239,9 @@ extension ProfileViewController: ViewLayoutProtocol, UIViewControllerTransitioni
     @objc func profilePictureButtonTapped() {
         ImagePickerManager().pickImage(self){ [self] image in
             self.profilePictureWasPressed.toggle()
-            self.presenter?.setUserChoosesPhoto(imageWasChoosen: profilePictureWasPressed)
-            userPhotoView.isHidden = false
-            userPhotoView.image = image
+            self.presenter?.setUserChoosesPhoto(imageWasChoosen: self.profilePictureWasPressed)
+            self.userPhotoView.isHidden = false
+            self.userPhotoView.image = image
         }
     }
 }
