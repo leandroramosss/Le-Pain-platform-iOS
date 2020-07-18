@@ -125,8 +125,6 @@ extension LoginViewController: PresenterToLoginProtocol {
     
     func didEndRequestSuccesfully() {
         let viewController = MainPageRouter.createModule()
-//        viewController.modalPresentationStyle = .fullScreen
-//        self.present(viewController, animated: true, completion: nil)
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     

@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import Lottie
 import NotificationCenter
+import Firebase
 
 class SignUpViewController: UIViewController {
     
@@ -25,7 +26,7 @@ class SignUpViewController: UIViewController {
     var selectedMonth: String?
     var selectedDay: String?
     var selectedYear: String?
-
+    let db = Firestore.firestore()
     
     lazy var backgroundView: UIImageView = {
         let view = UIImageView()
@@ -118,9 +119,7 @@ class SignUpViewController: UIViewController {
 
 extension SignUpViewController: PresenterToSignUpProtocol {
     func endRequestSuccessfully() {
-        let viewController = MainPageRouter.createModule()
-        self.navigationController?.present(viewController, animated: true, completion: nil)
-        self.navigationController?.popToViewController(viewController, animated: true)
+        let viewController = LoginRouter.createModule()
     }
     
     func endRequestWithError(alert: UIAlertController) {
@@ -245,6 +244,7 @@ extension SignUpViewController: ViewLayoutProtocol, UITextFieldDelegate {
         self.navigationController!.navigationBar.layer.zPosition = -1
         startAnimation()
         saveUserName()
+        self.createUserData()
         DispatchQueue.main.asyncAfter(wallDeadline: .now() + 1.5) {
             self.presenter?.createUser(email: self.emailTextfield.text ?? "", passWord: self.passwordTextField.text ?? "")
         }
@@ -300,6 +300,11 @@ extension SignUpViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         pickerMonth = formatter.shortMonthSymbols
         pickerDay = days
         pickYears = years
+    }
+    
+    func createUserData() {
+        db.collection("user").addDocument(data: ["email": emailTextfield.text!,
+                                                 "password": passwordTextField.text!])
     }
 
 }

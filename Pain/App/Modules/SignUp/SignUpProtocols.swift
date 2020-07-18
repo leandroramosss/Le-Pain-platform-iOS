@@ -39,5 +39,5 @@ protocol ViewToSignUpPresenterProtocol: class {
     
     func getUsername() -> String
     func setUsername(username: String)
-    
+        
 }

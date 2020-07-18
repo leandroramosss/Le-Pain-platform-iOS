@@ -12,6 +12,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pain/App/Modules/SignIn/LoginPresenter.swift"
+            timestampString = "0"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -28,6 +29,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pain/App/Modules/SignIn/LoginPresenter.swift"
+            timestampString = "0"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -44,6 +46,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pain/App/Modules/Profile/ProfileViewController.swift"
+            timestampString = "0"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "113"
@@ -60,6 +63,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pain/App/Modules/Profile/ProfileViewController.swift"
+            timestampString = "0"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "240"
@@ -76,6 +80,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pain/App/Modules/Login/LoginPresenter.swift"
+            timestampString = "0"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
@@ -92,6 +97,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pain/App/Commons/SceneDelegate.swift"
+            timestampString = "0"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -108,11 +114,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pain/App/Modules/Profile/ProfilePresenter.swift"
+            timestampString = "0"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
             endingLineNumber = "42"
             landmarkName = "signOutUser()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2475BED2-018F-4E4E-9366-B72ED30F00DC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pain/App/Modules/SignUp/SignUpViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
+            landmarkName = "SignUpViewController"
+            landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4F45BDDA-BD3D-44C5-9D2D-5A010751A348"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pain/App/Modules/SignUp/SignUpViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
+            landmarkName = "continueButtonTapped()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
